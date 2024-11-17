@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Mapengo Innovations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Mapengo Innovations Logo">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+
+            <!-- Toggle Switch -->
+            <label class="label">
+                <div class="toggle">
+                    <input class="toggle-state" type="checkbox" id="theme-toggle">
+                    <div class="indicator"></div>
+                </div>
+            </label>
+        </nav>
+    </header>
+        <main class="container">
+        <h2 class="section-title">Terms of Service</h2>
+        <section class="terms-content">
+            <h3>1. Introduction</h3>
+            <p>Welcome to Mapengo Innovations. These terms and conditions outline the rules and regulations for using our website and services.</p>
+
+            <h3>2. Terms of Service</h3>
+            <p>By accessing our website, you agree to these terms. If you do not agree with any part of the terms, you are prohibited from using our services.</p>
+
+            <h3>3. Services</h3>
+            <p>We provide custom web and app development services. The scope of each service will be outlined in the contract before the project begins.</p>
+
+            <h3>4. Payments</h3>
+            <p>Payments are due as outlined in the contract. Failure to make timely payments may result in termination of services.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container container">
+            <div class="footer-links">
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+        <p class="footer-copy">© 2024 Mapengo Innovations</p>
+    </footer>
+        <script>
+        // Get the toggle switch
+        const toggleSwitch = document.getElementById('theme-toggle');
+
+        // Add event listener for toggle switch
+        toggleSwitch.addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode', this.checked);
+        });
+    </script>
+</body>
+</html>
