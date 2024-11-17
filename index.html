@@ -143,28 +143,30 @@
         font-size: 0.8em;
       }
     }
-  
-/* General Styling */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f9fafb;
+
+/* Global Reset */
+body, html {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  display: flex;
   align-items: center;
-  height: 100vh;
-  color: #333;
-}
-
-h1 {
-  font-size: 2rem;
-  color: #333;
+  justify-content: center;
   text-align: center;
-  margin-bottom: 1.5rem;
+  padding: 20px;
 }
 
-.contact-container {
+/* Form Styles */
+.form-container {
   width: 100%;
   max-width: 500px;
   padding: 1.5rem;
@@ -173,10 +175,11 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styling */
-.contact-form {
-  display: flex;
-  flex-direction: column;
+.form-title {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
 .form-group {
@@ -241,46 +244,114 @@ button:hover {
   width: auto;
 }
 
-/* Loader and Response Styling */
-#loader {
-  display: none;
+/* Footer Styles */
+footer {
   text-align: center;
-  margin-top: 1rem;
+  padding: 20px;
+  background: #f8f8f8;
+  color: #666;
+  font-size: 14px;
 }
 
-#response {
-  display: none;
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  font-weight: 600;
+.wrapper {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  padding: 20px 0;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.success-message {
-  background-color: #10b981;
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wrapper .icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  background: #333;
   color: #fff;
+  font-size: 0.9em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.error-message {
-  background-color: #f87171;
-  color: #fff;
+.icon:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Responsive Styling */
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.footer-links {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  color: #333;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .contact-container {
+  .form-container {
     padding: 1rem;
   }
 
-  h1 {
-    font-size: 1.5rem;
+  .form-title {
+    font-size: 1.25rem;
   }
 
-  .form-group {
-    margin-bottom: 1rem;
+  .wrapper {
+    gap: 15px;
   }
-}
+
+  .wrapper .icon {
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 1em;
+  }
+
+  .tooltip {
+    font-size: 0.8em;
+  }
+    }
 </style>
   
 </head>
