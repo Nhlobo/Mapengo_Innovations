@@ -281,6 +281,73 @@ a:hover {
   font-size: 14px;
   text-align: center;
         }
+    /* Responsive Design */
+@media (max-width: 768px) {
+  /* Wrapper adjustments */
+  .contact-container {
+    padding: 20px;  /* Adjust padding for smaller screens */
+    width: 100%;  /* Make the container full width on small screens */
+    box-shadow: none; /* Remove shadow for smaller viewports */
+  }
+
+  /* Form elements adjustments */
+  .contact h1 {
+    font-size: 24px; /* Adjust header size */
+    margin-bottom: 15px;
+  }
+
+  .contact-form {
+    flex-direction: column;
+    gap: 15px; /* Reduced gap between form fields */
+  }
+
+  .form-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  label {
+    font-size: 14px; /* Smaller label size */
+  }
+
+  input,
+  textarea {
+    padding: 10px 12px;
+    font-size: 14px; /* Adjust input size */
+  }
+
+  button {
+    padding: 12px 16px;
+    font-size: 14px; /* Adjust button size */
+  }
+
+  /* Checkbox group styling */
+  .checkbox-group {
+    gap: 8px; /* Reduced gap for checkboxes */
+  }
+
+  .checkbox-group input {
+    width: 18px; /* Adjust checkbox size */
+  }
+
+  /* Loader */
+  #loader img {
+    width: 40px;  /* Adjust loader size */
+  }
+
+  /* Success and Error messages */
+  .success-message, 
+  .error-message {
+    font-size: 14px;  /* Adjust font size */
+    padding: 8px;
+  }
+
+  /* Response message */
+  #response {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+}
 </style>
   
 </head>
