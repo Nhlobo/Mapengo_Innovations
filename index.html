@@ -5,12 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Footer Test</title>
   <style>
+    /* Global Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Content Area */
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
     /* Footer Styles */
     footer {
       text-align: center;
       padding: 20px;
       background: #f8f8f8;
-      font-family: Arial, sans-serif;
       color: #666;
     }
     
@@ -20,7 +39,6 @@
       height: 120px;
       width: 100%;
       padding-top: 40px;
-      font-family: "Poppins", sans-serif;
       justify-content: center;
     }
 
@@ -74,11 +92,6 @@
       pointer-events: auto;
     }
 
-    .wrapper .icon:hover span,
-    .wrapper .icon:hover .tooltip {
-      text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-    }
-
     .wrapper .facebook:hover,
     .wrapper .facebook:hover .tooltip,
     .wrapper .facebook:hover .tooltip::before {
@@ -99,11 +112,25 @@
       background: #e4405f;
       color: #fff;
     }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-wrap: wrap;
+        padding-top: 20px;
+      }
+
+      .wrapper .icon {
+        margin: 8px;
+        width: 40px;
+        height: 40px;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Main Content -->
-  <div style="min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+  <div class="content">
     <h1>Footer Test Page</h1>
   </div>
   
