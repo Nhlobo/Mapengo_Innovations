@@ -1,43 +1,46 @@
 /* Updated Testimonials Section */
 #testimonials {
     background-color: #f9f9f9;
-    padding: 6rem 1rem; /* Increased padding for more spacing within the section */
-    margin-bottom: 0; /* Removed bottom margin to reduce gap with the next section */
+    padding: 4rem 1rem; /* Adjusted padding for consistency */
+    margin: 0 auto; /* Centered content within the container */
     text-align: center;
 }
 
 .section-title {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* Reduced margin to keep section compact */
     color: #333;
 }
 
 .testimonials-container {
-    overflow: auto;
     display: flex;
-    scroll-snap-type: x mandatory;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 1.5rem; /* Space between testimonial cards */
+    justify-content: center;
     width: 90%;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 1rem; /* Added padding for alignment */
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    background: rgba(255, 255, 255, 0.8); /* Slightly more solid background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern look */
     border-radius: 10px;
-    padding: 2rem;
-    margin: 1rem;
-    flex-shrink: 0;
-    scroll-snap-align: center;
-    width: 250px;
+    padding: 1.5rem;
+    flex: 1 1 calc(25% - 1.5rem); /* Responsive width for cards */
+    max-width: 300px; /* Ensures consistent card size */
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
 }
 
 .title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-style: italic;
     margin-bottom: 1rem;
     color: #555;
@@ -50,9 +53,15 @@ h4 {
 }
 
 /* Responsive Design */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .testimonials-container {
-        gap: 1.5rem;
+        flex-direction: column; /* Stacks cards on smaller screens */
+        align-items: center;
+    }
+    
+    .card {
+        flex: 1 1 100%;
+        max-width: 90%; /* Full width for mobile screens */
     }
     }
 /* Global Reset */
