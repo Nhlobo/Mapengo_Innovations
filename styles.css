@@ -1,7 +1,8 @@
-/* Testimonials Section */
+/* Updated Testimonials Section */
 #testimonials {
     background-color: #f9f9f9;
-    padding: 4rem 1rem;
+    padding: 6rem 1rem; /* Increased padding for more spacing within the section */
+    margin-bottom: 0; /* Removed bottom margin to reduce gap with the next section */
     text-align: center;
 }
 
@@ -53,8 +54,7 @@ h4 {
     .testimonials-container {
         gap: 1.5rem;
     }
-}
-
+    }
 /* Global Reset */
 * {
   margin: 0;
