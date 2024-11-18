@@ -1,46 +1,42 @@
-/* Updated Testimonials Section */
+/* Testimonials Section */
 #testimonials {
     background-color: #f9f9f9;
-    padding: 4rem 1rem; /* Adjusted padding for consistency */
-    margin: 0 auto; /* Centered content within the container */
+    padding: 4rem 1rem;
     text-align: center;
 }
 
 .section-title {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 1.5rem; /* Reduced margin to keep section compact */
+    margin-bottom: 2rem;
     color: #333;
 }
 
 .testimonials-container {
+    overflow: auto;
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    gap: 1.5rem; /* Space between testimonial cards */
-    justify-content: center;
+    scroll-snap-type: x mandatory;
     width: 90%;
     margin: 0 auto;
-    padding: 0 1rem; /* Added padding for alignment */
+    padding: 0 15px;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.8); /* Slightly more solid background */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern look */
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
     border-radius: 10px;
-    padding: 1.5rem;
-    flex: 1 1 calc(25% - 1.5rem); /* Responsive width for cards */
-    max-width: 300px; /* Ensures consistent card size */
+    padding: 2rem;
+    margin: 1rem;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    width: 250px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
 }
 
 .title {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-style: italic;
     margin-bottom: 1rem;
     color: #555;
@@ -53,17 +49,12 @@ h4 {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .testimonials-container {
-        flex-direction: column; /* Stacks cards on smaller screens */
-        align-items: center;
+        gap: 1.5rem;
     }
-    
-    .card {
-        flex: 1 1 100%;
-        max-width: 90%; /* Full width for mobile screens */
-    }
-    }
+}
+
 /* Global Reset */
 * {
   margin: 0;
@@ -697,4 +688,4 @@ a:hover {
     font-size: 14px;
     margin-top: 15px;
   }
-  }
+        }
