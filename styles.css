@@ -102,8 +102,88 @@ body, html {
   max-height: 100px;
   padding: 15px 20px;
 }
-
 /* Testimonials Section */
+#testimonials {
+  background-color: #f9f9f9;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.testimonials-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: start; /* Align items to the start for better scrolling */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scroll */
+  padding: 0 15px;
+  scroll-snap-type: x mandatory; /* Enable snap scrolling */
+}
+
+.testimonials-container::-webkit-scrollbar {
+  height: 8px; /* Customize scrollbar height */
+}
+
+.testimonials-container::-webkit-scrollbar-thumb {
+  background: #ddd; /* Custom scrollbar color */
+  border-radius: 5px;
+}
+
+.testimonials-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7px);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1rem;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start; /* Align cards in a scrollable container */
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsive Design for Testimonials */
+@media (max-width: 768px) {
+  .testimonials-container {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    gap: 1rem;
+    overflow-x: unset; /* Disable horizontal scroll on small screens */
+  }
+
+  .card {
+    width: 100%;
+  }
+  }
+
+/* Testimonials Section 
 #testimonials {
   background-color: #f9f9f9;
   padding: 4rem 1rem;
@@ -156,9 +236,9 @@ h4 {
   font-size: 1rem;
   font-weight: bold;
   color: #333;
-}
-
-/* Responsive Design */
+} 
+ 
+/* Responsive Design *
 @media (max-width: 768px) {
   .faq-section, #testimonials {
     padding: 20px;
@@ -180,7 +260,7 @@ h4 {
   .faq-item p, .card h4 {
     font-size: 0.9rem;
   }
-}
+} 
 
 /* Footer Styles */
 footer {
