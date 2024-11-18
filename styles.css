@@ -1,3 +1,102 @@
+/* FAQ Section Styles */
+.faq-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item h3 {
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+.faq-item h3:hover {
+  background-color: #e0e0e0;
+}
+
+.faq-item h3::after {
+  content: "+";
+  font-size: 1.5rem;
+  float: right;
+  font-weight: bold;
+  color: #00b0ff;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active h3::after {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  font-size: 1rem;
+  color: #666;
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid #ddd;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active p {
+  max-height: 100px; /* Adjust based on content */
+  padding: 15px 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 10px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9rem;
+  }
+  }
 /* Global Reset */
 body, html {
   margin: 0;
