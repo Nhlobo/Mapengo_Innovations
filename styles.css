@@ -1,6 +1,6 @@
 /* Testimonials Section */
 #testimonials {
-    background-color: #f9f9f9;
+    background-color: #000; /* Black background */
     padding: 2rem 0.5rem; /* Reduced padding to make the background smaller */
     text-align: center;
 }
@@ -9,7 +9,7 @@
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1.5rem; /* Slightly reduced bottom margin */
-    color: #333;
+    color: #fff; /* White text for contrast */
 }
 
 .testimonials-container {
@@ -22,10 +22,10 @@
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.15); /* Glass effect with lower opacity */
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(10px); /* Stronger blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
     border-radius: 10px;
     padding: 2rem;
     margin: 1rem;
@@ -39,13 +39,13 @@
     font-size: 1.1rem;
     font-style: italic;
     margin-bottom: 1rem;
-    color: #555;
+    color: #ddd; /* Light gray text for title */
 }
 
 h4 {
     font-size: 1rem;
     font-weight: bold;
-    color: #333;
+    color: #fff; /* White text for better visibility on black background */
 }
 
 /* Responsive Design */
@@ -53,7 +53,7 @@ h4 {
     .testimonials-container {
         gap: 1rem; /* Reduced gap for smaller spacing */
     }
-}
+    }
 /* Global Reset */
 * {
   margin: 0;
