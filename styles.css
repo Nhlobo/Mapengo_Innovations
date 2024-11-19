@@ -1,27 +1,3 @@
-/* Contact Section */
-.contact {
-  background: linear-gradient(135deg, #eaf6ff, #d0eaff); /* Lighter sky-blue gradient */
-  padding: 60px 20px;
-}
-
-.contact-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.2); /* More transparent for stronger Glassmorphism */
-  border-radius: 12px; /* Smooth rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(12px); /* Enhanced blur for stronger effect */
-}
-
-.contact h1 {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #1e293b; /* Dark blue-gray for strong visibility */
-}
-
 /* Testimonials Section */
 #testimonials {
   background: linear-gradient(135deg, #eaf6ff, #d0eaff); /* Lighter sky-blue gradient */
@@ -46,9 +22,9 @@
 }
 
 .card {
-  backdrop-filter: blur(12px); /* Glass effect */
-  -webkit-backdrop-filter: blur(12px); /* WebKit compatibility */
-  background: rgba(255, 255, 255, 0.2); /* More transparent white glass */
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* WebKit compatibility */
+  background: rgba(255, 255, 255, 0.4); /* Translucent white glass */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   border-radius: 12px; /* Smooth rounded corners */
   padding: 2rem; /* Inner spacing */
@@ -58,12 +34,6 @@
   width: 250px; /* Fixed card width */
   text-align: center;
   color: #111827; /* Black text for maximum readability */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-.card:hover {
-  transform: translateY(-5px); /* Elevates the card on hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
 }
 
 .title {
@@ -85,7 +55,6 @@ h4 {
     gap: 1rem; /* Spacing between cards on larger screens */
   }
 }
-
 /* FAQ Section Styles */
 .faq-section {
   max-width: 800px;
@@ -189,190 +158,4 @@ h4 {
   }
 }
 
-/* Footer Styles */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #eaf6ff, #d0eaff); /* Light gradient for consistency */
-  color: #666;
-  font-size: 14px;
-}
 
-.wrapper {
-  display: flex;
-  list-style: none;
-  width: 100%;
-  padding: 20px 0;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.wrapper .icon {
-  position: relative;
-  background: #fff;
-  border-radius: 50%;
-  width: 3em;
-  height: 3em;
-  font-size: 1.2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.wrapper .icon:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.tooltip {
-  position: absolute;
-  top: -40px;
-  background: #333;
-  color: #fff;
-  font-size: 0.9em;
-  padding: 5px 10px;
-  border-radius: 5px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.icon:hover .tooltip {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.tooltip::before {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: #333 transparent transparent transparent;
-}
-
-/* Social Media Icon Colors */
-.facebook:hover {
-  background: #1877f2; /* Facebook blue */
-  color: #fff;
-}
-
-.twitter:hover {
-  background: #1da1f2; /* Twitter blue */
-  color: #fff;
-}
-
-.linkedin:hover {
-  background: #0077b5; /* LinkedIn blue */
-  color: #fff;
-}
-
-.github:hover {
-  background: #333; /* GitHub dark */
-  color: #fff;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .contact-container {
-    padding: 30px 10px;
-  }
-
-  .testimonials-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .card {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .faq-container {
-    gap: 15px;
-  }
-
-  .faq-item h3 {
-    font-size: 1rem;
-  }
-
-  .faq-item p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Footer Styles */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #eaf6ff, #d0eaff); /* Light gradient for consistency */
-  color: #666;
-  font-size: 14px;
-}
-
-.wrapper {
-  display: flex;
-  list-style: none;
-  width: 100%;
-  padding: 20px 0;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.wrapper .icon {
-  position: relative;
-  background: #fff;
-  border-radius: 50%;
-  width: 3em;
-  height: 3em;
-  font-size: 1.2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.wrapper .icon:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.tooltip {
-  position: absolute;
-  top: -40px;
-  background: #333;
-  color: #fff;
-  font-size: 0.9em;
-  padding: 5px 10px;
-  border-radius: 5px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.icon:hover .tooltip {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.tooltip::before {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: #333 transparent transparent transparent;
-}
