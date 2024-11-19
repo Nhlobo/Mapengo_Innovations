@@ -1,6 +1,6 @@
 /* Testimonials Section */
 #testimonials {
-  background: linear-gradient(135deg, #e0f7fa, #bbdefb); /* Light gradient blue */
+  background: linear-gradient(135deg, #eaf6ff, #d0eaff); /* Lighter sky-blue gradient */
   padding: 2rem 0.5rem;
   text-align: center;
 }
@@ -54,7 +54,7 @@ h4 {
   .testimonials-container {
     gap: 1rem; /* Spacing between cards on larger screens */
   }
-  }
+    }
 /* Global Reset */
 * {
   margin: 0;
