@@ -1,58 +1,59 @@
 /* Testimonials Section */
 #testimonials {
-    background-color: #f9f9f9;
-    padding: 2rem 0.5rem; /* Reduced padding to make the background smaller */
-    text-align: center;
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0); /* Clean white gradient */
+  padding: 2rem 0.5rem; 
+  text-align: center;
 }
 
 .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem; /* Slightly reduced bottom margin */
-    color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #000; /* Black text for contrast */
 }
 
 .testimonials-container {
-    overflow: auto;
-    display: flex;
-    scroll-snap-type: x mandatory;
-    width: 90%;
-    margin: 0 auto;
-    padding: 0 10px; /* Reduced horizontal padding */
+  overflow: auto;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    border-radius: 10px;
-    padding: 2rem;
-    margin: 1rem;
-    flex-shrink: 0;
-    scroll-snap-align: center;
-    width: 250px;
-    text-align: center;
+  background: rgba(255, 255, 255, 0.6); /* Light glass effect */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* Softer shadow for subtle depth */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1rem;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  width: 250px;
+  text-align: center;
+  color: #000; /* Black text for readability */
 }
 
 .title {
-    font-size: 1.1rem;
-    font-style: italic;
-    margin-bottom: 1rem;
-    color: #555;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #333; /* Slightly lighter black */
 }
 
 h4 {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000; /* Strong black for headings */
 }
 
 /* Responsive Design */
 @media (min-width: 768px) {
-    .testimonials-container {
-        gap: 1rem; /* Reduced gap for smaller spacing */
-    }
+  .testimonials-container {
+    gap: 1rem;
+  }
 }
 /* Global Reset */
 * {
