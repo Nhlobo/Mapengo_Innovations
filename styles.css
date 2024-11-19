@@ -48,9 +48,7 @@ h4, p {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: #ffffff; /* Removed gradient and transparency */
   box-shadow: 0 8px 32px var(--shadow);
   border-radius: 12px;
   padding: 2rem;
@@ -89,7 +87,7 @@ h4, p {
 }
 
 .faq-item {
-  background: rgba(255, 255, 255, 0.2);
+  background: #ffffff; /* Removed gradient */
   border-radius: 12px;
   box-shadow: 0 4px 8px var(--shadow);
   overflow: hidden;
@@ -106,13 +104,13 @@ h4, p {
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.4);
+  background: #ffffff; /* Removed gradient */
   margin: 0;
   transition: background 0.3s ease;
 }
 
 .faq-item h3:hover {
-  background: rgba(255, 255, 255, 0.6);
+  background: #f0f0f0; /* Lighter background color */
 }
 
 .faq-item h3::after {
@@ -133,7 +131,7 @@ h4, p {
   padding: 0 20px;
   font-size: 1rem;
   color: var(--dark-gray);
-  background: rgba(255, 255, 255, 0.5);
+  background: #ffffff; /* Removed gradient */
   border-top: 1px solid #ccc;
   transition: max-height 0.3s ease, padding 0.3s ease;
 }
@@ -142,24 +140,22 @@ h4, p {
   max-height: 100px;
   padding: 15px 20px;
 }
+
 /* Contact Section */
 .contact {
   padding: 60px 20px;
   border-radius: 12px; /* Rounded corners */
-  backdrop-filter: blur(12px); /* Glass effect */
-  -webkit-backdrop-filter: blur(12px); /* WebKit compatibility */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   background-color: #f0f4f8; /* Light background color */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .contact-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  background: #ffffff; /* Solid white instead of semi-transparent */
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px); /* Glass effect */
 }
 
 .contact h1 {
@@ -278,57 +274,6 @@ a:hover {
   text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-container {
-    padding: 20px;
-    width: 100%;
-    box-shadow: none;
-  }
-
-  .contact h1 {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-
-  .contact-form {
-    gap: 15px;
-  }
-
-  label {
-    font-size: 14px;
-  }
-
-  input,
-  textarea {
-    padding: 10px 12px;
-    font-size: 14px;
-  }
-
-  button {
-    padding: 12px 16px;
-    font-size: 14px;
-  }
-
-  .checkbox-group {
-    gap: 8px;
-  }
-
-  #loader img {
-    width: 40px;
-  }
-
-  .success-message, 
-  .error-message {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  #response {
-    font-size: 14px;
-    margin-top: 15px;
-  }
-}
 /* Footer Styles */
 footer {
   text-align: center;
