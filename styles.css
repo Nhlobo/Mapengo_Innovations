@@ -22,10 +22,10 @@
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.15); /* Glass effect with lower opacity */
+    background: rgba(255, 255, 255, 0.1); /* Glass effect with a low opacity for transparency */
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(10px); /* Stronger blur effect */
-    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+    backdrop-filter: blur(12px); /* Stronger blur effect for a more prominent glass look */
+    -webkit-backdrop-filter: blur(12px); /* For Safari compatibility */
     border-radius: 10px;
     padding: 2rem;
     margin: 1rem;
@@ -53,7 +53,8 @@ h4 {
     .testimonials-container {
         gap: 1rem; /* Reduced gap for smaller spacing */
     }
-    }
+}
+
 /* Global Reset */
 * {
   margin: 0;
