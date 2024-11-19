@@ -1,14 +1,24 @@
+/* Body Background with Gradient */
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00467F;
+    background-image: radial-gradient(ellipse farthest-corner at 80vw 15vh, 
+        rgba(250, 240, 128, 0.5) 5%, rgba(250, 240, 128, 0) 95%);
+    background-attachment: fixed;
+}
+
 /* Testimonials Section */
 #testimonials {
-    background-color: #000; /* Black background */
-    padding: 2rem 0.5rem; /* Reduced padding to make the background smaller */
+    padding: 2rem 0.5rem; /* Reduced padding */
     text-align: center;
 }
 
 .section-title {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 1.5rem; /* Slightly reduced bottom margin */
+    margin-bottom: 1.5rem;
     color: #fff; /* White text for contrast */
 }
 
@@ -22,17 +32,18 @@
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.1); /* Glass effect with a low opacity for transparency */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(12px); /* Stronger blur effect for a more prominent glass look */
-    -webkit-backdrop-filter: blur(12px); /* For Safari compatibility */
-    border-radius: 10px;
-    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Glass effect with transparency */
+    color: white;
+    display: inline-block;
+    border-radius: 15px;
+    padding: 10px;
     margin: 1rem;
     flex-shrink: 0;
     scroll-snap-align: center;
     width: 250px;
     text-align: center;
+    backdrop-filter: blur(12px); /* Glass effect with blur */
+    -webkit-backdrop-filter: blur(12px); /* Safari compatibility */
 }
 
 .title {
@@ -45,15 +56,15 @@
 h4 {
     font-size: 1rem;
     font-weight: bold;
-    color: #fff; /* White text for better visibility on black background */
+    color: #fff; /* White text for visibility */
 }
 
 /* Responsive Design */
 @media (min-width: 768px) {
     .testimonials-container {
-        gap: 1rem; /* Reduced gap for smaller spacing */
+        gap: 1rem; /* Reduced gap */
     }
-}
+    }
 
 /* Global Reset */
 * {
