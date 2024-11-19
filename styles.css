@@ -1,41 +1,40 @@
 /* Global Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f9fafb; /* Light background for a clean feel */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #f4f7fc; /* Light, clean background */
   color: #333;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Common Gradient for All Sections */
 section {
-  margin: 3rem 0; /* Consistent margin for all sections */
-}
-
-/* Gradient Style for All Sections */
-section {
-  background: linear-gradient(135deg, #eaf6ff, #d0eaff);
-  padding: 3rem 0; /* Consistent padding */
+  background: linear-gradient(135deg, #a0d9f7, #ffdebb); /* Fresh and unique gradient */
+  padding: 3rem 1.5rem;
   border-radius: 12px;
-  backdrop-filter: blur(12px); /* Glass effect */
-  -webkit-backdrop-filter: blur(12px); /* WebKit compatibility */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  backdrop-filter: blur(12px); /* Subtle glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth */
+  margin-bottom: 3rem;
+  transition: transform 0.3s ease-in-out;
 }
 
+/* Hover effect on section */
+section:hover {
+  transform: translateY(-5px); /* Subtle lift on hover for interactivity */
+}
+
+/* Section Title Styling */
 .section-title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #1e293b;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d3a56; /* Dark blue for prominence */
   text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.card, .faq-item, .contact-container {
-  background: rgba(255, 255, 255, 0.4); /* Glass effect */
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  margin: 1.5rem 0; /* Consistent spacing */
+  margin-bottom: 2rem;
+  text-transform: uppercase; /* Added for a modern touch */
+  letter-spacing: 2px; /* Increased spacing for emphasis */
 }
 
 /* Testimonials Section */
@@ -45,70 +44,83 @@ section {
   gap: 2rem;
   overflow-x: auto;
   padding: 0 10px;
-  scroll-snap-type: x mandatory;
 }
 
 .card {
   flex-shrink: 0;
-  width: 300px;
+  width: 320px;
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   text-align: center;
-  color: #111827;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .card .title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-style: italic;
-  color: #374151;
+  color: #5c6b76; /* Slightly muted gray for subtitle */
   margin-bottom: 1rem;
 }
 
 .card h4 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #111827;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3a56; /* Dark blue for clarity */
 }
 
 /* FAQ Section */
 .faq-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .faq-item {
+  background: rgba(255, 255, 255, 0.7); /* More transparent white glass */
+  border-radius: 12px;
+  padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .faq-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .faq-item h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d3a56;
+  background: rgba(255, 255, 255, 0.5);
   padding: 20px;
-  background: rgba(255, 255, 255, 0.4);
-  color: #111827;
-  cursor: pointer;
   margin: 0;
-  transition: background 0.3s ease;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .faq-item h3:hover {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
+  color: #007acc; /* Accent color change */
 }
 
 .faq-item h3::after {
   content: "+";
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   float: right;
   font-weight: bold;
-  color: #007acc;
+  color: #00b0ff; /* Accent color */
 }
 
 .faq-item.active h3::after {
-  transform: rotate(45deg);
+  transform: rotate(45deg); /* Rotate for active state */
 }
 
 .faq-item p {
@@ -116,44 +128,41 @@ section {
   overflow: hidden;
   padding: 0 20px;
   font-size: 1rem;
-  color: #374151;
-  background: rgba(255, 255, 255, 0.5);
-  border-top: 1px solid #ccc;
+  color: #4f5a63; /* Slightly muted text */
+  background: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid #ddd;
   transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .faq-item.active p {
-  max-height: 100px;
+  max-height: 150px;
   padding: 15px 20px;
 }
 
 /* Contact Section */
-.contact {
-  padding: 60px 20px;
-}
-
 .contact-container {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
 }
 
 .contact h1 {
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 36px;
+  font-weight: 700;
   color: #333;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
 .form-group {
@@ -162,16 +171,16 @@ section {
 }
 
 label {
-  font-size: 14px;
-  color: #444;
-  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
 }
 
 input, textarea {
   width: 100%;
-  padding: 12px 15px;
+  padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 16px;
   transition: all 0.3s ease;
 }
@@ -185,7 +194,7 @@ button {
   background-color: #00b0ff;
   color: white;
   border: none;
-  padding: 14px 20px;
+  padding: 14px 22px;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
@@ -210,55 +219,82 @@ button:active {
   width: auto;
 }
 
-/* Footer Styles */
+/* Footer Section */
 footer {
   text-align: center;
-  padding: 20px;
-  background: #f8f8f8;
-  color: #666;
-  font-size: 14px;
+  padding: 30px;
+  background: #2d3a56; /* Dark background for contrast */
+  color: #fff;
 }
 
 .wrapper {
   display: flex;
   list-style: none;
-  width: 100%;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
   flex-wrap: wrap;
 }
 
 .wrapper .icon {
   background: #fff;
   border-radius: 50%;
-  width: 3em;
-  height: 3em;
+  width: 3.5em;
+  height: 3.5em;
   font-size: 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .wrapper .icon:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.footer-links a {
-  color: #666;
-  text-decoration: none;
-  margin: 0 10px;
-  transition: color 0.3s ease;
+.wrapper .facebook:hover {
+  background: #1877f2;
+  color: #fff;
 }
 
-.footer-links a:hover {
-  color: #333;
+.wrapper .twitter:hover {
+  background: #1da1f2;
+  color: #fff;
 }
 
-.footer-links {
-  margin-top: 1.5rem;
-  font-size: 14px;
+.wrapper .instagram:hover {
+  background: #e4405f;
+  color: #fff;
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  background: #333;
+  color: #fff;
+  font-size: 0.9em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.icon:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
 }
