@@ -69,23 +69,24 @@ h4, p {
   z-index: 10;
 }
 
-.rating input {
-  display: none;
-}
-
 .rating label {
-  font-size: 24px; /* Increased size for better visibility */
-  color: #ddd;
+  font-size: 24px; /* Adjust the size for visibility */
+  color: #ddd; /* Gray for empty stars */
   cursor: pointer;
 }
 
-.rating input:checked ~ label {
-  color: #ff9800; /* Gold color for selected stars */
+.rating label:hover {
+  color: #ff9800; /* Optional: change color when hovered */
+}
+
+/* Make filled stars gold */
+.rating label:nth-child(-n+5) {
+  color: #ff9800; /* Gold color for filled stars */
 }
 
 /* Round the testimonial images */
 .testimonial-img {
-  width: 40px; /* Adjust to make it small */
+  width: 40px; /* Small size for the images */
   height: 40px;
   border-radius: 50%;
   border: 2px solid #fff;  /* Optional: white border around the image */
