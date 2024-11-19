@@ -1,6 +1,5 @@
-/* Global Gradient */
+/* Global Base Styles */
 :root {
-  --light-blue-gradient: linear-gradient(135deg, #eaf6ff, #d0eaff); /* Global light blue gradient */
   --light-gray: #f8f8f8;
   --dark-blue-gray: #1e293b;
   --dark-gray: #374151;
@@ -14,10 +13,8 @@
 
 /* Base Styles for All Sections */
 section {
-  background: var(--light-blue-gradient);
+  background: #ffffff; /* Removed gradient, set to plain white */
   border-radius: 12px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 8px 32px var(--shadow);
   padding: 2rem 1rem;
 }
@@ -149,6 +146,7 @@ h4, p {
 /* Contact Section */
 .contact {
   padding: 60px 20px;
+  background: #ffffff; /* Removed gradient */
 }
 
 .contact-container {
@@ -158,7 +156,6 @@ h4, p {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
   box-shadow: 0 4px 10px var(--shadow);
-  backdrop-filter: blur(10px);
 }
 
 .contact h1 {
