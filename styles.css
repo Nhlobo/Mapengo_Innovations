@@ -144,12 +144,12 @@ h4, p {
 }
 /* Contact Section */
 .contact {
-  background: linear-gradient(135deg, #eaf6ff, #d0eaff); /* Matching gradient with footer */
   padding: 60px 20px;
   border-radius: 12px; /* Rounded corners */
   backdrop-filter: blur(12px); /* Glass effect */
   -webkit-backdrop-filter: blur(12px); /* WebKit compatibility */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #f0f4f8; /* Light background color */
 }
 
 .contact-container {
@@ -329,7 +329,6 @@ a:hover {
     margin-top: 15px;
   }
 }
-
 /* Footer Styles */
 footer {
   text-align: center;
