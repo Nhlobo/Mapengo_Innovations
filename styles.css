@@ -1,6 +1,6 @@
 /* Testimonials Section */
 #testimonials {
-  background-color: #f3f4f6; /* Soft light gray for a clean background */
+  background: linear-gradient(135deg, #e0f7fa, #bbdefb); /* Light gradient blue */
   padding: 2rem 0.5rem;
   text-align: center;
 }
@@ -9,7 +9,7 @@
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: #1f2937; /* Dark slate gray for strong visibility */
+  color: #1e293b; /* Dark blue-gray for strong visibility */
 }
 
 .testimonials-container {
@@ -22,31 +22,31 @@
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.15); /* Soft translucent white background */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle modern shadow for depth */
-  backdrop-filter: blur(10px); /* Enhanced glass blur effect */
+  backdrop-filter: blur(10px); /* Glass effect */
   -webkit-backdrop-filter: blur(10px); /* WebKit compatibility */
-  border-radius: 12px; /* Smooth, slightly larger rounded corners */
-  padding: 2rem; /* Spacing inside the card */
+  background: rgba(255, 255, 255, 0.4); /* Translucent white glass */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 12px; /* Smooth rounded corners */
+  padding: 2rem; /* Inner spacing */
   margin: 1rem; /* Space between cards */
   flex-shrink: 0; /* Prevents shrinking */
   scroll-snap-align: center; /* Aligns card to center on scroll */
-  width: 250px; /* Fixed width for cards */
-  text-align: center; /* Center-aligned content */
-  color: #111827; /* Very dark gray for text for maximum readability */
+  width: 250px; /* Fixed card width */
+  text-align: center;
+  color: #111827; /* Black text for maximum readability */
 }
 
 .title {
   font-size: 1.1rem;
   font-style: italic; /* Italicized for emphasis */
   margin-bottom: 1rem;
-  color: #4b5563; /* Medium gray for titles */
+  color: #374151; /* Dark gray for subtitles */
 }
 
 h4 {
   font-size: 1rem;
   font-weight: bold; /* Bold for emphasis */
-  color: #111827; /* Dark gray for names */
+  color: #111827; /* Black for strong visibility */
 }
 
 /* Responsive Design */
@@ -54,7 +54,7 @@ h4 {
   .testimonials-container {
     gap: 1rem; /* Spacing between cards on larger screens */
   }
-}
+  }
 /* Global Reset */
 * {
   margin: 0;
