@@ -30,7 +30,6 @@ h4, p {
   font-size: 1rem;
   color: var(--dark-gray);
 }
-
 /* Testimonials Section */
 #testimonials {
   padding: 2rem 0.5rem;
@@ -48,7 +47,7 @@ h4, p {
 }
 
 .card {
-  background: #ffffff; /* Changed from semi-transparent to solid white */
+  background: #ffffff; /* Solid white background */
   box-shadow: 0 8px 32px var(--shadow);
   border-radius: 12px;
   padding: 2rem;
@@ -57,8 +56,43 @@ h4, p {
   width: 250px;
   margin: 1rem;
   color: #111827;
+  position: relative; /* To position the stars inside the card */
 }
 
+/* Style the rating stars and position them at the top left */
+.rating {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 20px;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.rating input:checked ~ label {
+  color: #ff9800; /* Gold color for selected stars */
+}
+
+/* Round the testimonial images */
+.testimonial-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #fff;  /* Optional: white border around the image */
+  margin-top: 20px;
+}
+
+/* Style the testimonial text */
 .title {
   font-size: 1.1rem;
   font-style: italic;
@@ -71,7 +105,6 @@ h4, p {
     gap: 1rem;
   }
 }
-
 /* FAQ Section */
 .faq-section {
   margin: 50px auto;
