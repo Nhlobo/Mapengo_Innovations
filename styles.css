@@ -74,7 +74,7 @@ h4, p {
 }
 
 .rating label {
-  font-size: 20px;
+  font-size: 24px; /* Increased size for better visibility */
   color: #ddd;
   cursor: pointer;
 }
@@ -85,11 +85,12 @@ h4, p {
 
 /* Round the testimonial images */
 .testimonial-img {
-  width: 60px;
-  height: 60px;
+  width: 40px; /* Adjust to make it small */
+  height: 40px;
   border-radius: 50%;
   border: 2px solid #fff;  /* Optional: white border around the image */
-  margin-top: 20px;
+  margin-top: 10px;
+  object-fit: cover; /* Ensures image remains clear and doesn't stretch */
 }
 
 /* Style the testimonial text */
