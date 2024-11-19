@@ -1,13 +1,17 @@
 /* Testimonials Section */
 #testimonials {
-  background: linear-gradient(135deg, #eaf6ff, #d0eaff); /* Lighter sky-blue gradient */
+  background: linear-gradient(135deg, #eaf6ff, #d0eaff); /* Light sky-blue gradient, same as FAQ */
   padding: 2rem 0.5rem;
   text-align: center;
+  border-radius: 12px; /* Rounded corners to match FAQ section */
+  backdrop-filter: blur(12px); /* Glass effect to match FAQ */
+  -webkit-backdrop-filter: blur(12px); /* WebKit compatibility */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .section-title {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 600; /* Matching font weight with FAQ section */
   margin-bottom: 1.5rem;
   color: #1e293b; /* Dark blue-gray for strong visibility */
 }
@@ -26,7 +30,7 @@
   -webkit-backdrop-filter: blur(10px); /* WebKit compatibility */
   background: rgba(255, 255, 255, 0.4); /* Translucent white glass */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 12px; /* Smooth rounded corners */
+  border-radius: 12px; /* Rounded corners to match FAQ section */
   padding: 2rem; /* Inner spacing */
   margin: 1rem; /* Space between cards */
   flex-shrink: 0; /* Prevents shrinking */
@@ -45,7 +49,7 @@
 
 h4 {
   font-size: 1rem;
-  font-weight: bold; /* Bold for emphasis */
+  font-weight: 500; /* Matching font weight with FAQ section */
   color: #111827; /* Black for strong visibility */
 }
 
