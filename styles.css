@@ -1,7 +1,7 @@
 /* Testimonials Section */
 #testimonials {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9)); /* Soft white gradient */
-  padding: 2rem 0.5rem; 
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 2rem 0.5rem;
   text-align: center;
 }
 
@@ -9,11 +9,11 @@
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: #000; /* Black text for contrast */
+  color: #333;
 }
 
 .testimonials-container {
-  overflow: auto;
+  overflow: auto; /* Allows horizontal scrolling */
   display: flex;
   scroll-snap-type: x mandatory;
   width: 90%;
@@ -22,32 +22,32 @@
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for a glassy edge */
-  border-radius: 15px; /* Rounded corners */
-  padding: 2rem;
-  margin: 1rem;
-  flex-shrink: 0;
-  scroll-snap-align: center;
-  width: 250px;
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Compatibility for WebKit browsers */
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent white background */
+  border-radius: 10px; /* Smooth rounded corners */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Adds depth with shadow */
+  padding: 2rem; /* Inner spacing */
+  margin: 1rem; /* Spacing between cards */
+  flex-shrink: 0; /* Prevents card from shrinking */
+  scroll-snap-align: center; /* Aligns card in the scroll container */
+  width: 250px; /* Fixed card width */
   text-align: center;
-  color: #000; /* Black text for readability */
+  color: #fff; /* White text color for contrast on the glass */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Subtle border for clarity */
 }
 
 .title {
   font-size: 1.1rem;
   font-style: italic;
   margin-bottom: 1rem;
-  color: #222; /* Slightly darker black for a polished look */
+  color: #eee; /* Slightly lighter color for better contrast on glass */
 }
 
 h4 {
   font-size: 1rem;
   font-weight: bold;
-  color: #000; /* Strong black for headings */
+  color: #fff; /* Matches the glass theme */
 }
 
 /* Responsive Design */
@@ -55,7 +55,7 @@ h4 {
   .testimonials-container {
     gap: 1rem;
   }
-  }
+}
 /* Global Reset */
 * {
   margin: 0;
