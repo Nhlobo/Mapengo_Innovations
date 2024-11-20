@@ -6,15 +6,15 @@
     bottom: 40px;
     right: 15px;
     background-color: #25d366;
-    color: #FFF;
     border-radius: 50%;
     text-align: center;
-    font-size: 30px;
     box-shadow: 2px 2px 3px #999;
     z-index: 100;
     animation: popUp 0.5s ease-out, bounce 2s infinite 2s;
     cursor: pointer;
-    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Hidden Class */
@@ -45,7 +45,13 @@
     60% {
         transform: translateY(-5px);
     }
-            }
+}
+
+/* Style for the WhatsApp icon */
+.whats-app img {
+    width: 40px;
+    height: 40px;
+}
 /* Global Base Styles */
 :root {
   --light-gray: #f8f8f8;
