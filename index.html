@@ -308,6 +308,15 @@
     
     <p>© 2024 Mapengo Innovations. All rights reserved.</p>
   </footer>
-</script>
+  <script>
+    // Handle the page refresh when the user clicks or taps outside
+    let wasVisible = document.hidden;
+    document.addEventListener("visibilitychange", function() {
+        if (!document.hidden && wasVisible) {
+            window.location.reload();
+        }
+        wasVisible = document.hidden;
+    });
+    </script>
 </body>
   </html>
