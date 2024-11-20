@@ -107,6 +107,41 @@
     });
   });
 </script>
+<!-- WhatsApp Pop-Up Icon -->
+  <div class="whatsapp-popup">
+    <a href="https://wa.me/1234567890" target="_blank" id="whatsappLink">
+      <img src="whatsapp-icon.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <!-- Your Contact Form Section -->
+  <section class="contact">
+    <div class="contact-container">
+      <h1>Contact Us</h1>
+      <form class="contact-form">
+        <!-- Add your form fields here -->
+      </form>
+    </div>
+  </section>
+
+  <!-- JavaScript to show/hide the WhatsApp pop-up -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const contactSection = document.querySelector('.contact'); // The contact section
+      const whatsappPopup = document.querySelector('.whatsapp-popup'); // The WhatsApp pop-up
+
+      // Get the position of the contact section relative to the viewport
+      const contactPosition = contactSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      // Show the WhatsApp icon when the contact section is in view
+      if (contactPosition < windowHeight) {
+        whatsappPopup.classList.add('show'); // Add show class to display the icon
+      } else {
+        whatsappPopup.classList.remove('show'); // Remove show class to hide the icon
+      }
+    });
+  </script>
 <!--================= CONTACT ================ -->
 <section class="contact" id="contact">
     <div class="contact-container">
