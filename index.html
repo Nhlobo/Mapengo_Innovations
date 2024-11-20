@@ -308,40 +308,6 @@
     
     <p>© 2024 Mapengo Innovations. All rights reserved.</p>
   </footer>
-
-  <script>
-    function redirectTo(url) {
-      setTimeout(() => {
-        window.location.href = url;
-      }, 300);  // Delay of 0.3 seconds
-    }
-  </script>
-  <section id="smooth-scroll-refresh">
-    <h2>Smooth Scrolling with Refresh on Tap</h2>
-    <p>This page will smoothly scroll when you navigate and refresh itself when you come back.</p>
-
-    <a href="#section1">Go to Section 1</a> | 
-    <a href="#section2">Go to Section 2</a>
-
-    <div id="section1" style="padding: 20px; height: 100vh; background-color: #f0f0f0;">
-        <h3>Section 1</h3>
-        <p>This is section 1. Scroll smoothly to section 2 by clicking the link above.</p>
-    </div>
-
-    <div id="section2" style="padding: 20px; height: 100vh; background-color: #e0e0e0;">
-        <h3>Section 2</h3>
-        <p>This is section 2. Go back to the top or scroll smoothly.</p>
-    </div>
-</section>
-
-<script>
-    let wasVisible = document.hidden;
-    document.addEventListener("visibilitychange", function() {
-        if (!document.hidden && wasVisible) {
-            window.location.reload();
-        }
-        wasVisible = document.hidden;
-    });
 </script>
 </body>
   </html>
