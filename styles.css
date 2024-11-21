@@ -1,50 +1,50 @@
-/* General body scaling and overflow fix */
+/* General body settings for normal margins */
 body {
-  transform: scale(0.9); /* Adjust size to 90% of the original */
-  transform-origin: top; /* Anchor scaling from the top */
-  margin: 0;
-  padding: 0;
-  width: 111%; /* Compensates for scaling to avoid gaps */
+  transform: scale(0.9); /* Compress everything inside */
+  transform-origin: top; /* Ensure scaling anchors from the top */
+  margin: 0; /* Standard margin for a clean layout */
+  padding: 0; /* No extra padding around the edges */
+  width: 100%; /* Prevent horizontal overflow */
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  box-sizing: border-box;
+  overflow-x: hidden; /* Disable horizontal scrolling */
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9; /* Light background color */
+  background-color: #f9f9f9; /* Light background for aesthetics */
+  box-sizing: border-box; /* Consistent box model */
 }
 
-/* Wrapper to ensure content stays centered */
+/* Container for central alignment and no overflow */
 .wrapper {
-  max-width: 100%; /* Prevent exceeding viewport width */
-  margin: 0 auto;
-  padding: 0 10px; /* Small padding to prevent content sticking to edges */
-  overflow: hidden; /* Contain any oversized elements */
+  max-width: 100%; /* Ensure it does not exceed viewport width */
+  margin: 0 auto; /* Center align all content */
+  padding: 0; /* Remove extra padding */
+  overflow: hidden; /* Contain oversized content */
 }
 
-/* Example header styling */
+/* Header styling */
 header {
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   background-color: #4CAF50;
   color: white;
   font-size: 1.5rem;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add slight shadow for aesthetics */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for better visual separation */
 }
 
-/* Main content container */
+/* Content container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  background: #fff; /* Optional content background */
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  padding: 10px; /* Light padding for internal spacing */
+  background: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
   border-radius: 8px; /* Rounded corners */
 }
 
-/* Example button styling */
+/* Button styling */
 button {
   background-color: #007BFF;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -55,37 +55,37 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Responsive design adjustments */
+/* Responsive scaling for smaller devices */
 @media (max-width: 1024px) {
   body {
-    transform: scale(0.85); /* Further scaling for medium devices */
-    width: 117%;
+    transform: scale(0.85); /* Slightly smaller scaling for medium devices */
   }
 }
 
 @media (max-width: 768px) {
   body {
-    transform: scale(0.8); /* Scaling for tablets */
-    width: 125%;
+    transform: scale(0.8); /* Further scaling for tablets */
   }
 }
 
 @media (max-width: 480px) {
   body {
     transform: scale(0.75); /* Scaling for mobile devices */
-    width: 133%;
   }
 }
 
-/* Ensure all content fits within viewport */
+/* Global box-sizing to maintain layout integrity */
 * {
-  box-sizing: border-box; /* Include padding and borders in dimensions */
+  box-sizing: border-box; /* Include padding and border in size */
 }
 
+/* Remove extra spacing from HTML and body */
 html, body {
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal overflow */
-}
+  overflow-x: hidden; /* No horizontal scrolling */
+  margin: 0; /* No unnecessary gaps */
+  padding: 0; /* Clean edge-to-edge layout */
+  }
 
 General Styles */
   body {
