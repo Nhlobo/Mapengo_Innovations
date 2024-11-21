@@ -1,3 +1,60 @@
+/* General body scaling */
+body {
+  transform: scale(0.9); /* Adjusts everything to 90% of the original size */
+  transform-origin: top; /* Anchors scaling from the top */
+  width: 111%; /* Compensates for the reduced size */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; /* Default font */
+  background-color: #f9f9f9; /* Light background for better visibility */
+}
+
+/* Example header styling */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Example container styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Example button styling */
+button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  body {
+    transform: scale(0.85); /* Further reduces scale for smaller devices */
+    width: 117%; /* Compensates for reduced scaling */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    transform: scale(0.8); /* For very small screens */
+    width: 125%; /* Compensates for reduced scaling */
+  }
+    }
 General Styles */
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
