@@ -183,12 +183,12 @@ General Styles */
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   .store-buttons img {
-    height: 48px;
-    max-width 148px;
+    height: 50px;
+    max-width 150px;
   }
 /* WhatsApp Popup Icon */
 .whats-app {
