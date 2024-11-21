@@ -8,17 +8,20 @@ body {
 }
 
 h2 {
-  font-size: 1.1rem; /* Updated font size */
-  font-style: italic; /* Applied italic style */
-  margin-bottom: 1rem; /* Updated margin */
-  color: var(--dark-gray); /* Updated color */
-  text-align: center; /* Centered the title */
+  font-size: 2rem; /* Retained boldness and original size */
+  font-style: italic; /* Added italic style */
+  margin-bottom: 15px;
+  color: #333;
 }
 
+/* Styling specifically for the title "Our Amazing Apps" */
+h2:contains("Our Amazing Apps") {
+  font-style: italic;
+}
+  
 p {
   font-size: 1rem;
-  font-style: italic; /* Applied italic style for consistency */
-  color: var(--dark-gray); /* Updated color */
+  color: #555;
   line-height: 1.4;
   margin-bottom: 20px;
 }
@@ -32,7 +35,7 @@ p {
   /* The device with borders */
   .smartphone {
     position: relative;
-    width: 310px;
+    width: 308px;
     height: 588px;
     margin: auto;
     border: 16px black solid;
