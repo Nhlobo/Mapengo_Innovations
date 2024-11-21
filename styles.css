@@ -31,7 +31,7 @@ General Styles */
   .smartphone {
     position: relative;
     width: 310px;
-    height: 595px;
+    height: 592px;
     margin: auto;
     border: 16px black solid;
     border-top-width: 60px;
@@ -187,8 +187,8 @@ General Styles */
   }
 
   .store-buttons img {
-    height: 30px;
-    max-width 130px;
+    height: 35px;
+    max-width 135px;
   }
 /* WhatsApp Popup Icon */
 .whats-app {
