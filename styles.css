@@ -1,4 +1,4 @@
- /* General Styles */
+General Styles */
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -187,8 +187,8 @@
   }
 
   .store-buttons img {
-    height: 50px;
-    max-width: 150px;
+    height: 40px;
+    max-width 140px;
   }
 /* WhatsApp Popup Icon */
 .whats-app {
