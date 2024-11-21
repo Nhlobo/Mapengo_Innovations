@@ -9,9 +9,9 @@ body {
 
 /* Section Titles */
 h2 {
-  font-size: 2rem; /* Retained boldness and original size */
+  font-size: 2rem; 
   font-style: italic;
-  margin-bottom: 30px; /* Increased space for better section clarity */
+  margin-bottom: 25px; /* Increased space between section titles */
   color: #333;
 }
 
@@ -19,7 +19,7 @@ h2 {
 p {
   font-size: 1rem;
   color: #555;
-  line-height: 1.4;
+  line-height: 1.6;
   margin-bottom: 25px; /* Increased space between paragraphs */
 }
 
@@ -27,7 +27,7 @@ p {
 .carousel-container {
   position: relative;
   width: 360px;
-  margin: 40px auto; /* Added margin for better clearance */
+  margin: 40px auto; /* Added margin for clearance */
 }
 
 /* General Section Styles */
@@ -35,8 +35,8 @@ section {
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 32px var(--shadow);
-  padding: 2.5rem 1.5rem; /* Increased padding for more room around content */
-  margin-bottom: 30px; /* Increased space between sections */
+  padding: 3rem 2rem; /* Increased padding for better spacing around content */
+  margin-bottom: 40px; /* Increased space between sections */
 }
 
 /* Title and Subtitle for Sections */
@@ -44,20 +44,21 @@ h1, .section-title {
   font-size: 2rem;
   font-weight: 600;
   color: var(--dark-blue-gray);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem; /* Increased spacing between title and content */
 }
 
 /* Testimonials Section */
 #testimonials {
-  padding: 3rem 1.5rem; /* Added padding to space out content */
+  padding: 3rem 2rem; /* Added padding for better spacing */
   text-align: center;
+  margin-bottom: 50px; /* Added margin for separation from next section */
 }
 
 /* Testimonials Cards */
 .testimonials-container {
   display: flex;
   overflow-x: auto;
-  gap: 1.5rem; /* Increased gap for better clarity between cards */
+  gap: 2rem; /* Increased gap for better clarity between cards */
   scroll-snap-type: x mandatory;
   padding: 0 10px;
   margin: 0 auto;
@@ -72,14 +73,14 @@ h1, .section-title {
   text-align: center;
   flex-shrink: 0;
   width: 270px;
-  margin: 1.5rem; /* Increased margin for spacing between cards */
+  margin: 1.5rem; /* Added margin for spacing between cards */
   color: #111827;
   position: relative;
 }
 
 /* FAQ Section */
 .faq-section {
-  margin: 50px auto;
+  margin: 60px auto; /* Increased top margin for more space above */
   max-width: 800px;
   padding: 2.5rem;
   text-align: center;
@@ -88,7 +89,7 @@ h1, .section-title {
 .faq-container {
   display: flex;
   flex-direction: column;
-  gap: 25px; /* Increased gap between FAQ items */
+  gap: 30px; /* Increased gap between FAQ items */
 }
 
 .faq-item {
@@ -97,20 +98,20 @@ h1, .section-title {
   box-shadow: 0 4px 8px var(--shadow);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 15px; /* Added space between FAQ items */
+  margin-bottom: 20px; /* Added space between FAQ items */
 }
 
 /* Contact Section */
 .contact {
   background: #f0f4f8;
-  padding: 70px 20px; /* Increased padding for better spacing */
+  padding: 80px 20px; /* Increased padding for better spacing */
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  margin-top: 40px; /* Added margin to separate from previous content */
+  margin-top: 60px; /* Added margin to separate from previous content */
 }
 
 .contact-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 40px;
   background: #ffffff;
@@ -168,6 +169,12 @@ h1, .section-title {
   height: 60px;
 }
 
+/* Global Base Styles */
+:root {
+  --light-gray: #f8f8f8;
+  --dark-blue-gray: #1e293b;
+  --shadow: rgba(0, 0, 0, 0.15);
+  }
 
 
 
