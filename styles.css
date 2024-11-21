@@ -25,175 +25,183 @@ p {
   line-height: 1.4;
   margin-bottom: 20px;
 }
-  /* The Carousel Container */
-  .carousel-container {
-    position: relative;
-    width: 360px;
-    margin: 0 auto;
-  }
 
-  /* The device with borders */
-  .smartphone {
-    position: relative;
-    width: 308px;
-    height: 588px;
-    margin: auto;
-    border: 16px black solid;
-    border-top-width: 60px;
-    border-bottom-width: 60px;
-    border-radius: 36px;
-    display: none;
-    animation: slideIn 1s ease-out forwards;
-  }
+/* The Carousel Container */
+.carousel-container {
+  position: relative;
+  width: 360px;
+  margin: 0 auto;
+}
 
-  .smartphone.active {
-    display: block;
-    animation: bounceIn 1s ease-out forwards;
-  }
+/* The device with borders */
+.smartphone {
+  position: relative;
+  width: 308px;
+  height: 588px;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+  display: none;
+  animation: slideBounce 1.5s ease-out forwards;
+}
 
-  /* Phone slide-in animation */
-  @keyframes slideIn {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
+/* Add the active class to display the phone and apply the animation */
+.smartphone.active {
+  display: block;
+  animation: bounceIn 1s ease-out forwards;
+}
 
-  /* Phone bounce-in animation */
-  @keyframes bounceIn {
-    0% {
-      transform: translateY(-20px);
-    }
-    50% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+/* Phone slide-in bounce animation */
+@keyframes slideBounce {
+  0% {
+    transform: translateX(100vw);
   }
-
-  /* The glowing outline around the phone */
-  .smartphone.active {
-    animation: glowOutline 2s infinite alternate;
+  60% {
+    transform: translateX(-20px);
   }
-
-  @keyframes glowOutline {
-    0% {
-      box-shadow: 0 0 10px rgba(0, 153, 255, 0.8);
-    }
-    100% {
-      box-shadow: 0 0 20px rgba(0, 153, 255, 1);
-    }
+  80% {
+    transform: translateX(10px);
   }
-
-  /* The horizontal line on the top of the device */
-  .smartphone:before {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 5px;
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #333;
-    border-radius: 10px;
+  100% {
+    transform: translateX(0);
   }
+}
 
-  /* The circle on the bottom of the device */
-  .smartphone:after {
-    content: '';
-    display: block;
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    left: 50%;
-    bottom: -65px;
-    transform: translate(-50%, -50%);
-    background: #333;
-    border-radius: 50%;
+/* Phone bounce-in animation */
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-20px);
   }
-
-  /* The screen (or content) of the device */
-  .smartphone .content {
-    width: 100%;
-    height: 100%;
-    background: white;
-    overflow: hidden;
+  50% {
+    transform: translateY(10px);
   }
-
-  .smartphone .content iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    animation: appFall 1s ease-in-out forwards;
+  100% {
+    transform: translateY(0);
   }
+}
 
-  /* 3D app rotation effect */
-  @keyframes appFall {
-    0% {
-      transform: rotateX(45deg) scale(0.5);
-    }
-    100% {
-      transform: rotateX(0deg) scale(1);
-    }
+/* The glowing outline around the phone */
+.smartphone.active {
+  animation: glowOutline 2s infinite alternate;
+}
+
+@keyframes glowOutline {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 153, 255, 0.8);
   }
-
-  /* The centered "Next" Button */
-  .next-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s linear;
-    border-radius: 10px;
-    border: 1px solid #87CEEB; /* Light Sky Blue */
-    padding: 10px 20px;
-    margin-top: 20px;
-    animation: zoomInBounce 0.5s ease-in-out;
+  100% {
+    box-shadow: 0 0 20px rgba(0, 153, 255, 1);
   }
+}
 
-  /* "Next" button animation (zoom and bounce) */
-  @keyframes zoomInBounce {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 100%;
+  height: 100%;
+  background: white;
+  overflow: hidden;
+}
+
+.smartphone .content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  animation: appFall 1s ease-in-out forwards;
+}
+
+/* 3D app rotation effect */
+@keyframes appFall {
+  0% {
+    transform: rotateX(45deg) scale(0.5);
   }
-
-  .next-button > svg {
-    margin-left: 5px;
-    transition: all 0.4s ease-in;
+  100% {
+    transform: rotateX(0deg) scale(1);
   }
+}
 
-  .next-button:hover > svg {
-    font-size: 1.2em;
-    transform: translateX(6px);
+/* The centered "Next" Button */
+.next-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  border-radius: 10px;
+  border: 1px solid #87CEEB; /* Light Sky Blue */
+  padding: 10px 20px;
+  margin-top: 20px;
+  animation: zoomInBounce 0.5s ease-in-out;
+}
+
+/* "Next" button animation (zoom and bounce) */
+@keyframes zoomInBounce {
+  0% {
+    transform: scale(0);
   }
-
-  .next-button:hover {
-    box-shadow: 10px 10px 40px #d1d1d1;
-    transform: translateY(-5px);
+  50% {
+    transform: scale(1.1);
   }
-
-  /* App Store Badges */
-  .store-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
+  100% {
+    transform: scale(1);
   }
+}
 
-  .store-buttons img {
-    height: 35px;
-    max-width 135px;
+.next-button > svg {
+  margin-left: 5px;
+  transition: all 0.4s ease-in;
+}
+
+.next-button:hover > svg {
+  font-size: 1.2em;
+  transform: translateX(6px);
+}
+
+.next-button:hover {
+  box-shadow: 10px 10px 40px #d1d1d1;
+  transform: translateY(-5px);
+}
+
+/* App Store Badges */
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.store-buttons img {
+  height: 35px;
+  max-width 135px;
   }
 /* WhatsApp Popup Icon */
 .whats-app {
