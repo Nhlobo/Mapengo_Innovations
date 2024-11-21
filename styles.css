@@ -7,6 +7,179 @@ body {
   text-align: center;
 }
 
+/* Section Titles */
+h2 {
+  font-size: 2rem; /* Retained boldness and original size */
+  font-style: italic;
+  margin-bottom: 30px; /* Increased space for better section clarity */
+  color: #333;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 25px; /* Increased space between paragraphs */
+}
+
+/* The Carousel Container */
+.carousel-container {
+  position: relative;
+  width: 360px;
+  margin: 40px auto; /* Added margin for better clearance */
+}
+
+/* General Section Styles */
+section {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px var(--shadow);
+  padding: 2.5rem 1.5rem; /* Increased padding for more room around content */
+  margin-bottom: 30px; /* Increased space between sections */
+}
+
+/* Title and Subtitle for Sections */
+h1, .section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark-blue-gray);
+  margin-bottom: 1.5rem;
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 3rem 1.5rem; /* Added padding to space out content */
+  text-align: center;
+}
+
+/* Testimonials Cards */
+.testimonials-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem; /* Increased gap for better clarity between cards */
+  scroll-snap-type: x mandatory;
+  padding: 0 10px;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.card {
+  background: #ffffff;
+  box-shadow: 0 8px 32px var(--shadow);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+  flex-shrink: 0;
+  width: 270px;
+  margin: 1.5rem; /* Increased margin for spacing between cards */
+  color: #111827;
+  position: relative;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Increased gap between FAQ items */
+}
+
+.faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 15px; /* Added space between FAQ items */
+}
+
+/* Contact Section */
+.contact {
+  background: #f0f4f8;
+  padding: 70px 20px; /* Increased padding for better spacing */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-top: 40px; /* Added margin to separate from previous content */
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* WhatsApp Popup Icon */
+.whats-app {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 15px;
+  background-color: #25d366;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  animation: popUp 0.5s ease-out, bounce 2s infinite 2s;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Keyframes for Pop-up and Bounce Effect */
+@keyframes popUp {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Style for the WhatsApp icon */
+.whats-app img {
+  width: 60px;
+  height: 60px;
+}
+
+
+
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f7fb;
+  text-align: center;
+}
+
 h2 {
   font-size: 2rem; /* Retained boldness and original size */
   font-style: italic; /* Added italic style */
