@@ -273,3 +273,240 @@ h1, .section-title {
 .next-button:hover {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 }
+/* -------------------- FAQ Accordion Styles -------------------- */
+.faq-item .faq-question {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.faq-item .faq-question:hover {
+  background-color: #f5f5f5;
+}
+
+.faq-item .faq-answer {
+  font-size: 1rem;
+  color: #666;
+  padding: 15px;
+  display: none;
+  background-color: #fafafa;
+  border-top: 1px solid #e0e0e0;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* -------------------- Button Styles -------------------- */
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* -------------------- Form Styles -------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input, select, textarea {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* -------------------- Responsive Design -------------------- */
+@media screen and (max-width: 768px) {
+  .carousel-container {
+    width: 90%;
+  }
+
+  section {
+    padding: 2rem 1.5rem;
+  }
+
+  .testimonials-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .smartphone {
+    width: 300px;
+    height: 570px;
+  }
+
+  .contact-container {
+    padding: 30px;
+  }
+
+  .faq-container {
+    gap: 20px;
+  }
+
+  .next-button {
+    font-size: 1rem;
+  }
+
+  form {
+    padding: 1.5rem;
+  }
+
+  input, select, textarea {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carousel-container {
+    width: 100%;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+  }
+
+  .smartphone {
+    width: 280px;
+    height: 550px;
+  }
+
+  .testimonials-container {
+    gap: 1rem;
+  }
+
+  .faq-container {
+    gap: 15px;
+  }
+
+  .next-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .contact-container {
+    padding: 20px;
+  }
+}
+
+/* -------------------- Footer Styles -------------------- */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------- Modal Styles -------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* -------------------- Tooltip Styles -------------------- */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  }
