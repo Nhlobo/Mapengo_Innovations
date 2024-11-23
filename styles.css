@@ -17,6 +17,7 @@ body {
   margin: 0;
   padding: 0;
   background: var(--light-gray);
+  overflow-y: hidden; /* Prevent vertical scroll */
 }
 
 /* ============================== HEADER ============================== */
@@ -112,7 +113,7 @@ h4, p {
 
 .testimonials-container {
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   gap: 1rem;
   scroll-snap-type: x mandatory;
   padding: 0 10px;
@@ -131,6 +132,8 @@ h4, p {
   margin: 1rem;
   color: #111827;
   position: relative;
+  max-height: 500px; /* Limit card height */
+  overflow: hidden; /* Prevent overflow */
 }
 
 .rating {
@@ -262,6 +265,7 @@ h4, p {
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent overflow */
 }
 
 .contact h1 {
@@ -361,58 +365,26 @@ footer {
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 20px 0;
-  list-style: none;
-  flex-wrap: wrap;
+  padding: 10px 0;
 }
 
-.wrapper .icon {
-  width: 3em;
-  height: 3em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+.wrapper a {
+  color: #0088cc;
 }
 
-.wrapper .icon:hover {
-  background-color: #f0f0f0;
+.wrapper a:hover {
+  text-decoration: underline;
 }
 
-.wrapper .icon i {
-  font-size: 20px;
-  color: #333;
-}
-
-.wrapper .icon:hover i {
-  color: #00b0ff;
-}
-
-footer p {
-  font-size: 14px;
-  color: #444;
-}
-
-/* ============================== MEDIA QUERIES ============================== */
-
-/* Mobile Styles */
+/* ============================== RESPONSIVE DESIGN ============================== */
 @media (max-width: 768px) {
-  .contact-form {
-    gap: 15px;
-  }
-
   .contact-container {
-    padding: 30px;
-  }
-
-  .card {
-    width: 90%;
+    padding: 20px;
   }
 
   .testimonials-container {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
 }
