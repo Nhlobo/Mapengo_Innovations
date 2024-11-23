@@ -383,35 +383,5 @@
     
     <p>© 2024 Mapengo Innovations. All rights reserved.</p>
   </footer>
-<script>
-  // Save the user's last page and scroll position before leaving
-  window.addEventListener("beforeunload", () => {
-    localStorage.setItem("lastPage", window.location.pathname + window.location.hash);
-    localStorage.setItem("scrollPosition", window.scrollY);
-  });
-
-  // Handle page load or return
-  window.addEventListener("load", () => {
-    const lastPage = localStorage.getItem("lastPage");
-    const scrollPosition = localStorage.getItem("scrollPosition");
-
-    // Check if returning to the same page and restore scroll position
-    if (lastPage && window.location.pathname === lastPage.split("#")[0]) {
-      if (scrollPosition) {
-        window.scrollTo({ top: parseInt(scrollPosition, 10), behavior: "smooth" });
-      }
-
-      // If there's a hash (e.g., #section1), scroll to that section
-      const hash = lastPage.split("#")[1];
-      if (hash) {
-        const targetSection = document.getElementById(hash);
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    }
-  });
-  </script>
-
 </body>
   </html>
