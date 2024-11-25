@@ -1,8 +1,8 @@
 /* Hide WhatsApp icon by default */
 .whatsapp-icon {
     position: fixed;
-    bottom: 5px;
-    right: 5px;
+    bottom: 150px;
+    right: 150px;
     display: none; /* Initially hidden */
     z-index: 1000;
 }
