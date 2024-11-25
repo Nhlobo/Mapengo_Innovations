@@ -1,108 +1,147 @@
-/* General reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
+/* Body Styles */
 body {
-  font-family: Arial, sans-serif;
-  background: #f8f8f8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #f4f7fc;
+  color: #333;
   padding: 20px;
 }
 
-#amazing-apps {
-  width: 100%;
-  max-width: 960px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
+/* Section Header */
+#amazing-apps h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  color: #2c3e50;
+  margin-bottom: 15px;
 }
 
-p {
+#amazing-apps p {
+  font-size: 1.2rem;
   text-align: center;
-  color: #666;
-  margin-bottom: 20px;
+  color: #7f8c8d;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 30px;
 }
 
+/* Carousel Container */
 .carousel-container {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Smartphone Container */
 .smartphone {
-  width: 200px;
-  height: 360px;
-  background: #ececec;
-  border-radius: 15px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.6;
-  transition: opacity 0.3s;
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 15px;
+  transition: transform 0.5s ease;
 }
 
 .smartphone.active {
-  opacity: 1;
+  display: block;
+}
+
+.smartphone .content {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .smartphone iframe {
   width: 100%;
-  height: 100%;
+  height: 600px;
   border: none;
+  border-radius: 16px;
 }
 
+/* Navigation Button */
 .next-button {
   position: absolute;
+  right: 20px;
   top: 50%;
-  right: -40px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 50%;
-  cursor: pointer;
   transform: translateY(-50%);
+  background-color: #2980b9;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
+.next-button:hover {
+  background-color: #3498db;
+}
+
+.next-button svg {
+  margin-left: 8px;
+}
+
+.next-button span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* App Store Badges */
 .store-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  gap: 10px;
+  gap: 20px;
+  margin-top: 40px;
 }
 
 .store-buttons img {
-  width: 120px;
-  height: auto;
+  max-height: 50px;
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 600px) {
+.store-buttons img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  #amazing-apps h2 {
+    font-size: 2rem;
+  }
+
+  #amazing-apps p {
+    font-size: 1rem;
+  }
+
   .carousel-container {
     flex-direction: column;
   }
 
   .smartphone {
-    width: 180px;
-    height: 320px;
+    max-width: 100%;
   }
 
-  .next-button {
-    right: -20px;
+  .store-buttons {
+    flex-direction: column;
+    gap: 10px;
   }
 }
+
 
 
 
