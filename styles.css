@@ -1,3 +1,175 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+/* Carousel Styles */
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease;
+}
+
+.smartphone {
+  position: relative;
+  width: 350px;
+  height: 650px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  transform: scale(0.8);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+.smartphone.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.smartphone .content {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.smartphone iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+}
+
+.next-button {
+  position: absolute;
+  top: 50%;
+  right: -50px;
+  background-color: #5c6bc0;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #3f51b5;
+}
+
+.next-button svg {
+  margin-left: 5px;
+  fill: #fff;
+}
+
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.store-buttons img {
+  width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.store-buttons img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .carousel-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .smartphone {
+    width: 280px;
+    height: 500px;
+  }
+
+  .next-button {
+    right: -30px;
+  }
+
+  .store-buttons img {
+    width: 120px;
+  }
+}
+
+/* Animation on section load */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#amazing-apps {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+#amazing-apps h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+#amazing-apps p {
+  font-family: 'Roboto', sans-serif;
+  color: #555;
+  font-size: 1rem;
+}
+
+
+
+
 /* Hide WhatsApp icon by default */
 .whatsapp-icon {
     position: fixed;
