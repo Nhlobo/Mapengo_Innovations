@@ -100,7 +100,6 @@ body {
 }
 
 
-
 /* App Store Badges */
 .store-buttons {
   display: flex;
@@ -110,37 +109,29 @@ body {
 }
 
 .store-buttons img {
-  max-height: 50px;
+  width: 120px;            /* Set fixed width */
+  height: 40px;            /* Set fixed height */
+  object-fit: contain;     /* Ensures the image scales correctly within the container */
   transition: transform 0.3s ease;
 }
 
 .store-buttons img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1);    /* Optional hover effect */
 }
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
-  #amazing-apps h2 {
-    font-size: 2rem;
-  }
-
-  #amazing-apps p {
-    font-size: 1rem;
-  }
-
-  .carousel-container {
-    flex-direction: column;
-  }
-
-  .smartphone {
-    max-width: 100%;
-  }
-
   .store-buttons {
     flex-direction: column;
     gap: 10px;
   }
+
+  .store-buttons img {
+    width: 100px;           /* Slightly smaller width for mobile */
+    height: 30px;           /* Adjust height for mobile */
+  }
 }
+
 
 
 /* Hide WhatsApp icon by default */
