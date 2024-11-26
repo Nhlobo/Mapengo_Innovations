@@ -71,22 +71,25 @@ body {
   border-radius: 16px;
 }
 
-/* Navigation Button (now below the card, not stretched) */
+/* Navigation Button (modern and compact) */
 .next-button {
-  display: inline-flex; /* Changed to inline-flex to only take up content's width */
-  margin: 20px auto 0; /* Adds space above the button and centers it */
+  display: inline-flex; /* Makes the button take up only as much space as the content */
+  justify-content: center; /* Centers content horizontally inside the button */
+  align-items: center; /* Centers content vertically inside the button */
+  margin: 20px auto 0; /* Adds space above and centers it */
   background-color: #2980b9;
   color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
+  padding: 12px 24px; /* Padding to make it look more compact and modern */
+  border-radius: 50px; /* Rounded corners for a modern look */
   text-align: center;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .next-button:hover {
-  background-color: #3498db;
+  background-color: #3498db; /* Darker shade on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Slightly more shadow on hover */
 }
 
 .next-button svg {
@@ -97,7 +100,6 @@ body {
   font-size: 1rem;
   font-weight: 600;
 }
-
 /* App Store Badges */
 .store-buttons {
   display: flex;
