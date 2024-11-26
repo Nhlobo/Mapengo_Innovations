@@ -1,3 +1,4 @@
+
 /* General Reset */
 * {
   margin: 0;
@@ -71,18 +72,15 @@ body {
   border-radius: 16px;
 }
 
-/* Navigation Button */
+/* Navigation Button (now below the card) */
 .next-button {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  display: block;
+  margin: 20px auto 0; /* Adds space above the button and centers it */
   background-color: #2980b9;
   color: white;
   padding: 10px 20px;
   border-radius: 30px;
-  display: flex;
-  align-items: center;
+  text-align: center;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
@@ -141,9 +139,6 @@ body {
     gap: 10px;
   }
 }
-
-
-
 
 
 
