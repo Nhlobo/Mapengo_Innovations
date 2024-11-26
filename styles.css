@@ -71,7 +71,7 @@ body {
   border-radius: 16px;
 }
 /* New Button Container for Centering */
-.button-container {
+.arrow-button {
   display: flex;
   justify-content: center; /* Centers horizontally */
   margin-top: 20px; /* Adds some space between the card and the button */
@@ -89,7 +89,6 @@ body {
   width: 16px; /* Adjusted size of the arrow */
   height: 16px;
 }
-
 /* App Store Badges */
 .store-buttons {
   display: flex;
