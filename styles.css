@@ -1,4 +1,3 @@
-
 /* General Reset */
 * {
   margin: 0;
@@ -72,9 +71,9 @@ body {
   border-radius: 16px;
 }
 
-/* Navigation Button (now below the card) */
+/* Navigation Button (now below the card, not stretched) */
 .next-button {
-  display: block;
+  display: inline-flex; /* Changed to inline-flex to only take up content's width */
   margin: 20px auto 0; /* Adds space above the button and centers it */
   background-color: #2980b9;
   color: white;
@@ -139,7 +138,6 @@ body {
     gap: 10px;
   }
 }
-
 
 
 /* Hide WhatsApp icon by default */
