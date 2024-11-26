@@ -122,7 +122,7 @@ body {
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
   .store-buttons {
-    flex-direction: column;
+    flex-direction: row;    /* Ensures badges stay in a row even on mobile */
     gap: 10px;
   }
 
