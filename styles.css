@@ -73,22 +73,34 @@ body {
 /* New Button Container for Centering */
 .arrow-button {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  margin-top: 20px; /* Adds some space between the card and the button */
+  justify-content: center; /* Centers the button horizontally */
+  align-items: center;     /* Centers the button vertically if needed */
+  width: 100%;             /* Ensures the button container takes full width */
+  margin-top: 20px;        /* Adds space between the card and the button */
 }
 
 /* Adjusted Button Size */
-.arrow-button {
-  width: 40px; /* Reduced width */
-  height: 40px; /* Reduced height */
-  font-size: 16px; /* Optionally adjust font size */
-  padding: 8px; /* Optional padding for better alignment */
+.arrow-button button {
+  width: 40px;            /* Reduced width */
+  height: 40px;           /* Reduced height */
+  font-size: 16px;        /* Optionally adjust font size */
+  padding: 8px;           /* Optional padding for better alignment */
+  border: none;           /* Removes any border */
+  background-color: #3498db; /* Button background color */
+  color: white;           /* Text color */
+  border-radius: 50%;     /* Makes the button round */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .arrow-button svg {
-  width: 16px; /* Adjusted size of the arrow */
+  width: 16px;            /* Adjusted size of the arrow */
   height: 16px;
 }
+
+
+
 /* App Store Badges */
 .store-buttons {
   display: flex;
