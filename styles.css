@@ -76,7 +76,7 @@ body {
   justify-content: center; /* Centers the button horizontally */
   align-items: center;     /* Centers the button vertically if needed */
   width: 100%;             /* Ensures the button container takes full width */
-  margin-top: 20px;        /* Adds space between the card and the button */
+  margin-top: 20px;       
 }
 
 /* Adjusted Button Size */
@@ -131,9 +131,6 @@ body {
     height: 30px;           /* Adjust height for mobile */
   }
 }
-
-
-
 /* Hide WhatsApp icon by default */
 .whatsapp-icon {
     position: fixed;
@@ -165,140 +162,6 @@ body {
         height: 35px;
     }
 }
-/* CHART BOT */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Helvetica Neue', Arial, sans-serif; /* Clean modern font */
-}
-
-/* Body Styles */
-body {
-  background-color: #f7f7f7; /* Soft light grey background for the body */
-  color: #333; /* Dark text for contrast */
-  font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern font */
-  line-height: 1.6;
-}
-
-/* Chatbot Container */
-.chatbot {
-  position: fixed;
-  bottom: 20px; /* Slightly more space from the bottom */
-  right: 20px; /* A bit more space from the right */
-  width: 280px; /* Small and compact width */
-  background-color: #ffffff; /* Clean white background for the chatbot */
-  border: 1px solid #ddd; /* Subtle border for the container */
-  border-radius: 12px; /* Slightly more rounded corners */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow with more spread */
-  padding: 15px;
-  display: none; /* Hidden by default, toggled with JS */
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease; /* Smooth transition for toggling */
-  opacity: 0; /* Start with hidden opacity */
-  visibility: hidden; /* Hidden by default */
-}
-
-/* Chat Header */
-.chat-header {
-  background: #007bff; /* Clean blue header */
-  color: white;
-  padding: 10px;
-  border-radius: 8px 8px 0 0;
-  text-align: center;
-  font-size: 14px; /* Smaller header font */
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow under header */
-}
-
-/* Chat Body */
-.chat-body {
-  padding: 12px;
-  max-height: 250px; /* Smaller max height */
-  overflow-y: auto;
-  font-size: 14px; /* Smaller text */
-  color: #555; /* Lighter text color for chat messages */
-  line-height: 1.5;
-  margin-bottom: 10px; /* Spacing between content and footer */
-}
-
-/* Chat Footer */
-.chat-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 12px;
-  padding-top: 10px;
-  border-top: 1px solid #ddd; /* Subtle border on the top */
-}
-
-/* Chat Footer Button */
-.chat-footer button {
-  padding: 6px 12px; /* Smaller button size */
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px; /* Smaller text size */
-  transition: background-color 0.3s ease;
-  width: 48%; /* Buttons take half the space each */
-}
-
-/* Button Hover Effect */
-.chat-footer button:hover {
-  background-color: #0056b3;
-}
-
-/* Chat Toggle Button */
-.chat-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 12px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px; /* Medium toggle button size */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Larger soft shadow */
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  z-index: 999; /* Ensure it's always on top */
-}
-
-/* Chat Toggle Hover Effect */
-.chat-toggle:hover {
-  background-color: #0056b3;
-  transform: scale(1.1); /* Slight grow effect on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-  .chatbot {
-    width: 100%; /* Full width on smaller screens */
-    max-width: 260px; /* Max width for a consistent look */
-  }
-
-  .chat-header {
-    font-size: 14px; /* Slightly smaller font on smaller screens */
-  }
-
-  .chat-body {
-    font-size: 13px; /* Smaller font size for messages */
-  }
-
-  .chat-footer button {
-    padding: 5px 10px; /* Smaller button size for mobile */
-    font-size: 11px; /* Smaller button text */
-  }
-
-  .chat-toggle {
-    font-size: 18px; /* Smaller toggle button font size */
-  }
-}
-
-
 /* Global Base Styles */
 :root {
   --light-gray: #f8f8f8;
