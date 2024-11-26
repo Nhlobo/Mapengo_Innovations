@@ -75,10 +75,9 @@ body {
   display: inline-flex; /* Ensures the button takes only as much space as its content */
   justify-content: center; /* Centers the content horizontally */
   align-items: center; /* Centers the content vertically */
-  margin: 20px auto 0; /* Centers the button with margin at the top */
   background-color: #2980b9;
   color: white;
-  width: 50px; /* Set a fixed width to ensure it's compact */
+  width: 50px; /* Fixed width for a compact button */
   height: 50px; /* Fixed height for a circular button */
   border-radius: 50%; /* Fully rounded for a circular appearance */
   text-align: center;
@@ -96,6 +95,14 @@ body {
   width: 20px; /* Adjust size of the arrow */
   height: 20px;
   fill: white; /* Ensure the arrow is white */
+}
+
+/* To Center the Button */
+.center-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Full viewport height to center vertically */
 }
 /* App Store Badges */
 .store-buttons {
