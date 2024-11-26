@@ -165,8 +165,7 @@ body {
         height: 35px;
     }
 }
-/* MI CHAT  */
-/* General Reset */
+/* CHART BOT */
 * {
   margin: 0;
   padding: 0;
@@ -176,7 +175,7 @@ body {
 
 /* Body Styles */
 body {
-  background-color: #ffffff; /* Clean white background */
+  background-color: #f7f7f7; /* Soft light grey background for the body */
   color: #333; /* Dark text for contrast */
   font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern font */
   line-height: 1.6;
@@ -185,44 +184,51 @@ body {
 /* Chatbot Container */
 .chatbot {
   position: fixed;
-  bottom: 15px; /* Closer to the bottom */
-  right: 15px;  /* Closer to the right edge */
-  width: 280px; /* Smaller width */
-  background-color: #ffffff; /* White background for the chatbot */
-  border: 1px solid #ddd; /* Lighter border for a subtle look */
-  border-radius: 10px; /* Slightly rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern feel */
-  padding: 12px;
-  display: none;
-  transition: transform 0.3s ease-in-out; /* Smooth animation when toggling */
+  bottom: 20px; /* Slightly more space from the bottom */
+  right: 20px; /* A bit more space from the right */
+  width: 280px; /* Small and compact width */
+  background-color: #ffffff; /* Clean white background for the chatbot */
+  border: 1px solid #ddd; /* Subtle border for the container */
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow with more spread */
+  padding: 15px;
+  display: none; /* Hidden by default, toggled with JS */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease; /* Smooth transition for toggling */
+  opacity: 0; /* Start with hidden opacity */
+  visibility: hidden; /* Hidden by default */
 }
 
 /* Chat Header */
 .chat-header {
   background: #007bff; /* Clean blue header */
   color: white;
-  padding: 8px;
+  padding: 10px;
   border-radius: 8px 8px 0 0;
   text-align: center;
-  font-size: 16px; /* Smaller header font */
-  font-weight: 600; /* Slightly bolder text */
+  font-size: 14px; /* Smaller header font */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow under header */
 }
 
 /* Chat Body */
 .chat-body {
-  padding: 8px;
+  padding: 12px;
   max-height: 250px; /* Smaller max height */
   overflow-y: auto;
   font-size: 14px; /* Smaller text */
   color: #555; /* Lighter text color for chat messages */
-  line-height: 1.4;
+  line-height: 1.5;
+  margin-bottom: 10px; /* Spacing between content and footer */
 }
 
 /* Chat Footer */
 .chat-footer {
-  margin-top: 8px;
   display: flex;
   justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd; /* Subtle border on the top */
 }
 
 /* Chat Footer Button */
@@ -235,6 +241,7 @@ body {
   cursor: pointer;
   font-size: 12px; /* Smaller text size */
   transition: background-color 0.3s ease;
+  width: 48%; /* Buttons take half the space each */
 }
 
 /* Button Hover Effect */
@@ -245,30 +252,32 @@ body {
 /* Chat Toggle Button */
 .chat-toggle {
   position: fixed;
-  bottom: 15px; /* Closer to the bottom */
-  right: 15px;  /* Closer to the right edge */
-  padding: 8px 12px;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 16px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 18px; /* Smaller icon size */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for toggle button */
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-size: 20px; /* Medium toggle button size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Larger soft shadow */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999; /* Ensure it's always on top */
 }
 
 /* Chat Toggle Hover Effect */
 .chat-toggle:hover {
   background-color: #0056b3;
   transform: scale(1.1); /* Slight grow effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
   .chatbot {
     width: 100%; /* Full width on smaller screens */
-    max-width: 250px; /* Max width for a consistent look */
+    max-width: 260px; /* Max width for a consistent look */
   }
 
   .chat-header {
@@ -280,14 +289,15 @@ body {
   }
 
   .chat-footer button {
-    padding: 5px 10px; /* Even smaller button size for mobile */
+    padding: 5px 10px; /* Smaller button size for mobile */
     font-size: 11px; /* Smaller button text */
   }
 
   .chat-toggle {
-    font-size: 16px; /* Smaller toggle button font size */
+    font-size: 18px; /* Smaller toggle button font size */
   }
 }
+
 
 /* Global Base Styles */
 :root {
