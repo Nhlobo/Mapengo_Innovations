@@ -151,7 +151,7 @@
         }
 
         .hero-text {
-            color: #333;
+            color: black;
             font-size: 4rem;
             font-weight: 700;
             letter-spacing: 1px;
@@ -331,7 +331,7 @@
     </header>
 
     <!-- Hamburger Menu -->
-    <div id="menuSlide" class="menu-slide">
+    <div id="menuSlide" class="menu-slide" onclick="closeMenu(event)">
         <span class="close-btn" onclick="toggleMenu()">&times;</span>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -346,8 +346,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-text">Welcome to <span>Mapengo Innovations</span></h1>
-            <p class="hero-subtext">Your partner in cutting-edge technology solutions for a brighter future.</p>
+            <h1 class="hero-text">Mapengo Innovations</h1>
+            <p class="hero-subtext">Web and App Development for a brighter future.</p>
             <div class="hero-buttons">
                 <button class="cta-btn">Get Started</button>
                 <button class="cta-btn">Learn More</button>
@@ -360,6 +360,27 @@
             const menuSlide = document.getElementById("menuSlide");
             menuSlide.classList.toggle("active");
         }
+
+        // Close the menu when clicking outside
+        function closeMenu(event) {
+            if (!document.getElementById('hamburger').contains(event.target)) {
+                toggleMenu();
+            }
+        }
+
+        // Close the menu when swiping
+        let startX;
+
+        document.getElementById('menuSlide').addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        });
+
+        document.getElementById('menuSlide').addEventListener('touchend', function(e) {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 100) { // swipe right to left
+                toggleMenu();
+            }
+        });
     </script>
 </body>
 </html>
