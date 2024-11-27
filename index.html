@@ -315,12 +315,12 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
+                <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
+                <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
+                <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
+                <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+                <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
             </ul>
         </nav>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -330,16 +330,16 @@
         </div>
     </header>
 
-    <!-- Hamburger Menu -->
+    <!-- Sliding Menu -->
     <div id="menuSlide" class="menu-slide" onclick="closeMenu(event)">
         <span class="close-btn" onclick="toggleMenu()">&times;</span>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
+            <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
+            <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
+            <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
+            <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+            <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
         </ul>
     </div>
 
@@ -363,12 +363,12 @@
 
         // Close the menu when clicking outside
         function closeMenu(event) {
-            if (!document.getElementById('hamburger').contains(event.target)) {
+            if (!document.getElementById('menuSlide').contains(event.target) && !document.getElementById('hamburger').contains(event.target)) {
                 toggleMenu();
             }
         }
 
-        // Close the menu when swiping
+        // Close the menu when tapping/swiping from left to right
         let startX;
 
         document.getElementById('menuSlide').addEventListener('touchstart', function(e) {
@@ -377,10 +377,20 @@
 
         document.getElementById('menuSlide').addEventListener('touchend', function(e) {
             let endX = e.changedTouches[0].clientX;
-            if (startX - endX > 100) { // swipe right to left
+            if (endX - startX > 100) { // swipe from left to right
                 toggleMenu();
             }
         });
+
+        // Close the menu and navigate to the section
+        function closeMenuAndNavigate(target) {
+            toggleMenu();
+            if (target.startsWith('#')) {
+                document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.location.href = target;
+            }
+        }
     </script>
 </body>
 </html>
