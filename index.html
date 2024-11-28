@@ -1,432 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapengo Innovations</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fff;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-            margin: 0;
-            transition: background-color 0.3s ease;
-        }
-
-        h1, h2, h3, p {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            flex-wrap: wrap;
-            transition: top 0.3s ease;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #1a73e8;
-            transform: translateY(-5px);
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 30px;
-            height: 3px;
-            background-color: #333;
-            border-radius: 5px;
-        }
-
-        /* Hamburger Menu Slide In */
-        .menu-slide {
-            position: fixed;
-            top: 0;
-            right: -300px;
-            width: 300px;
-            height: 100%;
-            background-color: #333;
-            color: white;
-            transition: right 0.3s ease-in-out;
-            padding-top: 80px;
-            z-index: 2000;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .menu-slide.active {
-            right: 0;
-        }
-
-        .menu-slide .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 25px;
-            cursor: pointer;
-            color: white;
-        }
-
-        .menu-slide ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .menu-slide ul li {
-            padding: 15px;
-            font-size: 20px;
-            text-align: center;
-        }
-
-        .menu-slide ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 100px 50px;
-            height: 100vh;
-            background: linear-gradient(to right, #ffffff, #f8f9fa);
-            position: relative;
-            text-align: center;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            animation: fadeInBackground 3s ease-out forwards;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            animation: fadeIn 2s ease forwards;
-        }
-
-        .hero-text {
-            color: black;
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            opacity: 0;
-            animation: slideUp 1s ease forwards;
-            margin-bottom: 10px;
-        }
-
-        .hero-text span {
-            color: #1a73e8;
-        }
-
-        .hero-subtext {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: #555;
-            margin-top: 20px;
-            animation: fadeInUp 2s ease 1s forwards;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            animation: fadeInUp 2s ease 1.5s forwards;
-        }
-
-        .cta-btn {
-            padding: 15px 30px;
-            background-color: #1a73e8;
-            color: #fff;
-            font-weight: 600;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .cta-btn:hover {
-            background-color: #005bb5;
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInBackground {
-            from {
-                background-color: #ffffff;
-            }
-            to {
-                background-color: #f8f9fa;
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 20px;
-                align-items: center;
-                background-color: transparent;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-                width: 100%;
-                margin-top: 20px;
-            }
-
-            .nav-links a {
-                padding: 10px 0;
-                font-size: 18px;
-                width: 100%;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero {
-                padding: 80px 30px;
-                height: auto;
-            }
-
-            .hero-text {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtext {
-                font-size: 1.125rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-.close-btn {
-    font-size: 30px;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #fff; 
-}
-
-            .hero-image {
-                display: block;
-                position: relative;
-                margin-top: 30px;
-                right: 0;
-                bottom: 0;
-            }
-
-            .cta-btn {
-                padding: 12px 25px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text {
-                font-size: 2rem;
-            }
-
-            .cta-btn {
-                padding: 10px 20px;
-                font-size: 13px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapengo Innovations</title>
+  <!-- Link to CSS file for styles (you can customize this) -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="navbar" id="navbar">
-        <div class="logo">
-            <img src="john-doe.jpg" alt="Mapengo Innovations">
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
-                <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
-                <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
-                <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
-                <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
-                <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
-
-    <!-- Sliding Menu -->
-    <div id="menuSlide" class="menu-slide" onclick="closeMenu(event)">
-        <div class="close-btn" onclick="closeMenu()">&times;</div>
-        <ul>
-            <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
-            <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
-            <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
-            <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
-            <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
-            <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
-        </ul>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Mapengo Innovations</h1>
+      <p>Where cutting-edge web and app development meets creativity and performance.</p>
+      <div class="cta-buttons">
+        <a href="#portfolio" class="cta-btn">View Our Work</a>
+        <a href="#contact" class="cta-btn">Start Your Project</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-text">Welcome to <span>Mapengo Innovations</span></h1>
-            <p class="hero-subtext">Transforming ideas into digital reality with cutting-edge solutions.</p>
-            <div class="hero-buttons">
-                <button class="cta-btn">Our Work</button>
-                <button class="cta-btn">Get Started</button>
-            </div>
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2>What We Offer</h2>
+      <div class="feature-cards">
+        <div class="feature-card">
+          <i class="icon custom-solution"></i>
+          <h3>Custom-Tailored Solutions</h3>
+          <p>We create bespoke solutions that are built to meet your business goals.</p>
         </div>
-    </section>
+        <div class="feature-card">
+          <i class="icon design-ux"></i>
+          <h3>World-Class Design & UX</h3>
+          <p>Intuitive, user-friendly interfaces that enhance your users' experience.</p>
+        </div>
+        <div class="feature-card">
+          <i class="icon scalable"></i>
+          <h3>High-Performance & Scalability</h3>
+          <p>Fast, reliable, and scalable solutions designed to grow with your business.</p>
+        </div>
+        <div class="feature-card">
+          <i class="icon mobile-first"></i>
+          <h3>Mobile-First Approach</h3>
+          <p>Responsive design that looks and works perfectly on all devices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-    // Toggle the menu when hamburger is clicked
-    function toggleMenu() {
-        const menu = document.getElementById('menuSlide');
-        menu.classList.toggle('active');
-        
-        // Prevent scrolling when the menu is open
-        if (menu.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    }
+  <!-- Process Section -->
+  <section class="process">
+    <div class="container">
+      <h2>Our Process</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <h3>Discovery & Strategy</h3>
+          <p>We understand your business goals and audience before we begin.</p>
+        </div>
+        <div class="process-step">
+          <h3>Design & Development</h3>
+          <p>Our designers and developers work together to create your solution.</p>
+        </div>
+        <div class="process-step">
+          <h3>Testing & Optimization</h3>
+          <p>We rigorously test the app/website to ensure high performance.</p>
+        </div>
+        <div class="process-step">
+          <h3>Launch & Support</h3>
+          <p>We launch and provide ongoing maintenance and support to optimize results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Close the menu and navigate to the specified section
-    function closeMenuAndNavigate(target) {
-        const menu = document.getElementById('menuSlide');
-        menu.classList.remove('active');
-        
-        // Enable scrolling after the menu closes
-        document.body.style.overflow = 'auto';
-        
-        // Use the target link to navigate
-        window.location.href = target;
-    }
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>Client Success Stories</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial-item">
+          <p>"Mapengo Innovations took our e-commerce platform to the next level. We saw a 30% increase in sales in just 3 months!"</p>
+          <span>- CEO, EcomPro</span>
+        </div>
+        <div class="testimonial-item">
+          <p>"The app they built for us is sleek, user-friendly, and efficient. Our clients love the new experience!"</p>
+          <span>- Founder, FitnessApp</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Close the menu when clicking outside the menu or on the close button
-    function closeMenu(event) {
-        const menu = document.getElementById('menuSlide');
-        if (event.target === menu || event.target === document.getElementById('closeBtn')) {
-            menu.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
-        }
-    }
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2>Our Work</h2>
+      <div class="portfolio-items">
+        <div class="portfolio-item">
+          <img src="project1.jpg" alt="Project 1">
+          <p>Custom Web Development</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="project2.jpg" alt="Project 2">
+          <p>Mobile App Development</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="project3.jpg" alt="Project 3">
+          <p>E-Commerce Platform</p>
+        </div>
+      </div>
+      <a href="#contact" class="cta-btn">Start Your Project</a>
+    </div>
+  </section>
 
-    // Close the menu on Escape key press
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            const menu = document.getElementById('menuSlide');
-            menu.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
-        }
-    });
+  <!-- Why Choose Us Section -->
+  <section class="why-us">
+    <div class="container">
+      <h2>Why Choose Mapengo Innovations?</h2>
+      <div class="why-us-cards">
+        <div class="why-us-card">
+          <h3>Expert Team</h3>
+          <p>We have a world-class team of developers, designers, and strategists.</p>
+        </div>
+        <div class="why-us-card">
+          <h3>Proven Track Record</h3>
+          <p>With 100+ successful projects, we deliver results that matter.</p>
+        </div>
+        <div class="why-us-card">
+          <h3>Scalable Solutions</h3>
+          <p>Our solutions grow with your business to meet future demands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Close the menu when clicking outside (except the hamburger menu itself)
-    document.addEventListener('click', function(event) {
-        const menu = document.getElementById('menuSlide');
-        const hamburger = document.getElementById('hamburger');
-        
-        // Close menu if clicked outside
-        if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-            menu.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
-        }
-    });
+  <!-- Contact CTA Section -->
+  <section class="cta-contact" id="contact">
+    <div class="container">
+      <h2>Ready to bring your digital vision to life?</h2>
+      <a href="mailto:info@mapengo.com" class="cta-btn">Get in Touch</a>
+    </div>
+  </section>
 
-    // Prevent closing when clicking inside the menu or on the hamburger itself
-    document.getElementById('menuSlide').addEventListener('click', function(event) {
-        event.stopPropagation();
-    });
-
-    // Close the menu when clicking the close (X) button
-    document.getElementById('closeBtn').addEventListener('click', function() {
-        document.getElementById('menuSlide').classList.remove('active');
-        document.body.style.overflow = 'auto'; // Re-enable scrolling
-    });
-</script>
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Mapengo Innovations. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-icon">Facebook</a>
+        <a href="#" class="social-icon">Twitter</a>
+        <a href="#" class="social-icon">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts (You can add external JS libraries for animations and interactivity) -->
+  <script src="scripts.js"></script>
+</body>
+</html>
