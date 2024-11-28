@@ -1,160 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mapengo Innovations</title>
-  <!-- Link to CSS file for styles (you can customize this) -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Example</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Carousel Container */
+        .carousel-container {
+            max-width: 800px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            padding: 20px;
+            color: white;
+            background: linear-gradient(135deg, #1e293b, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .carousel-content .badge {
+            background-color: #facc15;
+            color: #1e293b;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        .carousel-content h2 {
+            font-size: 1.8em;
+            margin: 10px 0;
+        }
+
+        .carousel-content p {
+            font-size: 1em;
+            margin: 10px 0 20px;
+            max-width: 80%;
+            line-height: 1.5;
+        }
+
+        .carousel-content .cta {
+            display: inline-block;
+            color: #f8f9fa;
+            background: #2563eb;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .carousel-content .cta:hover {
+            background: #1d4ed8;
+        }
+
+        /* Controls */
+        .carousel-controls {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .carousel-controls button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2em;
+            pointer-events: all;
+            cursor: pointer;
+        }
+
+        .carousel-controls .indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .carousel-controls .indicator {
+            width: 10px;
+            height: 10px;
+            background: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .carousel-controls .indicator.active {
+            background: #2563eb;
+        }
+    </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to Mapengo Innovations</h1>
-      <p>Where cutting-edge web and app development meets creativity and performance.</p>
-      <div class="cta-buttons">
-        <a href="#portfolio" class="cta-btn">View Our Work</a>
-        <a href="#contact" class="cta-btn">Start Your Project</a>
-      </div>
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <!-- Slide 1 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <span class="badge">Free Tier</span>
+                    <h2>Start building with us today</h2>
+                    <p>Discover tools and resources to help you achieve your goals efficiently and effectively.</p>
+                    <a href="#" class="cta">Get started for free →</a>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <span class="badge">Learn More</span>
+                    <h2>Flexible Solutions for Developers</h2>
+                    <p>From compute power to database storage, find the services to power your next project.</p>
+                    <a href="#" class="cta">Explore Solutions →</a>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <span class="badge">Get Support</span>
+                    <h2>Reach Out Anytime</h2>
+                    <p>Our dedicated support team is here to guide you through every step of your journey.</p>
+                    <a href="#" class="cta">Contact Support →</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="prev">&lt;</button>
+            <div class="indicators">
+                <span data-slide="0" class="indicator active"></span>
+                <span data-slide="1" class="indicator"></span>
+                <span data-slide="2" class="indicator"></span>
+            </div>
+            <button class="next">&gt;</button>
+        </div>
     </div>
-  </section>
+    <script>
+        const slides = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentIndex = 0;
 
-  <!-- Features Section -->
-  <section class="features">
-    <div class="container">
-      <h2>What We Offer</h2>
-      <div class="feature-cards">
-        <div class="feature-card">
-          <i class="icon custom-solution"></i>
-          <h3>Custom-Tailored Solutions</h3>
-          <p>We create bespoke solutions that are built to meet your business goals.</p>
-        </div>
-        <div class="feature-card">
-          <i class="icon design-ux"></i>
-          <h3>World-Class Design & UX</h3>
-          <p>Intuitive, user-friendly interfaces that enhance your users' experience.</p>
-        </div>
-        <div class="feature-card">
-          <i class="icon scalable"></i>
-          <h3>High-Performance & Scalability</h3>
-          <p>Fast, reliable, and scalable solutions designed to grow with your business.</p>
-        </div>
-        <div class="feature-card">
-          <i class="icon mobile-first"></i>
-          <h3>Mobile-First Approach</h3>
-          <p>Responsive design that looks and works perfectly on all devices.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        document.querySelector('.next').addEventListener('click', () => {
+            moveToSlide(currentIndex + 1);
+        });
 
-  <!-- Process Section -->
-  <section class="process">
-    <div class="container">
-      <h2>Our Process</h2>
-      <div class="process-steps">
-        <div class="process-step">
-          <h3>Discovery & Strategy</h3>
-          <p>We understand your business goals and audience before we begin.</p>
-        </div>
-        <div class="process-step">
-          <h3>Design & Development</h3>
-          <p>Our designers and developers work together to create your solution.</p>
-        </div>
-        <div class="process-step">
-          <h3>Testing & Optimization</h3>
-          <p>We rigorously test the app/website to ensure high performance.</p>
-        </div>
-        <div class="process-step">
-          <h3>Launch & Support</h3>
-          <p>We launch and provide ongoing maintenance and support to optimize results.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        document.querySelector('.prev').addEventListener('click', () => {
+            moveToSlide(currentIndex - 1);
+        });
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>Client Success Stories</h2>
-      <div class="testimonial-carousel">
-        <div class="testimonial-item">
-          <p>"Mapengo Innovations took our e-commerce platform to the next level. We saw a 30% increase in sales in just 3 months!"</p>
-          <span>- CEO, EcomPro</span>
-        </div>
-        <div class="testimonial-item">
-          <p>"The app they built for us is sleek, user-friendly, and efficient. Our clients love the new experience!"</p>
-          <span>- Founder, FitnessApp</span>
-        </div>
-      </div>
-    </div>
-  </section>
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                moveToSlide(index);
+            });
+        });
 
-  <!-- Portfolio Section -->
-  <section class="portfolio" id="portfolio">
-    <div class="container">
-      <h2>Our Work</h2>
-      <div class="portfolio-items">
-        <div class="portfolio-item">
-          <img src="project1.jpg" alt="Project 1">
-          <p>Custom Web Development</p>
-        </div>
-        <div class="portfolio-item">
-          <img src="project2.jpg" alt="Project 2">
-          <p>Mobile App Development</p>
-        </div>
-        <div class="portfolio-item">
-          <img src="project3.jpg" alt="Project 3">
-          <p>E-Commerce Platform</p>
-        </div>
-      </div>
-      <a href="#contact" class="cta-btn">Start Your Project</a>
-    </div>
-  </section>
+        function moveToSlide(index) {
+            if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else if (index >= slides.length) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+            updateCarousel();
+        }
 
-  <!-- Why Choose Us Section -->
-  <section class="why-us">
-    <div class="container">
-      <h2>Why Choose Mapengo Innovations?</h2>
-      <div class="why-us-cards">
-        <div class="why-us-card">
-          <h3>Expert Team</h3>
-          <p>We have a world-class team of developers, designers, and strategists.</p>
-        </div>
-        <div class="why-us-card">
-          <h3>Proven Track Record</h3>
-          <p>With 100+ successful projects, we deliver results that matter.</p>
-        </div>
-        <div class="why-us-card">
-          <h3>Scalable Solutions</h3>
-          <p>Our solutions grow with your business to meet future demands.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        function updateCarousel() {
+            document.querySelector('.carousel-slide').style.transform = `translateX(-${currentIndex * 100}%)`;
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
+            });
+        }
 
-  <!-- Contact CTA Section -->
-  <section class="cta-contact" id="contact">
-    <div class="container">
-      <h2>Ready to bring your digital vision to life?</h2>
-      <a href="mailto:info@mapengo.com" class="cta-btn">Get in Touch</a>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 Mapengo Innovations. All Rights Reserved.</p>
-      <div class="social-links">
-        <a href="#" class="social-icon">Facebook</a>
-        <a href="#" class="social-icon">Twitter</a>
-        <a href="#" class="social-icon">LinkedIn</a>
-      </div>
-    </div>
-  </footer>
-  
-  <!-- Scripts (You can add external JS libraries for animations and interactivity) -->
-  <script src="scripts.js"></script>
+        // Auto Slide (Optional)
+        setInterval(() => moveToSlide(currentIndex + 1), 5000);
+    </script>
 </body>
-</html>
+  </html>
