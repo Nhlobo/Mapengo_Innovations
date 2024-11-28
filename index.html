@@ -3,23 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousel Example</title>
+    <title>AWS Style Page</title>
     <style>
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
             background-color: #f8f9fa;
         }
 
-        /* Carousel Container */
+        header {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        header .links {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Carousel */
         .carousel-container {
-            max-width: 800px;
-            margin: 50px auto;
-            position: relative;
+            max-width: 1200px;
+            margin: 20px auto;
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .carousel-slide {
@@ -29,38 +48,23 @@
 
         .carousel-item {
             min-width: 100%;
-            padding: 20px;
+            position: relative;
             color: white;
-            background: linear-gradient(135deg, #1e293b, #3b82f6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
+            text-align: left;
+            padding: 40px;
+            background: linear-gradient(135deg, #3b82f6, #1e293b);
         }
 
-        .carousel-content .badge {
-            background-color: #facc15;
-            color: #1e293b;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            margin-bottom: 10px;
+        .carousel-item h2 {
+            font-size: 2rem;
         }
 
-        .carousel-content h2 {
-            font-size: 1.8em;
-            margin: 10px 0;
-        }
-
-        .carousel-content p {
-            font-size: 1em;
+        .carousel-item p {
+            font-size: 1rem;
             margin: 10px 0 20px;
-            max-width: 80%;
-            line-height: 1.5;
         }
 
-        .carousel-content .cta {
+        .carousel-item a {
             display: inline-block;
             color: #f8f9fa;
             background: #2563eb;
@@ -71,43 +75,21 @@
             transition: background 0.3s;
         }
 
-        .carousel-content .cta:hover {
+        .carousel-item a:hover {
             background: #1d4ed8;
         }
 
-        /* Controls */
-        .carousel-controls {
+        /* Indicators */
+        .indicators {
             position: absolute;
-            width: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            pointer-events: none;
-        }
-
-        .carousel-controls button {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 1.2em;
-            pointer-events: all;
-            cursor: pointer;
-        }
-
-        .carousel-controls .indicators {
-            position: absolute;
-            bottom: 10px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 5px;
+            gap: 10px;
         }
 
-        .carousel-controls .indicator {
+        .indicator {
             width: 10px;
             height: 10px;
             background: #ddd;
@@ -116,91 +98,140 @@
             transition: background 0.3s;
         }
 
-        .carousel-controls .indicator.active {
+        .indicator.active {
             background: #2563eb;
+        }
+
+        /* Cards Section */
+        .cards-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #facc15;
+            color: #1e293b;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #4b5563;
+        }
+
+        .card a {
+            color: #2563eb;
+            font-weight: bold;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">AWS Style</div>
+        <div class="links">
+            <a href="#">Products</a>
+            <a href="#">Solutions</a>
+            <a href="#">Pricing</a>
+            <a href="#">Learn</a>
+        </div>
+    </header>
+    
+    <!-- Carousel -->
     <div class="carousel-container">
         <div class="carousel-slide">
-            <!-- Slide 1 -->
             <div class="carousel-item">
-                <div class="carousel-content">
-                    <span class="badge">Free Tier</span>
-                    <h2>Start building with us today</h2>
-                    <p>Discover tools and resources to help you achieve your goals efficiently and effectively.</p>
-                    <a href="#" class="cta">Get started for free →</a>
-                </div>
+                <h2>Start building on AWS today</h2>
+                <p>Whether you're looking for compute power, database storage, content delivery, or other functionality, AWS has the services to help you build sophisticated applications with increased flexibility, scalability, and reliability.</p>
+                <a href="#">Get started for free →</a>
             </div>
-            <!-- Slide 2 -->
             <div class="carousel-item">
-                <div class="carousel-content">
-                    <span class="badge">Learn More</span>
-                    <h2>Flexible Solutions for Developers</h2>
-                    <p>From compute power to database storage, find the services to power your next project.</p>
-                    <a href="#" class="cta">Explore Solutions →</a>
-                </div>
+                <h2>Discover innovative solutions</h2>
+                <p>Leverage AWS's state-of-the-art cloud technology to bring your projects to life with ease and speed.</p>
+                <a href="#">Learn More →</a>
             </div>
-            <!-- Slide 3 -->
             <div class="carousel-item">
-                <div class="carousel-content">
-                    <span class="badge">Get Support</span>
-                    <h2>Reach Out Anytime</h2>
-                    <p>Our dedicated support team is here to guide you through every step of your journey.</p>
-                    <a href="#" class="cta">Contact Support →</a>
-                </div>
+                <h2>Reliable support at every step</h2>
+                <p>Gain access to dedicated resources and guides tailored to your needs for seamless development.</p>
+                <a href="#">Contact Us →</a>
             </div>
         </div>
-        <div class="carousel-controls">
-            <button class="prev">&lt;</button>
-            <div class="indicators">
-                <span data-slide="0" class="indicator active"></span>
-                <span data-slide="1" class="indicator"></span>
-                <span data-slide="2" class="indicator"></span>
-            </div>
-            <button class="next">&gt;</button>
+        <div class="indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
         </div>
     </div>
+
+    <!-- Cards -->
+    <div class="cards-container">
+        <div class="card">
+            <span class="tag">Industry</span>
+            <h3>Financial Services</h3>
+            <p>Reimagine your business and enable security and compliance at scale.</p>
+            <a href="#">Explore →</a>
+        </div>
+        <div class="card">
+            <span class="tag">Industry</span>
+            <h3>Telecom</h3>
+            <p>Transition from connectivity provider to digital service provider and reimagine the customer experience.</p>
+            <a href="#">View solutions →</a>
+        </div>
+        <div class="card">
+            <span class="tag">Industry</span>
+            <h3>Healthcare and Life Sciences</h3>
+            <p>Innovate faster for clinicians and patients with unmatched reliability, security, and data privacy.</p>
+            <a href="#">Learn More →</a>
+        </div>
+        <div class="card">
+            <span class="tag">Industry</span>
+            <h3>Games</h3>
+            <p>Build, run, and grow games with purpose-built, developer-friendly solutions.</p>
+            <a href="#">Discover →</a>
+        </div>
+    </div>
+
     <script>
         const slides = document.querySelectorAll('.carousel-item');
         const indicators = document.querySelectorAll('.indicator');
-        let currentIndex = 0;
-
-        document.querySelector('.next').addEventListener('click', () => {
-            moveToSlide(currentIndex + 1);
-        });
-
-        document.querySelector('.prev').addEventListener('click', () => {
-            moveToSlide(currentIndex - 1);
-        });
-
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                moveToSlide(index);
-            });
-        });
-
-        function moveToSlide(index) {
-            if (index < 0) {
-                currentIndex = slides.length - 1;
-            } else if (index >= slides.length) {
-                currentIndex = 0;
-            } else {
-                currentIndex = index;
-            }
-            updateCarousel();
-        }
+        let currentSlide = 0;
 
         function updateCarousel() {
-            document.querySelector('.carousel-slide').style.transform = `translateX(-${currentIndex * 100}%)`;
+            document.querySelector('.carousel-slide').style.transform = `translateX(-${currentSlide * 100}%)`;
             indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentIndex);
+                indicator.classList.toggle('active', index === currentSlide);
             });
         }
 
-        // Auto Slide (Optional)
-        setInterval(() => moveToSlide(currentIndex + 1), 5000);
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }, 5000);
     </script>
 </body>
-  </html>
+                </html>
