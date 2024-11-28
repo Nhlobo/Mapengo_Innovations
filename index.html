@@ -371,5 +371,38 @@
             }
         }
     </script>
+    <script>
+    // Toggle the menu when hamburger is clicked
+    function toggleMenu() {
+        document.getElementById('menuSlide').classList.toggle('active');
+    }
+
+    // Close the menu and navigate to the specified section
+    function closeMenuAndNavigate(target) {
+        document.getElementById('menuSlide').classList.remove('active');
+        window.location.href = target;
+    }
+
+    // Close the menu when clicking outside
+    function closeMenuOnClickOutside(event) {
+        const menu = document.getElementById('menuSlide');
+        const hamburger = document.getElementById('hamburger');
+        
+        // Check if the click was outside of the hamburger or the menu itself
+        if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+            menu.classList.remove('active');
+        }
+    }
+
+    // Attach the close function to the document click event
+    document.addEventListener('click', closeMenuOnClickOutside);
+
+    // Prevent closing when clicking inside the menu or on the hamburger itself
+    document.getElementById('menuSlide').addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+
+</script>
+
 </body>
 </html>
