@@ -364,79 +364,60 @@
     </section>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('menuSlide').classList.toggle('active');
-        }
-
-        function closeMenuAndNavigate(target) {
-            document.getElementById('menuSlide').classList.remove('active');
-            window.location.href = target;
-        }
-
-        function closeMenu(event) {
-            if (event.target === document.getElementById('menuSlide')) {
-                document.getElementById('menuSlide').classList.remove('active');
-            }
-        }
-    </script>
-    <script>
     // Toggle the menu when hamburger is clicked
     function toggleMenu() {
-        document.getElementById('menuSlide').classList.toggle('active');
+        const menu = document.getElementById('menuSlide');
+        menu.classList.toggle('active');
+        
+        // Prevent scrolling when the menu is open
+        if (menu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
     }
 
     // Close the menu and navigate to the specified section
     function closeMenuAndNavigate(target) {
-        document.getElementById('menuSlide').classList.remove('active');
+        const menu = document.getElementById('menuSlide');
+        menu.classList.remove('active');
+        
+        // Enable scrolling after the menu closes
+        document.body.style.overflow = 'auto';
+        
+        // Use the target link to navigate
         window.location.href = target;
     }
 
-    // Close the menu when clicking outside
-    function closeMenuOnClickOutside(event) {
+    // Close the menu when clicking outside the menu or on the close button
+    function closeMenu(event) {
         const menu = document.getElementById('menuSlide');
-        const hamburger = document.getElementById('hamburger');
-        
-        // Check if the click was outside of the hamburger or the menu itself
-        if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+        if (event.target === menu || event.target === document.getElementById('closeBtn')) {
             menu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
         }
     }
 
-    // Attach the close function to the document click event
-    document.addEventListener('click', closeMenuOnClickOutside);
-
-    // Prevent closing when clicking inside the menu or on the hamburger itself
-    document.getElementById('menuSlide').addEventListener('click', function(event) {
-        event.stopPropagation();
+    // Close the menu on Escape key press
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const menu = document.getElementById('menuSlide');
+            menu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
     });
 
-</script>
-
-    <script>
-    // Toggle the menu when hamburger is clicked
-    function toggleMenu() {
-        document.getElementById('menuSlide').classList.toggle('active');
-    }
-
-    // Close the menu and navigate to the specified section
-    function closeMenuAndNavigate(target) {
-        document.getElementById('menuSlide').classList.remove('active');
-        window.location.href = target;
-    }
-
-    // Close the menu when clicking outside
-    function closeMenuOnClickOutside(event) {
+    // Close the menu when clicking outside (except the hamburger menu itself)
+    document.addEventListener('click', function(event) {
         const menu = document.getElementById('menuSlide');
         const hamburger = document.getElementById('hamburger');
         
-        // Check if the click was outside of the hamburger or the menu itself
+        // Close menu if clicked outside
         if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
             menu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
         }
-    }
-
-    // Attach the close function to the document click event
-    document.addEventListener('click', closeMenuOnClickOutside);
+    });
 
     // Prevent closing when clicking inside the menu or on the hamburger itself
     document.getElementById('menuSlide').addEventListener('click', function(event) {
@@ -446,9 +427,6 @@
     // Close the menu when clicking the close (X) button
     document.getElementById('closeBtn').addEventListener('click', function() {
         document.getElementById('menuSlide').classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
     });
 </script>
-
-
-</body>
-</html>
