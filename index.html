@@ -3,235 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Style Page</title>
+    <title>Mapengo Innovations</title>
     <style>
         /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: #f3f4f6;
+            color: #333;
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #1e293b;
+            background-color: #1a202c;
             color: #fff;
-            padding: 10px 20px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        header .links {
-            display: flex;
-            gap: 15px;
-        }
-
-        /* Carousel */
-        .carousel-container {
-            max-width: 1200px;
-            margin: 20px auto;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .carousel-slide {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-item {
-            min-width: 100%;
-            position: relative;
-            color: white;
-            text-align: left;
-            padding: 40px;
-            background: linear-gradient(135deg, #3b82f6, #1e293b);
-        }
-
-        .carousel-item h2 {
-            font-size: 2rem;
-        }
-
-        .carousel-item p {
-            font-size: 1rem;
-            margin: 10px 0 20px;
-        }
-
-        .carousel-item a {
-            display: inline-block;
-            color: #f8f9fa;
-            background: #2563eb;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
+        header .logo {
+            font-size: 1.5rem;
             font-weight: bold;
-            transition: background 0.3s;
         }
 
-        .carousel-item a:hover {
-            background: #1d4ed8;
+        header .links a {
+            color: #f3f4f6;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
         }
 
-        /* Indicators */
-        .indicators {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+        header .links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #4ade80, #38bdf8);
+            color: #fff;
             display: flex;
-            gap: 10px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
         }
 
-        .indicator {
-            width: 10px;
-            height: 10px;
-            background: #ddd;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s;
+        .hero h1 {
+            font-size: 3.5rem;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        .indicator.active {
-            background: #2563eb;
+        .hero p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            animation: slideUp 1.5s ease-in-out;
         }
 
-        /* Cards Section */
+        .hero a {
+            background-color: #fff;
+            color: #38bdf8;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .hero a:hover {
+            background-color: #2563eb;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f8fafc;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+
+        .services p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #6b7280;
+        }
+
         .cards-container {
-            max-width: 1200px;
-            margin: 20px auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            padding: 0 20px;
+            margin: 0 auto;
+            max-width: 1200px;
         }
 
         .card {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .card .tag {
-            display: inline-block;
-            background: #facc15;
-            color: #1e293b;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         .card h3 {
             font-size: 1.5rem;
-            margin: 10px 0;
+            margin-bottom: 15px;
+            color: #2563eb;
         }
 
         .card p {
             font-size: 1rem;
             color: #4b5563;
+            line-height: 1.6;
         }
 
         .card a {
-            color: #2563eb;
-            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            color: #38bdf8;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a202c;
+            color: #f8fafc;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">AWS Style</div>
+        <div class="logo">Mapengo Innovations</div>
         <div class="links">
-            <a href="#">Products</a>
-            <a href="#">Solutions</a>
-            <a href="#">Pricing</a>
-            <a href="#">Learn</a>
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">Careers</a>
         </div>
     </header>
-    
-    <!-- Carousel -->
-    <div class="carousel-container">
-        <div class="carousel-slide">
-            <div class="carousel-item">
-                <h2>Start building on AWS today</h2>
-                <p>Whether you're looking for compute power, database storage, content delivery, or other functionality, AWS has the services to help you build sophisticated applications with increased flexibility, scalability, and reliability.</p>
-                <a href="#">Get started for free →</a>
+
+    <section class="hero">
+        <h1>Empowering Digital Transformations</h1>
+        <p>Mapengo Innovations specializes in creating cutting-edge websites and mobile applications that drive growth and innovation.</p>
+        <a href="#">Get Started</a>
+    </section>
+
+    <section class="services">
+        <h2>What We Offer</h2>
+        <p>Our expert team is dedicated to delivering high-quality solutions tailored to your needs.</p>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Website Development</h3>
+                <p>We craft modern, responsive, and user-friendly websites to establish a strong online presence for your business.</p>
+                <a href="#">Learn More</a>
             </div>
-            <div class="carousel-item">
-                <h2>Discover innovative solutions</h2>
-                <p>Leverage AWS's state-of-the-art cloud technology to bring your projects to life with ease and speed.</p>
-                <a href="#">Learn More →</a>
+            <div class="card">
+                <h3>Mobile App Development</h3>
+                <p>Our mobile app solutions are designed to enhance customer engagement and streamline operations on iOS and Android.</p>
+                <a href="#">Learn More</a>
             </div>
-            <div class="carousel-item">
-                <h2>Reliable support at every step</h2>
-                <p>Gain access to dedicated resources and guides tailored to your needs for seamless development.</p>
-                <a href="#">Contact Us →</a>
+            <div class="card">
+                <h3>UI/UX Design</h3>
+                <p>We prioritize intuitive and visually stunning interfaces that improve the user experience and engagement.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>AI Solutions</h3>
+                <p>Empower your business with advanced AI and machine learning solutions to automate and optimize operations.</p>
+                <a href="#">Learn More</a>
             </div>
         </div>
-        <div class="indicators">
-            <div class="indicator active"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-        </div>
-    </div>
+    </section>
 
-    <!-- Cards -->
-    <div class="cards-container">
-        <div class="card">
-            <span class="tag">Industry</span>
-            <h3>Financial Services</h3>
-            <p>Reimagine your business and enable security and compliance at scale.</p>
-            <a href="#">Explore →</a>
-        </div>
-        <div class="card">
-            <span class="tag">Industry</span>
-            <h3>Telecom</h3>
-            <p>Transition from connectivity provider to digital service provider and reimagine the customer experience.</p>
-            <a href="#">View solutions →</a>
-        </div>
-        <div class="card">
-            <span class="tag">Industry</span>
-            <h3>Healthcare and Life Sciences</h3>
-            <p>Innovate faster for clinicians and patients with unmatched reliability, security, and data privacy.</p>
-            <a href="#">Learn More →</a>
-        </div>
-        <div class="card">
-            <span class="tag">Industry</span>
-            <h3>Games</h3>
-            <p>Build, run, and grow games with purpose-built, developer-friendly solutions.</p>
-            <a href="#">Discover →</a>
-        </div>
-    </div>
-
-    <script>
-        const slides = document.querySelectorAll('.carousel-item');
-        const indicators = document.querySelectorAll('.indicator');
-        let currentSlide = 0;
-
-        function updateCarousel() {
-            document.querySelector('.carousel-slide').style.transform = `translateX(-${currentSlide * 100}%)`;
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentSlide);
-            });
-        }
-
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateCarousel();
-        }, 5000);
-    </script>
+    <footer>
+        <p>© 2024 Mapengo Innovations. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
 </body>
                 </html>
