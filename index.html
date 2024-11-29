@@ -53,6 +53,7 @@ body {
     font-size: 6vw;
     font-weight: 800;
     letter-spacing: 1px;
+    color: #ff5733; /* TechConnect color */
 }
 
 .hero p {
@@ -60,6 +61,7 @@ body {
     max-width: 80%;
     margin: 0 auto;
     opacity: 0.85;
+    color: #fff; /* Text color for contrast */
 }
 
 .hero .cta-btn {
@@ -138,7 +140,7 @@ body {
     background-color: #fff;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #e0e0e0; /* Always visible border */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -293,7 +295,7 @@ body {
         <div>
             <h1>TechConnect - Latest Project</h1>
             <p>TechConnect is a project developed to create a user-friendly landing page that showcases the latest in technology.</p>
-            <a href="#project-details" class="cta-btn">View Web</a>
+            <a href="https://www.yourwebsite.com" class="cta-btn" target="_blank">View Web</a> <!-- Add your URL here -->
         </div>
     </section>
 
@@ -302,7 +304,7 @@ body {
         <img src="68747470733a2f2f692e696d6775722e636f6d2f52455933546f4c2e706e67.png" alt="Website Screenshot">
         <div class="showcase-text">
             <h2>Transforming User Experience</h2>
-            <p>This project exemplifies our dedication to creating modern, responsive, and user-friendly websites. TechConnect integrates the latest technology to enhance the user experience.</p>
+            <p>This project exemplifies our dedication to creating modern, responsive, and user-friendly websites. Every detail has been meticulously crafted to ensure a seamless digital experience.</p>
         </div>
     </section>
 
@@ -310,23 +312,27 @@ body {
     <section class="features">
         <div class="feature-card">
             <h3>Real-time Updates</h3>
-            <p>Implemented using WebSocket to provide instant notifications and updates, keeping users informed in real-time.</p>
+            <p>Implemented using WebSocket to provide instant notifications and updates.</p>
         </div>
         <div class="feature-card">
             <h3>User Rewards</h3>
-            <p>A reward system based on user activity to engage and retain users, enhancing the overall experience.</p>
+            <p>A reward system based on user activity to engage and retain users.</p>
         </div>
         <div class="feature-card">
             <h3>Job Search</h3>
             <p>Advanced search functionality to help users find job opportunities tailored to their preferences and qualifications.</p>
         </div>
+        <div class="feature-card">
+            <h3>Advanced Security</h3>
+            <p>Robust security measures to ensure user data privacy and platform integrity.</p>
+        </div>
     </section>
 
     <!-- Contact CTA Section -->
-    <section class="contact-cta">
-        <h2>Someone Interested in Working with Us?</h2>
+    <section class="contact-cta" id="contact">
+        <h2>Do you have a project or need a website?</h2>
         <p>We specialize in creating beautiful, user-centric websites. Let’s talk about how we can elevate your online presence.</p>
-        <a href="mailto:contact@yourcompany.com" class="cta-btn">Someone</a>
+        <a href="#contact" class="cta-btn">Get Started</a>
     </section>
 
 </body>
