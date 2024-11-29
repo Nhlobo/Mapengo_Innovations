@@ -10,7 +10,7 @@
     <meta name="author" content="TechConnect Team">
     <title>TechConnect - Latest Project</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <style>
         /* Global reset */
@@ -21,9 +21,9 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #fff;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #f8f8f8;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -35,60 +35,59 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: url('Screenshot_20241129_022655_Chrome.jpg') no-repeat center center/cover;
+            background: linear-gradient(135deg, #ff6f61, #ffcc00); /* Bold gradient background */
             color: #fff;
             position: relative;
             background-size: cover;
             background-position: center;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
-        }
+        /* Animation for fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
 
-        .hero h1,
-        .hero p {
-            z-index: 1; /* Ensure text is above the overlay */
-            margin-bottom: 20px;
+            to {
+                opacity: 1;
+            }
         }
 
         .hero h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 6vw;
-            font-weight: 800;
+            font-weight: 700;
             letter-spacing: 1px;
             color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .hero p {
-            font-size: 4vw;
+            font-size: 3vw;
             max-width: 80%;
             margin: 0 auto;
-            opacity: 0.85;
+            opacity: 0.9;
             color: #fff;
+            margin-bottom: 30px;
         }
 
         .hero .cta-btn {
             display: inline-block;
-            background: linear-gradient(to right, #ffffff, #000000);
+            background: #ff5c8d;
             color: #fff;
-            padding: 14px 30px;
+            padding: 14px 40px;
             font-size: 18px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 5px;
+            border-radius: 50px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            z-index: 1;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .hero .cta-btn:hover {
-            background-color: #d14429;
+            background-color: #ff3333;
+            transform: scale(1.1);
         }
 
         /* Project Showcase Section */
@@ -97,91 +96,102 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            padding: 60px 5%;
-            background-color: #f4f4f4;
+            padding: 60px 10%;
+            background-color: #2f2f2f;
+            position: relative;
         }
 
         .showcase img {
             width: 100%;
             max-width: 600px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
             object-fit: cover;
+            z-index: 1;
         }
 
         .showcase img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
         }
 
         .showcase-text {
             max-width: 500px;
-            margin-left: 20px;
+            margin-left: 30px;
             text-align: left;
+            position: relative;
+            z-index: 1;
         }
 
         .showcase-text h2 {
-            font-size: 2.5vw;
+            font-family: 'Playfair Display', serif;
+            font-size: 3vw;
             font-weight: 700;
             margin-bottom: 20px;
-            letter-spacing: 1.5px;
-            color: #333;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
         }
 
         .showcase-text p {
             font-size: 1.5vw;
-            color: #777;
+            color: #bbb;
             line-height: 1.8;
             margin-bottom: 30px;
+            font-weight: 400;
         }
 
         /* Features Section */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
             padding: 80px 10%;
             text-align: center;
+            background-color: #333;
         }
 
         .feature-card {
-            background-color: #fff;
+            background-color: #444;
             padding: 30px;
             border-radius: 15px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #333;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            border-color: #ff5733;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            border-color: #ff5c8d;
         }
 
         .feature-card h3 {
-            font-size: 2vw;
+            font-size: 2.5vw;
             font-weight: 700;
-            color: #333;
+            color: #ff5c8d;
             margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .feature-card p {
             font-size: 1.2vw;
-            color: #777;
+            color: #fff;
         }
 
         /* Contact CTA Section */
         .contact-cta {
-            background-color: #000;
+            background-color: #111;
             color: #fff;
             padding: 60px 0;
             text-align: center;
         }
 
         .contact-cta h2 {
-            font-size: 2.5vw;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5vw;
             font-weight: 700;
             margin-bottom: 30px;
         }
@@ -192,31 +202,33 @@
         }
 
         .contact-cta .cta-btn {
-            background: linear-gradient(to right, #ffffff, #000000);
+            background: #ff5c8d;
             color: #fff;
             padding: 14px 40px;
             font-size: 18px;
             text-transform: uppercase;
-            border-radius: 5px;
+            border-radius: 50px;
             text-decoration: none;
             letter-spacing: 1px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .contact-cta .cta-btn:hover {
-            background-color: #d14429;
+            background-color: #ff3333;
+            transform: scale(1.1);
         }
 
         /* Footer Section */
         footer {
-            background-color: #333;
+            background-color: #1f1f1f;
             color: #fff;
             padding: 40px 5%;
             text-align: center;
+            font-size: 1em;
         }
 
         footer a {
-            color: #fff;
+            color: #ff5c8d;
             text-decoration: none;
             font-size: 1.2em;
             margin: 0 10px;
@@ -278,41 +290,8 @@
                 padding: 14px 30px;
             }
         }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 10vw;
-            }
-
-            .hero p {
-                font-size: 6vw;
-            }
-
-            .showcase-text h2 {
-                font-size: 5vw;
-            }
-
-            .showcase-text p {
-                font-size: 4vw;
-            }
-
-            .feature-card h3 {
-                font-size: 5vw;
-            }
-
-            .feature-card p {
-                font-size: 3.5vw;
-            }
-
-            .contact-cta h2 {
-                font-size: 6vw;
-            }
-
-            .contact-cta p {
-                font-size: 4.5vw;
-            }
-        }
     </style>
+
 </head>
 
 <body>
@@ -321,45 +300,45 @@
     <section class="hero">
         <div>
             <h1>TechConnect - Latest Project</h1>
-            <p>TechConnect is a project developed to create a user-friendly landing page that showcases the latest in technology.</p>
-            <a href="https://www.yourwebsite.com" class="cta-btn" target="_blank">View Web</a>
+            <p>Showcasing the future of technology with immersive web design and cutting-edge user experiences.</p>
+            <a href="https://www.yourwebsite.com" class="cta-btn" target="_blank">Explore the Web</a>
         </div>
     </section>
 
     <!-- Project Showcase Section -->
     <section class="showcase" id="project-details">
-        <img src="68747470733a2f2f692e696d6775722e636f6d2f52455933546f4c2e706e67.png" alt="Website Screenshot">
+        <img src="68747470733a2f2f692e696d6775722e636f6d2f52455933546f4c2e706e67.png" alt="TechConnect Website Screenshot">
         <div class="showcase-text">
-            <h2>Transforming User Experience</h2>
-            <p>This project exemplifies our dedication to creating modern, responsive, and user-friendly websites. Every detail has been meticulously crafted to ensure a seamless digital experience.</p>
+            <h2>Redefining Web Experiences</h2>
+            <p>Our latest project pushes the boundaries of modern design with dynamic features and an emphasis on user interaction.</p>
         </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
         <div class="feature-card">
-            <h3>Real-time Updates</h3>
-            <p>Implemented using WebSocket to provide instant notifications and updates.</p>
+            <h3>Real-time Sync</h3>
+            <p>Seamless real-time updates and notifications powered by WebSocket.</p>
         </div>
         <div class="feature-card">
-            <h3>User Rewards</h3>
-            <p>A reward system based on user activity to engage and retain users.</p>
+            <h3>Rewarding Engagement</h3>
+            <p>Reward system to encourage user interaction and foster community growth.</p>
         </div>
         <div class="feature-card">
-            <h3>Job Search</h3>
-            <p>Advanced search functionality to help users find job opportunities tailored to their preferences and qualifications.</p>
+            <h3>Advanced Search</h3>
+            <p>Smart search algorithms tailored to user preferences and activities.</p>
         </div>
         <div class="feature-card">
-            <h3>Advanced Security</h3>
-            <p>Robust security measures to ensure user data privacy and platform integrity.</p>
+            <h3>Unmatched Security</h3>
+            <p>State-of-the-art encryption and security protocols to ensure complete user privacy.</p>
         </div>
     </section>
 
     <!-- Contact CTA Section -->
     <section class="contact-cta" id="contact">
-        <h2>Do you have a project or need a website?</h2>
-        <p>We specialize in creating innovative and user-centric websites. Let’s discuss how we can help elevate your digital presence.</p>
-        <a href="#contact" class="cta-btn">Get Started</a>
+        <h2>Let’s Build Something Amazing</h2>
+        <p>We specialize in creating cutting-edge websites. Reach out to us and let’s start something innovative!</p>
+        <a href="#contact" class="cta-btn">Get In Touch</a>
     </section>
 
     <!-- Footer Section -->
