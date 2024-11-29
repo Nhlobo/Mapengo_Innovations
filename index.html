@@ -3,221 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Portfolio</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Our Latest Project</title>
     <style>
-        /* Resetting some default styles */
+        /* Global reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body and Background */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #fff;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Portfolio Section */
-        .portfolio {
-            padding: 80px 0;
-            background-color: #fff;
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .portfolio h2 {
-            font-size: 48px;
-            color: #000;
-            font-weight: 700;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-
-        .portfolio p {
-            font-size: 20px;
-            color: #777;
-            margin-bottom: 40px;
-            line-height: 1.7;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-
-        /* Portfolio Grid */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-            padding: 0 10%;
-            transition: grid-template-columns 0.3s ease;
-        }
-
-        .project {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
+            background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover; /* Your project image here */
+            color: #fff;
             position: relative;
+            transition: background 0.3s ease;
         }
 
-        .project:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .project img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
             transition: transform 0.3s ease;
         }
 
-        .project:hover img {
-            transform: scale(1.1);
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
         }
 
-        .project h3 {
-            font-size: 22px;
-            font-weight: 600;
-            margin-top: 20px;
-            color: #000;
-            transition: color 0.3s ease;
-        }
-
-        .project p {
-            font-size: 16px;
-            color: #777;
-            margin-top: 10px;
-            transition: color 0.3s ease;
-        }
-
-        /* Hover effects for all elements */
-        .project:hover h3 {
-            color: #ff5733;
-        }
-
-        .project:hover p {
-            color: #333;
-        }
-
-        /* Smooth hover effects for the whole grid */
-        .projects:hover {
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .projects {
-                padding: 0 5%;
-            }
-
-            .project {
-                padding: 15px;
-            }
-
-            .portfolio h2 {
-                font-size: 36px;
-            }
-
-            .portfolio p {
-                font-size: 18px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .portfolio h2 {
-                font-size: 28px;
-            }
-
-            .portfolio p {
-                font-size: 16px;
-            }
-
-            .projects {
-                padding: 0 5%;
-            }
-        }
-
-        /* Button Style for CTA */
-        .cta-btn {
+        .hero .cta-btn {
             display: inline-block;
             background-color: #ff5733;
             color: #fff;
-            padding: 12px 30px;
-            border-radius: 5px;
+            padding: 14px 30px;
             font-size: 18px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 40px;
+            border-radius: 5px;
+            text-decoration: none;
             transition: background-color 0.3s ease;
         }
 
-        .cta-btn:hover {
+        .hero .cta-btn:hover {
             background-color: #d14429;
+        }
+
+        .hero:hover h1 {
+            transform: translateY(-10px);
+        }
+
+        .hero:hover p {
+            opacity: 1;
+        }
+
+        /* Project Showcase Section */
+        .showcase {
+            display: flex;
+            justify-content: center;
+            padding: 60px 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s ease;
+        }
+
+        .showcase:hover {
+            background-color: #e8e8e8;
+        }
+
+        .showcase img {
+            width: 60%;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .showcase img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .showcase-text {
+            max-width: 500px;
+            margin-left: 40px;
+            text-align: left;
+        }
+
+        .showcase-text h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            color: #333;
+        }
+
+        .showcase-text p {
+            font-size: 18px;
+            color: #777;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .feature-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        /* Contact CTA Section */
+        .contact-cta {
+            background-color: #000;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact-cta h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .contact-cta p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .contact-cta .cta-btn {
+            background-color: #ff5733;
+            color: #fff;
+            padding: 14px 40px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-cta .cta-btn:hover {
+            background-color: #d14429;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .showcase {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .showcase img {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .showcase-text {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .features {
+                padding: 60px 5%;
+            }
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio">
-        <h2>Our Featured Projects</h2>
-        <p>Explore our cutting-edge website designs that deliver a seamless user experience. These projects reflect our commitment to quality and innovation.</p>
-
-        <div class="projects">
-            <!-- Project 1 -->
-            <div class="project">
-                <img src="https://via.placeholder.com/600x400" alt="Project 1">
-                <h3>Project Title 1</h3>
-                <p>Short description of the project. The design emphasizes modern aesthetics and functionality.</p>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project">
-                <img src="https://via.placeholder.com/600x400" alt="Project 2">
-                <h3>Project Title 2</h3>
-                <p>Short description of the project. We focus on clean and responsive design principles to ensure scalability.</p>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project">
-                <img src="https://via.placeholder.com/600x400" alt="Project 3">
-                <h3>Project Title 3</h3>
-                <p>Short description of the project. The integration of AI tools elevates this design to the next level of user experience.</p>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project">
-                <img src="https://via.placeholder.com/600x400" alt="Project 4">
-                <h3>Project Title 4</h3>
-                <p>Short description of the project. A sleek design with responsive features ensuring accessibility across all platforms.</p>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project">
-                <img src="https://via.placeholder.com/600x400" alt="Project 5">
-                <h3>Project Title 5</h3>
-                <p>Short description of the project. Designed with precision to meet high standards of usability and functionality.</p>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project">
-                <img src="https://via.placeholder.com/600x400" alt="Project 6">
-                <h3>Project Title 6</h3>
-                <p>Short description of the project. This design blends aesthetic beauty with robust functionality for a modern audience.</p>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Introducing Our Latest Website</h1>
+            <p>Discover the seamless user experience, cutting-edge design, and advanced functionality that we’ve integrated into this project.</p>
+            <a href="#project-details" class="cta-btn">See the Details</a>
         </div>
+    </section>
 
-        <!-- Call to Action Button -->
-        <a href="#" class="cta-btn">Get in Touch</a>
+    <!-- Project Showcase Section -->
+    <section class="showcase" id="project-details">
+        <img src="https://via.placeholder.com/1200x800" alt="Website Screenshot">
+        <div class="showcase-text">
+            <h2>Transforming User Experience</h2>
+            <p>This project exemplifies our dedication to creating modern, responsive, and user-friendly websites. Every detail has been meticulously crafted to ensure a seamless digital experience.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>Responsive Design</h3>
+            <p>Optimized for mobile, tablet, and desktop, ensuring a flawless experience on any device.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Advanced Functionality</h3>
+            <p>Leveraging the latest technologies to provide users with a fast, interactive interface.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Modern Aesthetics</h3>
+            <p>Clean, sleek, and visually striking design to engage visitors and keep them coming back.</p>
+        </div>
+        <div class="feature-card">
+            <h3>SEO Optimized</h3>
+            <p>Built with SEO best practices to help the website rank higher in search engines.</p>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta">
+        <h2>Interested in Working with Us?</h2>
+        <p>We specialize in creating beautiful, user-centric websites. Let’s talk about how we can elevate your online presence.</p>
+        <a href="mailto:contact@yourcompany.com" class="cta-btn">Contact Us</a>
     </section>
 
 </body>
