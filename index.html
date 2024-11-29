@@ -1,293 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="TechConnect - Showcasing the latest technology and modern web development practices.">
+    <meta name="keywords" content="TechConnect, Web Development, Technology, User Experience, Responsive Design">
+    <meta name="author" content="TechConnect Team">
     <title>TechConnect - Latest Project</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
     <style>
-/* Global reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Global reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fff;
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: url('Screenshot_20241129_022655_Chrome.jpg') no-repeat center center/cover;
-    color: #fff;
-    position: relative;
-}
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('Screenshot_20241129_022655_Chrome.jpg') no-repeat center center/cover;
+            color: #fff;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
 
-.hero:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
-}
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+        }
 
-.hero h1,
-.hero p {
-    z-index: 1; /* Ensure text is above the overlay */
-    margin-bottom: 20px;
-}
+        .hero h1,
+        .hero p {
+            z-index: 1; /* Ensure text is above the overlay */
+            margin-bottom: 20px;
+        }
 
-.hero h1 {
-    font-size: 6vw;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: #fff; /* White color for consistency */
-}
+        .hero h1 {
+            font-size: 6vw;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+        }
 
-.hero p {
-    font-size: 4vw;
-    max-width: 80%;
-    margin: 0 auto;
-    opacity: 0.85;
-    color: #fff; /* Text color for contrast */
-}
+        .hero p {
+            font-size: 4vw;
+            max-width: 80%;
+            margin: 0 auto;
+            opacity: 0.85;
+            color: #fff;
+        }
 
-.hero .cta-btn {
-    display: inline-block;
-    background: linear-gradient(to right, #ffffff, #000000); /* Gradient from white to black */
-    color: #fff;
-    padding: 14px 30px;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    z-index: 1;
-}
+        .hero .cta-btn {
+            display: inline-block;
+            background: linear-gradient(to right, #ffffff, #000000);
+            color: #fff;
+            padding: 14px 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            z-index: 1;
+        }
 
-.hero .cta-btn:hover {
-    background-color: #d14429;
-}
+        .hero .cta-btn:hover {
+            background-color: #d14429;
+        }
 
-/* Project Showcase Section */
-.showcase {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 60px 5%;
-    background-color: #f4f4f4;
-    transition: background-color 0.3s ease;
-}
+        /* Project Showcase Section */
+        .showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 60px 5%;
+            background-color: #f4f4f4;
+        }
 
-.showcase img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .showcase img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            object-fit: cover;
+        }
 
-.showcase img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
+        .showcase img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
 
-.showcase-text {
-    max-width: 500px;
-    margin-left: 20px;
-    text-align: left;
-}
+        .showcase-text {
+            max-width: 500px;
+            margin-left: 20px;
+            text-align: left;
+        }
 
-.showcase-text h2 {
-    font-size: 2.5vw;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 1.5px;
-    color: #333;
-}
+        .showcase-text h2 {
+            font-size: 2.5vw;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            color: #333;
+        }
 
-.showcase-text p {
-    font-size: 1.5vw;
-    color: #777;
-    line-height: 1.8;
-    margin-bottom: 30px;
-}
+        .showcase-text p {
+            font-size: 1.5vw;
+            color: #777;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
 
-/* Features Section */
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 80px 10%;
-    text-align: center;
-}
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 80px 10%;
+            text-align: center;
+        }
 
-.feature-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid #e0e0e0; /* Always visible border */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
+        .feature-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
 
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    border-color: #ff5733;
-}
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: #ff5733;
+        }
 
-.feature-card h3 {
-    font-size: 2vw;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 15px;
-}
+        .feature-card h3 {
+            font-size: 2vw;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
 
-.feature-card p {
-    font-size: 1.2vw;
-    color: #777;
-}
+        .feature-card p {
+            font-size: 1.2vw;
+            color: #777;
+        }
 
-/* Contact CTA Section */
-.contact-cta {
-    background-color: #000;
-    color: #fff;
-    padding: 60px 0;
-    text-align: center;
-}
+        /* Contact CTA Section */
+        .contact-cta {
+            background-color: #000;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
 
-.contact-cta h2 {
-    font-size: 2.5vw;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
+        .contact-cta h2 {
+            font-size: 2.5vw;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
 
-.contact-cta p {
-    font-size: 1.5vw;
-    margin-bottom: 40px;
-}
+        .contact-cta p {
+            font-size: 1.5vw;
+            margin-bottom: 40px;
+        }
 
-.contact-cta .cta-btn {
-    background: linear-gradient(to right, #ffffff, #000000); /* Gradient from white to black */
-    color: #fff;
-    padding: 14px 40px;
-    font-size: 18px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease;
-}
+        .contact-cta .cta-btn {
+            background: linear-gradient(to right, #ffffff, #000000);
+            color: #fff;
+            padding: 14px 40px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
 
-.contact-cta .cta-btn:hover {
-    background-color: #d14429;
-}
+        .contact-cta .cta-btn:hover {
+            background-color: #d14429;
+        }
 
-/* Responsive Design Adjustments for Smaller Screens */
-@media (max-width: 768px) {
-    /* Hero Section */
-    .hero h1 {
-        font-size: 8vw;
-    }
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 5%;
+            text-align: center;
+        }
 
-    .hero p {
-        font-size: 5vw;
-        max-width: 90%;
-    }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 10px;
+        }
 
-    .showcase {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 5%;
-    }
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-    .showcase img {
-        width: 80%;
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
+        /* Responsive Design Adjustments for Smaller Screens */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 8vw;
+            }
 
-    .showcase-text {
-        margin-left: 0;
-        max-width: 100%;
-    }
+            .hero p {
+                font-size: 5vw;
+                max-width: 90%;
+            }
 
-    .features {
-        padding: 40px 5%;
-    }
+            .showcase {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 5%;
+            }
 
-    .feature-card h3 {
-        font-size: 4vw;
-    }
+            .showcase img {
+                width: 80%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
 
-    .feature-card p {
-        font-size: 3vw;
-    }
+            .showcase-text {
+                margin-left: 0;
+                max-width: 100%;
+            }
 
-    .contact-cta h2 {
-        font-size: 5vw;
-    }
+            .features {
+                padding: 40px 5%;
+            }
 
-    .contact-cta p {
-        font-size: 3.5vw;
-    }
+            .feature-card h3 {
+                font-size: 4vw;
+            }
 
-    .contact-cta .cta-btn {
-        padding: 14px 30px;
-    }
-}
+            .feature-card p {
+                font-size: 3vw;
+            }
 
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 10vw;
-    }
+            .contact-cta h2 {
+                font-size: 5vw;
+            }
 
-    .hero p {
-        font-size: 6vw;
-    }
+            .contact-cta p {
+                font-size: 3.5vw;
+            }
 
-    .showcase-text h2 {
-        font-size: 5vw;
-    }
+            .contact-cta .cta-btn {
+                padding: 14px 30px;
+            }
+        }
 
-    .showcase-text p {
-        font-size: 4vw;
-    }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 10vw;
+            }
 
-    .feature-card h3 {
-        font-size: 5vw;
-    }
+            .hero p {
+                font-size: 6vw;
+            }
 
-    .feature-card p {
-        font-size: 3.5vw;
-    }
+            .showcase-text h2 {
+                font-size: 5vw;
+            }
 
-    .contact-cta h2 {
-        font-size: 6vw;
-    }
+            .showcase-text p {
+                font-size: 4vw;
+            }
 
-    .contact-cta p {
-        font-size: 4.5vw;
-    }
-}
+            .feature-card h3 {
+                font-size: 5vw;
+            }
 
+            .feature-card p {
+                font-size: 3.5vw;
+            }
+
+            .contact-cta h2 {
+                font-size: 6vw;
+            }
+
+            .contact-cta p {
+                font-size: 4.5vw;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Hero Section -->
@@ -295,7 +322,7 @@ body {
         <div>
             <h1>TechConnect - Latest Project</h1>
             <p>TechConnect is a project developed to create a user-friendly landing page that showcases the latest in technology.</p>
-            <a href="https://www.yourwebsite.com" class="cta-btn" target="_blank">View Web</a> <!-- Link to the website -->
+            <a href="https://www.yourwebsite.com" class="cta-btn" target="_blank">View Web</a>
         </div>
     </section>
 
@@ -335,5 +362,12 @@ body {
         <a href="#contact" class="cta-btn">Get Started</a>
     </section>
 
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 TechConnect. All Rights Reserved.</p>
+        <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms & Conditions</a>
+    </footer>
+
 </body>
+
 </html>
