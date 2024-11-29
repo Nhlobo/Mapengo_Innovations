@@ -28,7 +28,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url('Screenshot_20241129_022655_Chrome.jpg') no-repeat center center/cover; 
+    background: url('Screenshot_20241129_022655_Chrome.jpg') no-repeat center center/cover;
     color: #fff;
     position: relative;
     transition: background 0.3s ease;
@@ -45,7 +45,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 60px;
+    font-size: 6vw; /* Responsive font size based on viewport width */
     font-weight: 800;
     letter-spacing: 1px;
     margin-bottom: 20px;
@@ -54,8 +54,8 @@ body {
 }
 
 .hero p {
-    font-size: 20px;
-    max-width: 600px;
+    font-size: 4vw; /* Responsive font size */
+    max-width: 80%;
     margin: 0 auto;
     margin-bottom: 30px;
     opacity: 0.85;
@@ -93,14 +93,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 0;
+    flex-wrap: wrap;
+    padding: 60px 5%;
     background-color: #f4f4f4;
     transition: background-color 0.3s ease;
 }
 
 .showcase img {
-    width: 60%;
-    max-width: 900px;
+    width: 100%;
+    max-width: 600px;
     border-radius: 20px; /* Round edges */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Softer shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -113,12 +114,12 @@ body {
 
 .showcase-text {
     max-width: 500px;
-    margin-left: 40px;
+    margin-left: 20px;
     text-align: left;
 }
 
 .showcase-text h2 {
-    font-size: 36px;
+    font-size: 2.5vw; /* Responsive font size */
     font-weight: 700;
     margin-bottom: 20px;
     letter-spacing: 1.5px;
@@ -126,7 +127,7 @@ body {
 }
 
 .showcase-text p {
-    font-size: 18px;
+    font-size: 1.5vw; /* Responsive font size */
     color: #777;
     line-height: 1.8;
     margin-bottom: 30px;
@@ -157,14 +158,14 @@ body {
 }
 
 .feature-card h3 {
-    font-size: 22px;
+    font-size: 2vw; /* Responsive font size */
     font-weight: 700;
     color: #333;
     margin-bottom: 15px;
 }
 
 .feature-card p {
-    font-size: 16px;
+    font-size: 1.2vw; /* Responsive font size */
     color: #777;
 }
 
@@ -177,13 +178,13 @@ body {
 }
 
 .contact-cta h2 {
-    font-size: 36px;
+    font-size: 2.5vw; /* Responsive font size */
     font-weight: 700;
     margin-bottom: 30px;
 }
 
 .contact-cta p {
-    font-size: 18px;
+    font-size: 1.5vw; /* Responsive font size */
     margin-bottom: 40px;
 }
 
@@ -202,6 +203,96 @@ body {
 .contact-cta .cta-btn:hover {
     background-color: #d14429;
 }
+
+/* Responsive Design Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero h1 {
+        font-size: 8vw; /* Smaller font size on mobile */
+    }
+
+    .hero p {
+        font-size: 5vw; /* Smaller font size on mobile */
+        max-width: 90%; /* Ensure it doesn't overflow */
+    }
+
+    .showcase {
+        flex-direction: column; /* Stack the image and text vertically */
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .showcase img {
+        width: 80%; /* Make the image responsive */
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .showcase-text {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .features {
+        padding: 40px 5%;
+    }
+
+    .feature-card h3 {
+        font-size: 4vw; /* Adjust feature card heading size */
+    }
+
+    .feature-card p {
+        font-size: 3vw; /* Adjust feature card text size */
+    }
+
+    .contact-cta h2 {
+        font-size: 5vw; /* Adjust heading size on mobile */
+    }
+
+    .contact-cta p {
+        font-size: 3.5vw; /* Adjust text size on mobile */
+    }
+
+    .contact-cta .cta-btn {
+        padding: 14px 30px; /* Adjust padding of CTA button on mobile */
+    }
+}
+
+/* More Responsive Adjustments for Extremely Small Screens */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 10vw; /* Even smaller font size on very small screens */
+    }
+
+    .hero p {
+        font-size: 6vw; /* Adjust text size */
+    }
+
+    .showcase-text h2 {
+        font-size: 5vw; /* Adjust showcase title size */
+    }
+
+    .showcase-text p {
+        font-size: 4vw; /* Adjust showcase text size */
+    }
+
+    .feature-card h3 {
+        font-size: 5vw; /* Adjust feature card title size */
+    }
+
+    .feature-card p {
+        font-size: 3.5vw; /* Adjust feature card text size */
+    }
+
+    .contact-cta h2 {
+        font-size: 6vw; /* Adjust contact CTA title size */
+    }
+
+    .contact-cta p {
+        font-size: 4.5vw; /* Adjust contact CTA text size */
+    }
+}
+
     </style>
 </head>
 <body>
