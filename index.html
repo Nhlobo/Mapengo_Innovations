@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="TechConnect - Showcasing the latest in technology with cutting-edge design.">
-    <meta name="keywords" content="TechConnect, futuristic design, technology, web development, UX/UI">
-    <meta name="author" content="TechConnect Team">
-    <title>TechConnect - Latest Project</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Russo+One&family=Poppins:wght@600&display=swap" rel="stylesheet">
-
+    <title>Mapengo Innovations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Global Reset */
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -22,324 +15,418 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #141414;
-            color: #fff;
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #333;
             line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
+            margin: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        h1, h2, h3, p {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+            transition: top 0.3s ease;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1a73e8;
+            transform: translateY(-5px);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        /* Hamburger Menu Slide In */
+        .menu-slide {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            transition: right 0.3s ease-in-out;
+            padding-top: 80px;
+            z-index: 2000;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-slide.active {
+            right: 0;
+        }
+
+        .menu-slide .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 25px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .menu-slide ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-slide ul li {
+            padding: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .menu-slide ul li a {
+            color: white;
+            text-decoration: none;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            background: linear-gradient(145deg, #1f1c2c, #2c3e50); /* Bold gradient */
-            color: #fff;
+            padding: 100px 50px;
+            height: 100vh;
+            background: linear-gradient(to right, #ffffff, #f8f9fa);
             position: relative;
+            text-align: center;
             overflow: hidden;
-            z-index: 0;
-            box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.1);
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300%;
-            height: 300%;
-            background: url('https://images.unsplash.com/photo-1490197154154-9f3e3757db59') no-repeat center center;
             background-size: cover;
-            filter: blur(10px);
-            z-index: -1;
+            background-position: center;
+            animation: fadeInBackground 3s ease-out forwards;
         }
 
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 7vw;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: #fff;
-            text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.4);
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeIn 2s ease forwards;
         }
 
-        .hero p {
-            font-size: 2vw;
-            margin: 20px 0;
-            color: rgba(255, 255, 255, 0.75);
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        .hero-text {
+            color: black;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: slideUp 1s ease forwards;
+            margin-bottom: 10px;
+        }
+
+        .hero-text span {
+            color: #1a73e8;
+        }
+
+        .hero-subtext {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #555;
+            margin-top: 20px;
+            animation: fadeInUp 2s ease 1s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 2s ease 1.5s forwards;
         }
 
         .cta-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #00bcd4, #ff4081);
+            padding: 15px 30px;
+            background-color: #1a73e8;
             color: #fff;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            font-family: 'Russo One', sans-serif;
-            text-transform: uppercase;
+            font-weight: 600;
+            border: none;
             border-radius: 30px;
-            border: 2px solid transparent;
-            letter-spacing: 2px;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .cta-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-            background: linear-gradient(45deg, #ff4081, #00bcd4);
+            background-color: #005bb5;
+            transform: translateY(-5px);
         }
 
-        /* Project Showcase Section */
-        .showcase {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 100px 10%;
-            position: relative;
-            z-index: 0;
-            background: radial-gradient(circle, rgba(31, 28, 44, 0.9), rgba(44, 62, 80, 0.7));
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
-        .showcase img {
-            width: 100%;
-            max-width: 700px;
-            border-radius: 15px;
-            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
-        .showcase img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .showcase-text {
-            max-width: 600px;
-            margin-left: 50px;
-            color: #fff;
+        @keyframes fadeInBackground {
+            from {
+                background-color: #ffffff;
+            }
+            to {
+                background-color: #f8f9fa;
+            }
         }
 
-        .showcase-text h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #fff;
-            text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.6);
-            margin-bottom: 20px;
-        }
-
-        .showcase-text p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 40px;
-        }
-
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-            padding: 60px 10%;
-            text-align: center;
-            background: #222;
-        }
-
-        .feature-card {
-            background: linear-gradient(145deg, #2c3e50, #34495e);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #1f1f1f;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            border: 2px solid #00bcd4;
-        }
-
-        .feature-card h3 {
-            font-size: 2.5rem;
-            font-family: 'Orbitron', sans-serif;
-            color: #00bcd4;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .feature-card p {
-            font-size: 1.2rem;
-            color: #fff;
-        }
-
-        /* Contact CTA Section */
-        .contact-cta {
-            background-color: #141414;
-            color: #fff;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .contact-cta h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .contact-cta p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .contact-cta .cta-btn {
-            background: #00bcd4;
-            color: #fff;
-            padding: 15px 50px;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            border-radius: 50px;
-            border: 2px solid transparent;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .contact-cta .cta-btn:hover {
-            background-color: #ff4081;
-            transform: scale(1.1);
-        }
-
-        /* Footer Section */
-        footer {
-            background-color: #111;
-            color: #fff;
-            padding: 40px 10%;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        footer a {
-            color: #00bcd4;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #ff4081;
-        }
-
-        /* Responsive Design */
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 9vw;
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+                align-items: center;
+                background-color: transparent;
             }
 
-            .hero p {
-                font-size: 4vw;
-            }
-
-            .showcase {
-                padding: 60px 5%;
+            .nav-links {
+                display: none;
                 flex-direction: column;
                 text-align: center;
+                gap: 15px;
+                width: 100%;
+                margin-top: 20px;
             }
 
-            .showcase-text {
-                margin-left: 0;
-                max-width: 100%;
+            .nav-links a {
+                padding: 10px 0;
+                font-size: 18px;
+                width: 100%;
             }
 
-            .features {
-                padding: 40px 5%;
+            .hamburger {
+                display: flex;
             }
 
-            .feature-card h3 {
-                font-size: 4vw;
+            .hero {
+                padding: 80px 30px;
+                height: auto;
             }
 
-            .feature-card p {
-                font-size: 3vw;
+            .hero-text {
+                font-size: 2.5rem;
             }
 
-            .contact-cta h2 {
-                font-size: 5vw;
+            .hero-subtext {
+                font-size: 1.125rem;
             }
 
-            .contact-cta p {
-                font-size: 3vw;
+            .hero-buttons {
+                flex-direction: column;
+            }
+.close-btn {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff; 
+}
+
+            .hero-image {
+                display: block;
+                position: relative;
+                margin-top: 30px;
+                right: 0;
+                bottom: 0;
+            }
+
+            .cta-btn {
+                padding: 12px 25px;
+                font-size: 14px;
             }
         }
 
+        @media (max-width: 480px) {
+            .hero-text {
+                font-size: 2rem;
+            }
+
+            .cta-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
-
 <body>
+    <!-- Header Section -->
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <img src="john-doe.jpg" alt="Mapengo Innovations">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
+                <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
+                <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
+                <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
+                <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+                <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Sliding Menu -->
+    <div id="menuSlide" class="menu-slide" onclick="closeMenu(event)">
+        <div class="close-btn" onclick="closeMenu()">&times;</div>
+        <ul>
+            <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
+            <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
+            <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
+            <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
+            <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+            <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div>
-            <h1>TechConnect - Latest Project</h1>
-            <p>Showcasing the future of technology with immersive web design and cutting-edge user experiences.</p>
-            <a href="https://www.yourwebsite.com" class="cta-btn" target="_blank">Explore the Web</a>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-text">Welcome to <span>Mapengo Innovations</span></h1>
+            <p class="hero-subtext">Transforming ideas into digital reality with cutting-edge solutions.</p>
+            <div class="hero-buttons">
+                <button class="cta-btn">Our Work</button>
+                <button class="cta-btn">Get Started</button>
+            </div>
         </div>
     </section>
 
-    <!-- Project Showcase Section -->
-    <section class="showcase" id="project-details">
-        <img src="68747470733a2f2f692e696d6775722e636f6d2f52455933546f4c2e706e67.png" alt="TechConnect Website Screenshot">
-        <div class="showcase-text">
-            <h2>Redefining Web Experiences</h2>
-            <p>Our latest project pushes the boundaries of modern design with dynamic features and an emphasis on user interaction.</p>
-        </div>
-    </section>
+    <script>
+    // Toggle the menu when hamburger is clicked
+    function toggleMenu() {
+        const menu = document.getElementById('menuSlide');
+        menu.classList.toggle('active');
+        
+        // Prevent scrolling when the menu is open
+        if (menu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="feature-card">
-            <h3>Real-time Sync</h3>
-            <p>Seamless real-time updates and notifications powered by WebSocket.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Rewarding Engagement</h3>
-            <p>Reward system to encourage user interaction and foster community growth.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Advanced Search</h3>
-            <p>Smart search algorithms tailored to user preferences and activities.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Unmatched Security</h3>
-            <p>State-of-the-art encryption and security protocols to ensure complete user privacy.</p>
-        </div>
-    </section>
+    // Close the menu and navigate to the specified section
+    function closeMenuAndNavigate(target) {
+        const menu = document.getElementById('menuSlide');
+        menu.classList.remove('active');
+        
+        // Enable scrolling after the menu closes
+        document.body.style.overflow = 'auto';
+        
+        // Use the target link to navigate
+        window.location.href = target;
+    }
 
-    <!-- Contact CTA Section -->
-    <section class="contact-cta" id="contact">
-        <h2>Let’s Build Something Amazing</h2>
-        <p>We specialize in creating cutting-edge websites. Reach out to us and let’s start something innovative!</p>
-        <a href="#contact" class="cta-btn">Get In Touch</a>
-    </section>
+    // Close the menu when clicking outside the menu or on the close button
+    function closeMenu(event) {
+        const menu = document.getElementById('menuSlide');
+        if (event.target === menu || event.target === document.getElementById('closeBtn')) {
+            menu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+    }
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 TechConnect. All Rights Reserved.</p>
-        <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms & Conditions</a>
-    </footer>
+    // Close the menu on Escape key press
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const menu = document.getElementById('menuSlide');
+            menu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+    });
 
-</body>
+    // Close the menu when clicking outside (except the hamburger menu itself)
+    document.addEventListener('click', function(event) {
+        const menu = document.getElementById('menuSlide');
+        const hamburger = document.getElementById('hamburger');
+        
+        // Close menu if clicked outside
+        if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+            menu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+    });
 
-</html>
+    // Prevent closing when clicking inside the menu or on the hamburger itself
+    document.getElementById('menuSlide').addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+
+    // Close the menu when clicking the close (X) button
+    document.getElementById('closeBtn').addEventListener('click', function() {
+        document.getElementById('menuSlide').classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    });
+    </script>
