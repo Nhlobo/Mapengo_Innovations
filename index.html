@@ -287,23 +287,6 @@
             }
         });
 
-        // Close the menu when swiping outside the menu (for mobile)
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        document.addEventListener('touchstart', function (event) {
-            touchStartX = event.changedTouches[0].screenX;
-        });
-
-        document.addEventListener('touchend', function (event) {
-            touchEndX = event.changedTouches[0].screenX;
-            if (touchEndX < touchStartX) {
-                // Swipe left (close menu)
-                mainMenu.classList.remove('active');
-                toggleButton.innerHTML = "&#9776;";
-            }
-        });
-
         // Helper function for navigation that closes the menu on click
         function closeMenuAndNavigate(target) {
             mainMenu.classList.remove('active');
@@ -315,7 +298,8 @@
     <!-- Hero Section with Background Video -->
     <section class="hero" id="home">
         <video autoplay loop muted>
-            <source src="10130349-hd_1920_1080_30fps.mp4" type="video/mp4"> <!-- Replace with your video URL -->
+            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
         <div class="hero-content">
             <p class="hero-subtext">Transforming ideas into digital reality with cutting-edge solutions.</p>
@@ -325,5 +309,6 @@
             </div>
         </div>
     </section>
+
 </body>
 </html>
