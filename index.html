@@ -118,13 +118,119 @@
                 display: none;
             }
         }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .hero-subtext {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #ddd;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cta-btn {
+            padding: 15px 30px;
+            background-color: #1a73e8;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-btn:hover {
+            background-color: #005bb5;
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .toggle-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                gap: 15px;
+            }
+
+            .hero-text {
+                font-size: 2rem;
+            }
+
+            .cta-btn {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header class="navbar" id="navbar">
         <div class="logo">
-            <img src="your-image-url.jpg" alt="Mapengo Innovations">
+            <img src="alice-brown.jpg" alt="Mapengo Innovations">
         </div>
         <nav>
             <ul class="nav-links">
@@ -181,45 +287,13 @@
             }
         });
 
-        // Close the menu when swiping outside the menu (for mobile)
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        document.addEventListener('touchstart', function (event) {
-            touchStartX = event.changedTouches[0].screenX;
-        });
-
-        document.addEventListener('touchend', function (event) {
-            touchEndX = event.changedTouches[0].screenX;
-            if (touchEndX < touchStartX) {
-                // Swipe left (close menu)
-                mainMenu.classList.remove('active');
-                toggleButton.innerHTML = "&#9776;";
-            }
-        });
-
         // Helper function for navigation that closes the menu on click
         function closeMenuAndNavigate(target) {
             mainMenu.classList.remove('active');
-            toggleButton.innerHTML = "&#9776;";
+            toggleButton.innerHTML = "&#9776;"; 
             document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 
-     <!-- Hero Section -->
-    <section class="hero">
-        <video autoplay muted loop>
-            <source src="istockphoto-1257975523-640_adpp_is.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div>
-            <h1>Leading Eco-Friendly Pest Control Solutions</h1>
-            <p>Guaranteed results, professional service.</p>
-            <div class="cta-buttons">
-                <a href="contact.html">Quote</a>
-                <a href="services.html">Services</a>
-            </div>
-        </div>
-    </section>
-</body>
+  </body>
 </html>
