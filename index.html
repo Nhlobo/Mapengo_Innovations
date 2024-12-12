@@ -1,13 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footer Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapengo Innovations</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        h1, h2, h3, p {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+            transition: top 0.3s ease;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1a73e8;
+            transform: translateY(-5px);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 50px;
+            height: 100vh;
+            background: linear-gradient(to right, #ffffff, #f8f9fa);
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            transition: margin-top 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            animation: fadeInBackground 3s ease-out forwards;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        .hero-text {
+            color: #333;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: slideUp 1s ease forwards;
+            margin-bottom: 10px;
+        }
+
+        .hero-text span {
+            color: #1a73e8;
+        }
+
+        .hero-subtext {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #555;
+            margin-top: 20px;
+            animation: fadeInUp 2s ease 1s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 2s ease 1.5s forwards;
+        }
+
+        .cta-btn {
+            padding: 15px 30px;
+            background-color: #1a73e8;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-btn:hover {
+            background-color: #005bb5;
+            transform: translateY(-5px);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            display: block;
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            animation: fadeInUp 2s ease-out;
+            opacity: 0;
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Social Icons */
+        .social-icons a {
+            color: #333;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #1a73e8;
+            transform: scale(1.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInBackground {
+            from {
+                background-color: #ffffff;
+            }
+            to {
+                background-color: #f8f9fa;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+                align-items: center;
+                background-color: transparent;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .nav-links a {
+                padding: 10px 0;
+                font-size: 18px;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 80px 30px;
+                height: auto;
+            }
+
+            .hero-text {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtext {
+                font-size: 1.125rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-image {
+                display: block;
+                position: relative;
+                margin-top: 30px;
+                right: 0;
+                bottom: 0;
+            }
+
+            .cta-btn {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text {
+                font-size: 2rem;
+            }
+
+            .cta-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
-  
+    <!-- Header Section -->
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <img src="john-doe.jpg" alt="Mapengo Innovations">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Hamburger Menu -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                Mapengo Innovations<br><span>Web & App Solutions</span>
+            </div>
+            <p class="hero-subtext">Bringing Your Vision to Life with Clean, Simple, and Effective Technology Solutions.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="hero-buttons">
+                <button class="cta-btn" onclick="location.href='#contact'">Get In Touch</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="john-doe.jpg" alt="Technology Graphic">
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Hide navbar when scrolling down, show when scrolling up
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", function() {
+            const navbar = document.getElementById("navbar");
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                navbar.style.top = "-80px";  // Hide navbar when scrolling down
+            } else {
+                navbar.style.top = "0";  // Show navbar when scrolling up
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+    </script>
+  <script>
+    // Toggle the mobile menu visibility
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Hide navbar when scrolling down, show when scrolling up
+    let lastScrollTop = 0;
+    window.addEventListener("scroll", function() {
+        const navbar = document.getElementById("navbar");
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Hide navbar when scrolling down
+        if (currentScroll > lastScrollTop) {
+            navbar.style.top = "-80px";  // Hide navbar when scrolling down
+        } else {
+            navbar.style.top = "0";  // Show navbar when scrolling up
+        }
+
+        // Close the mobile menu if it's open while scrolling
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks.style.display === 'flex') {
+            navLinks.style.display = 'none';
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+</script>
+
+    
+<section id="amazing-apps">
+  <h2>Our Apps</h2>
+  <p>Explore the power of our apps and experience the best of technology in the palm of your hand. Browse our portfolio and see the future of mobile applications!</p>
+
+  <!-- Carousel for showcasing apps -->
+  <div class="carousel-container">
+    <!-- Weather App -->
+    <div class="smartphone active">
+      <div class="content">
+        <iframe src="https://weatherr-8z7v.onrender.com" title="Weather App" id="weatherApp"></iframe>
+      </div>
+    </div>
+
+    <!-- Quran Knowledge Quiz -->
+    <div class="smartphone">
+      <div class="content">
+        <iframe src="https://nhlobo.github.io/quran-knowledge-quiz/" title="Quran Knowledge Quiz" id="quranQuiz"></iframe>
+      </div>
+    </div>
+
+    <!-- Calculator -->
+    <div class="smartphone">
+      <div class="content">
+        <iframe src="https://nhlobo.github.io/calculator/" title="Calculator" id="calculator"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation for the carousel -->
+<div class="arrow-button" onclick="nextApp()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+    </svg>
+  </div>
+
+ 
+  <!-- App Store Badges -->
+  <div class="store-buttons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store">
+    <img src="huawei.png" alt="Huawei AppGallery">
+  </div>
+
+  <!-- JavaScript for carousel functionality -->
+  <script>
+    const phones = document.querySelectorAll('.smartphone');
+    const iframes = {
+      0: document.getElementById('weatherApp'),
+      1: document.getElementById('quranQuiz'),
+      2: document.getElementById('calculator'),
+    };
+    let currentIndex = 0;
+
+    function showApp(index) {
+      phones.forEach((phone, i) => {
+        phone.classList.toggle('active', i === index);
+        if (i === index) {
+          refreshIframe(i);
+        }
+      });
+    }
+
+    function refreshIframe(index) {
+      const iframe = iframes[index];
+      const currentSrc = iframe.src;
+      iframe.src = ''; // Temporarily clear the iframe content
+      iframe.src = currentSrc; // Reassign the original source to reload the iframe
+    }
+
+    function nextApp() {
+      currentIndex = (currentIndex + 1) % phones.length;
+      showApp(currentIndex);
+    }
+  </script>
+  </section>
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials" class="container">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="testimonials-container">
+        <div class="card">
+            <div class="rating">
+                <!-- 5/5 rating (all stars gold) -->
+                <label for="star1-1">&#9733;</label>
+                <label for="star2-1">&#9733;</label>
+                <label for="star3-1">&#9733;</label>
+                <label for="star4-1">&#9733;</label>
+                <label for="star5-1">&#9733;</label>
+            </div>
+            <img src="john-doe.jpg" alt="John Doe" class="testimonial-img">
+            <p class="title">"Mapengo Innovations delivered a top-notch app for our business. Their professionalism and attention to detail were exceptional!"</p>
+            <h4>- Tinyiko, CEO of Mzansi Taste Kitchen</h4>
+        </div>
+
+        <div class="card">
+            <div class="rating">
+                <!-- 4/5 rating (4 stars gold) -->
+                <label for="star1-2">&#9733;</label>
+                <label for="star2-2">&#9733;</label>
+                <label for="star3-2">&#9733;</label>
+                <label for="star4-2">&#9733;</label>
+                <label for="star5-2">&#9734;</label> <!-- Empty star -->
+            </div>
+            <img src="jane-smith.jpg" alt="Jane Smith" class="testimonial-img">
+            <p class="title">"The website they developed for us is exactly what we needed. Affordable and high-quality service!"</p>
+            <h4>- Mvelo, Owner of Mvelo Livestock Co.</h4>
+        </div>
+
+        <div class="card">
+            <div class="rating">
+                <!-- 3/5 rating (3 stars gold) -->
+                <label for="star1-3">&#9733;</label>
+                <label for="star2-3">&#9733;</label>
+                <label for="star3-3">&#9733;</label>
+                <label for="star4-3">&#9734;</label> <!-- Empty star -->
+                <label for="star5-3">&#9734;</label> <!-- Empty star -->
+            </div>
+            <img src="alice-brown.jpg" alt="Alice Brown" class="testimonial-img">
+            <p class="title">"Excellent customer service and a product that exceeds expectations! Highly recommended!"</p>
+            <h4>- Alice Brown, Founder of InnovateTech</h4>
+        </div>
+
+        <div class="card">
+            <div class="rating">
+                <!-- 2/5 rating (2 stars gold) -->
+                <label for="star1-4">&#9733;</label>
+                <label for="star2-4">&#9733;</label>
+                <label for="star3-4">&#9734;</label> <!-- Empty star -->
+                <label for="star4-4">&#9734;</label> <!-- Empty star -->
+                <label for="star5-4">&#9734;</label> <!-- Empty star -->
+            </div>
+            <img src="michael-johnson.jpg" alt="Michael Johnson" class="testimonial-img">
+            <p class="title">"Fast, reliable, and exceptional quality work. We couldn't be happier with the result!"</p>
+            <h4>- Michael Johnson, Director of WebWorks</h4>
+        </div>
+    </div>
+</section>
+<!-- ================= FAQ Section ================= -->
+<section id="faq" class="faq-section">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <h3>What services do you offer?</h3>
+      <p>We offer web development, mobile app development, maintenance & support, and consulting services to help your business thrive.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How much do your services cost?</h3>
+      <p>Our pricing is competitive and tailored to meet the needs of businesses in South Africa. Please visit our <a href="pricing.html">Pricing Page</a> for more details.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does a project take?</h3>
+      <p>Project timelines vary based on the complexity and requirements. We provide estimated timelines during the consultation phase.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you offer support after the project is completed?</h3>
+      <p>Yes, we offer maintenance and support packages to ensure your website or app continues to perform optimally.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ Toggle Logic
+  document.querySelectorAll('.faq-item').forEach((faq) => {
+    faq.addEventListener('click', () => {
+      // Collapse other open items
+      document.querySelectorAll('.faq-item.active').forEach((activeFaq) => {
+        if (activeFaq !== faq) {
+          activeFaq.classList.remove('active');
+        }
+      });
+
+      // Toggle current item
+      faq.classList.toggle('active');
+    });
+  });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const whatsAppIcon = document.getElementById("whatsAppIcon");
+
+        // Function to check if user has scrolled near the footer
+        function checkTriggerPoint() {
+            const scrollPosition = window.scrollY + window.innerHeight; // Bottom of the viewport
+            const triggerPoint = document.body.offsetHeight - 300; // 300px above the bottom
+            return scrollPosition >= triggerPoint;
+        }
+
+        // Event listener for scrolling
+        window.addEventListener("scroll", () => {
+            if (checkTriggerPoint()) {
+                whatsAppIcon.classList.remove("hidden"); // Show the WhatsApp icon
+            } else {
+                whatsAppIcon.classList.add("hidden"); // Hide the WhatsApp icon
+            }
+        });
+    });
+</script>
 <!--================= CONTACT ================ -->
 <section class="contact" id="contact">
     <div class="contact-container">
@@ -130,6 +714,35 @@
             }, 5000);
         }
     </script>
+   <!-- WhatsApp Icon Section -->
+    <section id="whatsapp-icon-section">
+        <a href="https://wa.me/your_number" id="whatsAppIcon" class="whatsapp-icon" target="_blank">
+            <img src="986960_whatsapp_icon.png" alt="WhatsApp Icon">
+        </a>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const whatsAppIcon = document.getElementById("whatsAppIcon");
+
+    // Function to check if user has scrolled near the footer
+    function checkTriggerPoint() {
+        const scrollPosition = window.scrollY + window.innerHeight; // Bottom of the viewport
+        const triggerPoint = document.body.offsetHeight - 300; // 300px above the bottom
+        return scrollPosition >= triggerPoint;
+    }
+
+    // Event listener for scrolling
+    window.addEventListener("scroll", () => {
+        if (checkTriggerPoint()) {
+            whatsAppIcon.style.display = "block"; // Show the WhatsApp icon
+        } else {
+            whatsAppIcon.style.display = "none"; // Hide the WhatsApp icon
+        }
+    });
+});
+ </script>
   
   <!-- Footer Section -->
   <footer>
@@ -178,13 +791,5 @@
     
     <p>© 2024 Mapengo Innovations. All rights reserved.</p>
   </footer>
-
-  <script>
-    function redirectTo(url) {
-      setTimeout(() => {
-        window.location.href = url;
-      }, 300);  // Delay of 0.3 seconds
-    }
-  </script>
 </body>
-  </html>
+      </html>
