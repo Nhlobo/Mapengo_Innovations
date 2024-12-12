@@ -2,207 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Footer Test</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <section id="amazing-apps">
-  <h2>Our Apps</h2>
-  <p>Explore the power of our apps and experience the best of technology in the palm of your hand. Browse our portfolio and see the future of mobile applications!</p>
-
-  <!-- Carousel for showcasing apps -->
-  <div class="carousel-container">
-    <!-- Weather App -->
-    <div class="smartphone active">
-      <div class="content">
-        <iframe src="https://weatherr-8z7v.onrender.com" title="Weather App" id="weatherApp"></iframe>
-      </div>
-    </div>
-
-    <!-- Quran Knowledge Quiz -->
-    <div class="smartphone">
-      <div class="content">
-        <iframe src="https://nhlobo.github.io/quran-knowledge-quiz/" title="Quran Knowledge Quiz" id="quranQuiz"></iframe>
-      </div>
-    </div>
-
-    <!-- Calculator -->
-    <div class="smartphone">
-      <div class="content">
-        <iframe src="https://nhlobo.github.io/calculator/" title="Calculator" id="calculator"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navigation for the carousel -->
-<div class="arrow-button" onclick="nextApp()">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-    </svg>
-  </div>
-
- 
-  <!-- App Store Badges -->
-  <div class="store-buttons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
-    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store">
-    <img src="huawei.png" alt="Huawei AppGallery">
-  </div>
-
-  <!-- JavaScript for carousel functionality -->
-  <script>
-    const phones = document.querySelectorAll('.smartphone');
-    const iframes = {
-      0: document.getElementById('weatherApp'),
-      1: document.getElementById('quranQuiz'),
-      2: document.getElementById('calculator'),
-    };
-    let currentIndex = 0;
-
-    function showApp(index) {
-      phones.forEach((phone, i) => {
-        phone.classList.toggle('active', i === index);
-        if (i === index) {
-          refreshIframe(i);
-        }
-      });
-    }
-
-    function refreshIframe(index) {
-      const iframe = iframes[index];
-      const currentSrc = iframe.src;
-      iframe.src = ''; // Temporarily clear the iframe content
-      iframe.src = currentSrc; // Reassign the original source to reload the iframe
-    }
-
-    function nextApp() {
-      currentIndex = (currentIndex + 1) % phones.length;
-      showApp(currentIndex);
-    }
-  </script>
-  </section>
-<!-- ================= TESTIMONIALS ================= -->
-<section id="testimonials" class="container">
-    <h2 class="section-title">What Our Clients Say</h2>
-    <div class="testimonials-container">
-        <div class="card">
-            <div class="rating">
-                <!-- 5/5 rating (all stars gold) -->
-                <label for="star1-1">&#9733;</label>
-                <label for="star2-1">&#9733;</label>
-                <label for="star3-1">&#9733;</label>
-                <label for="star4-1">&#9733;</label>
-                <label for="star5-1">&#9733;</label>
-            </div>
-            <img src="john-doe.jpg" alt="John Doe" class="testimonial-img">
-            <p class="title">"Mapengo Innovations delivered a top-notch app for our business. Their professionalism and attention to detail were exceptional!"</p>
-            <h4>- Tinyiko, CEO of Mzansi Taste Kitchen</h4>
-        </div>
-
-        <div class="card">
-            <div class="rating">
-                <!-- 4/5 rating (4 stars gold) -->
-                <label for="star1-2">&#9733;</label>
-                <label for="star2-2">&#9733;</label>
-                <label for="star3-2">&#9733;</label>
-                <label for="star4-2">&#9733;</label>
-                <label for="star5-2">&#9734;</label> <!-- Empty star -->
-            </div>
-            <img src="jane-smith.jpg" alt="Jane Smith" class="testimonial-img">
-            <p class="title">"The website they developed for us is exactly what we needed. Affordable and high-quality service!"</p>
-            <h4>- Mvelo, Owner of Mvelo Livestock Co.</h4>
-        </div>
-
-        <div class="card">
-            <div class="rating">
-                <!-- 3/5 rating (3 stars gold) -->
-                <label for="star1-3">&#9733;</label>
-                <label for="star2-3">&#9733;</label>
-                <label for="star3-3">&#9733;</label>
-                <label for="star4-3">&#9734;</label> <!-- Empty star -->
-                <label for="star5-3">&#9734;</label> <!-- Empty star -->
-            </div>
-            <img src="alice-brown.jpg" alt="Alice Brown" class="testimonial-img">
-            <p class="title">"Excellent customer service and a product that exceeds expectations! Highly recommended!"</p>
-            <h4>- Alice Brown, Founder of InnovateTech</h4>
-        </div>
-
-        <div class="card">
-            <div class="rating">
-                <!-- 2/5 rating (2 stars gold) -->
-                <label for="star1-4">&#9733;</label>
-                <label for="star2-4">&#9733;</label>
-                <label for="star3-4">&#9734;</label> <!-- Empty star -->
-                <label for="star4-4">&#9734;</label> <!-- Empty star -->
-                <label for="star5-4">&#9734;</label> <!-- Empty star -->
-            </div>
-            <img src="michael-johnson.jpg" alt="Michael Johnson" class="testimonial-img">
-            <p class="title">"Fast, reliable, and exceptional quality work. We couldn't be happier with the result!"</p>
-            <h4>- Michael Johnson, Director of WebWorks</h4>
-        </div>
-    </div>
-</section>
-<!-- ================= FAQ Section ================= -->
-<section id="faq" class="faq-section">
-  <h2 class="section-title">Frequently Asked Questions</h2>
-  <div class="faq-container">
-    <div class="faq-item">
-      <h3>What services do you offer?</h3>
-      <p>We offer web development, mobile app development, maintenance & support, and consulting services to help your business thrive.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How much do your services cost?</h3>
-      <p>Our pricing is competitive and tailored to meet the needs of businesses in South Africa. Please visit our <a href="pricing.html">Pricing Page</a> for more details.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How long does a project take?</h3>
-      <p>Project timelines vary based on the complexity and requirements. We provide estimated timelines during the consultation phase.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Do you offer support after the project is completed?</h3>
-      <p>Yes, we offer maintenance and support packages to ensure your website or app continues to perform optimally.</p>
-    </div>
-  </div>
-</section>
-
-<script>
-  // FAQ Toggle Logic
-  document.querySelectorAll('.faq-item').forEach((faq) => {
-    faq.addEventListener('click', () => {
-      // Collapse other open items
-      document.querySelectorAll('.faq-item.active').forEach((activeFaq) => {
-        if (activeFaq !== faq) {
-          activeFaq.classList.remove('active');
-        }
-      });
-
-      // Toggle current item
-      faq.classList.toggle('active');
-    });
-  });
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const whatsAppIcon = document.getElementById("whatsAppIcon");
-
-        // Function to check if user has scrolled near the footer
-        function checkTriggerPoint() {
-            const scrollPosition = window.scrollY + window.innerHeight; // Bottom of the viewport
-            const triggerPoint = document.body.offsetHeight - 300; // 300px above the bottom
-            return scrollPosition >= triggerPoint;
-        }
-
-        // Event listener for scrolling
-        window.addEventListener("scroll", () => {
-            if (checkTriggerPoint()) {
-                whatsAppIcon.classList.remove("hidden"); // Show the WhatsApp icon
-            } else {
-                whatsAppIcon.classList.add("hidden"); // Hide the WhatsApp icon
-            }
-        });
-    });
-</script>
+  
 <!--================= CONTACT ================ -->
 <section class="contact" id="contact">
     <div class="contact-container">
@@ -325,35 +130,6 @@
             }, 5000);
         }
     </script>
-   <!-- WhatsApp Icon Section -->
-    <section id="whatsapp-icon-section">
-        <a href="https://wa.me/your_number" id="whatsAppIcon" class="whatsapp-icon" target="_blank">
-            <img src="986960_whatsapp_icon.png" alt="WhatsApp Icon">
-        </a>
-    </section>
-
-    <!-- JavaScript -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-    const whatsAppIcon = document.getElementById("whatsAppIcon");
-
-    // Function to check if user has scrolled near the footer
-    function checkTriggerPoint() {
-        const scrollPosition = window.scrollY + window.innerHeight; // Bottom of the viewport
-        const triggerPoint = document.body.offsetHeight - 300; // 300px above the bottom
-        return scrollPosition >= triggerPoint;
-    }
-
-    // Event listener for scrolling
-    window.addEventListener("scroll", () => {
-        if (checkTriggerPoint()) {
-            whatsAppIcon.style.display = "block"; // Show the WhatsApp icon
-        } else {
-            whatsAppIcon.style.display = "none"; // Hide the WhatsApp icon
-        }
-    });
-});
- </script>
   
   <!-- Footer Section -->
   <footer>
@@ -402,5 +178,13 @@
     
     <p>© 2024 Mapengo Innovations. All rights reserved.</p>
   </footer>
+
+  <script>
+    function redirectTo(url) {
+      setTimeout(() => {
+        window.location.href = url;
+      }, 300);  // Delay of 0.3 seconds
+    }
+  </script>
 </body>
-    </html>
+  </html>
