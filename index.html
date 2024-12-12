@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -24,11 +23,6 @@
             transition: background-color 0.3s ease;
         }
 
-        h1, h2, h3, p {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Navbar Styles */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -66,14 +60,12 @@
             transform: translateY(-5px);
         }
 
-        /* Hamburger Menu */
         .toggle-button {
             font-size: 30px;
             cursor: pointer;
             display: none;
         }
 
-        /* Sliding Menu */
         .main-menu {
             position: fixed;
             top: 0;
@@ -117,99 +109,6 @@
             text-decoration: none;
         }
 
-        /* Hero Section */
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .hero video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            text-align: center;
-            color: white;
-            z-index: 1;
-        }
-
-        .hero-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background-image: url('your-image-url.jpg'); /* Replace with the correct image URL */
-            background-size: cover;
-            background-position: center;
-            border: 5px solid white;
-        }
-
-        .hero-subtext {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: #ddd;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .cta-btn {
-            padding: 15px 30px;
-            background-color: #1a73e8;
-            color: #fff;
-            font-weight: 600;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .cta-btn:hover {
-            background-color: #005bb5;
-            transform: scale(1.05);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Styles */
         @media (max-width: 768px) {
             .toggle-button {
                 display: block;
@@ -218,27 +117,14 @@
             .nav-links {
                 display: none;
             }
-
-            .hero-content {
-                gap: 15px;
-            }
-
-            .hero-text {
-                font-size: 2rem;
-            }
-
-            .cta-btn {
-                padding: 12px 25px;
-                font-size: 14px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
+
     <header class="navbar" id="navbar">
         <div class="logo">
-            <img src="john-doe.jpg" alt="Mapengo Innovations">
+            <img src="your-image-url.jpg" alt="Mapengo Innovations">
         </div>
         <nav>
             <ul class="nav-links">
@@ -250,12 +136,12 @@
                 <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
             </ul>
         </nav>
-        <!-- Hamburger Menu Button -->
         <div class="toggle-button" id="toggleButton">&#9776;</div>
     </header>
 
     <!-- Sliding Menu -->
     <div id="mainMenu" class="main-menu">
+        <span class="close-btn" id="closeMenuButton">&#215;</span>
         <ul>
             <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
             <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
@@ -266,36 +152,59 @@
         </ul>
     </div>
 
-    <!-- Hero Section with Background Video -->
-    <section class="hero" id="home">
-        <video autoplay loop muted>
-            <source src="your-video-url.mp4" type="video/mp4"> <!-- Replace with your video URL -->
-        </video>
-        <div class="hero-content">
-            <div class="hero-image"></div> <!-- Centered Image -->
-            <p class="hero-subtext">Transforming ideas into digital reality with cutting-edge solutions.</p>
-            <div class="hero-buttons">
-                <button class="cta-btn">Our Work</button>
-                <button class="cta-btn">Get Started</button>
-            </div>
-        </div>
-    </section>
-
     <script>
-        const toggleButton = document.querySelector(".toggle-button");
-        const mainMenu = document.querySelector(".main-menu");
+        const toggleButton = document.querySelector("#toggleButton");
+        const mainMenu = document.querySelector("#mainMenu");
+        const closeMenuButton = document.querySelector("#closeMenuButton");
 
+        // Open or close the menu when the hamburger button is clicked
         toggleButton.addEventListener('click', function () {
-            // Toggles the active class
             mainMenu.classList.toggle('active');
-            if (mainMenu.classList.contains("active")) {              
-                // Adds the close (x) icon 
-                toggleButton.innerHTML = "&#215;";
-            } else {          
-                // Adds the hamburger icon 
+            if (mainMenu.classList.contains("active")) {
+                toggleButton.innerHTML = "&#215;"; // Close icon
+            } else {
+                toggleButton.innerHTML = "&#9776;"; // Hamburger icon
+            }
+        });
+
+        // Close the menu when the close button (×) is clicked
+        closeMenuButton.addEventListener('click', function () {
+            mainMenu.classList.remove('active');
+            toggleButton.innerHTML = "&#9776;"; // Change back to hamburger icon
+        });
+
+        // Close the menu when clicking outside of the menu (on the body)
+        document.addEventListener('click', function(event) {
+            if (!mainMenu.contains(event.target) && !toggleButton.contains(event.target)) {
+                mainMenu.classList.remove('active');
+                toggleButton.innerHTML = "&#9776;"; // Change back to hamburger icon
+            }
+        });
+
+        // Close the menu when swiping outside the menu (for mobile)
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function (event) {
+            touchStartX = event.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function (event) {
+            touchEndX = event.changedTouches[0].screenX;
+            if (touchEndX < touchStartX) {
+                // Swipe left (close menu)
+                mainMenu.classList.remove('active');
                 toggleButton.innerHTML = "&#9776;";
             }
         });
+
+        // Helper function for navigation that closes the menu on click
+        function closeMenuAndNavigate(target) {
+            mainMenu.classList.remove('active');
+            toggleButton.innerHTML = "&#9776;";
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
+
 </body>
 </html>
