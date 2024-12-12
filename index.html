@@ -119,7 +119,7 @@
             }
         }
 
-         /* Hero Section */
+        /* Hero Section */
         .hero {
             display: flex;
             justify-content: center;
@@ -150,16 +150,6 @@
             text-align: center;
             color: white;
             z-index: 1;
-        }
-
-        .hero-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background-image: url('your-image-url.jpg'); /* Replace with the correct image URL */
-            background-size: cover;
-            background-position: center;
-            border: 5px solid white;
         }
 
         .hero-subtext {
@@ -268,7 +258,6 @@
         </ul>
     </div>
 
-    
     <script>
         const toggleButton = document.querySelector("#toggleButton");
         const mainMenu = document.querySelector("#mainMenu");
@@ -318,17 +307,17 @@
         // Helper function for navigation that closes the menu on click
         function closeMenuAndNavigate(target) {
             mainMenu.classList.remove('active');
-            toggleButton.innerHTML = "&#9776;";
+            toggleButton.innerHTML = "&#9776;"; 
             document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
         }
     </script>
- <!-- Hero Section with Background Video -->
+
+    <!-- Hero Section with Background Video -->
     <section class="hero" id="home">
         <video autoplay loop muted>
             <source src="10130349-hd_1920_1080_30fps.mp4" type="video/mp4"> <!-- Replace with your video URL -->
         </video>
         <div class="hero-content">
-            <div class="hero-image"></div> <!-- Centered Image -->
             <p class="hero-subtext">Transforming ideas into digital reality with cutting-edge solutions.</p>
             <div class="hero-buttons">
                 <button class="cta-btn">Our Work</button>
