@@ -66,6 +66,57 @@
             transform: translateY(-5px);
         }
 
+        /* Hamburger Menu */
+        .toggle-button {
+            font-size: 30px;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* Sliding Menu */
+        .main-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            transition: right 0.3s ease-in-out;
+            padding-top: 80px;
+            z-index: 2000;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-menu.active {
+            right: 0;
+        }
+
+        .main-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 25px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .main-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .main-menu ul li {
+            padding: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .main-menu ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
         /* Hero Section */
         .hero {
             display: flex;
@@ -160,6 +211,14 @@
 
         /* Responsive Styles */
         @media (max-width: 768px) {
+            .toggle-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
             .hero-content {
                 gap: 15px;
             }
@@ -191,12 +250,21 @@
                 <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
             </ul>
         </nav>
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <!-- Hamburger Menu Button -->
+        <div class="toggle-button" id="toggleButton">&#9776;</div>
     </header>
+
+    <!-- Sliding Menu -->
+    <div id="mainMenu" class="main-menu">
+        <ul>
+            <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
+            <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
+            <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
+            <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
+            <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+            <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section with Background Video -->
     <section class="hero" id="home">
@@ -214,21 +282,20 @@
     </section>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('menuSlide').classList.toggle('active');
-        }
+        const toggleButton = document.querySelector(".toggle-button");
+        const mainMenu = document.querySelector(".main-menu");
 
-        function closeMenuAndNavigate(target) {
-            document.getElementById('menuSlide').classList.remove('active');
-            window.location.href = target;
-        }
-
-        function closeMenu(event) {
-            if (event.target === document.getElementById('menuSlide')) {
-                document.getElementById('menuSlide').classList.remove('active');
+        toggleButton.addEventListener('click', function () {
+            // Toggles the active class
+            mainMenu.classList.toggle('active');
+            if (mainMenu.classList.contains("active")) {              
+                // Adds the close (x) icon 
+                toggleButton.innerHTML = "&#215;";
+            } else {          
+                // Adds the hamburger icon 
+                toggleButton.innerHTML = "&#9776;";
             }
-        }
+        });
     </script>
-
 </body>
 </html>
