@@ -73,15 +73,27 @@
             align-items: center;
             padding: 0;
             height: 100vh;
-            background-color: #fff; 
             color: #333;
             text-align: center;
             flex-direction: column;
             margin-bottom: 0;
             position: relative;
-            background-image: url('HERO PIC.jpg'); /* Using your provided background image */
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #000, #fff); /* Smooth black to white gradient */
+            background-size: 200% 200%;
+            animation: gradientAnimation 8s ease infinite;
+        }
+
+        /* Gradient Animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 100% 100%;
+            }
+            50% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
         }
 
         .hero h1 {
@@ -115,14 +127,7 @@
             transform: translateY(-5px);
         }
 
-        .company-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px;
-            gap: 30px;
-        }
-
+        /* Responsive Styles */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -135,10 +140,6 @@
 
             .cta-button {
                 font-size: 16px;
-            }
-
-            .company-logos i {
-                font-size: 30px;
             }
 
             .toggle-button {
