@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #fff;
+            background-color: #f4f7fc;
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
@@ -29,16 +29,16 @@
             align-items: center;
             padding: 20px 50px;
             background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
             flex-wrap: wrap;
-            transition: top 0.3s ease;
         }
 
         .logo img {
             height: 50px;
+            max-width: 100%;
         }
 
         .nav-links {
@@ -57,7 +57,7 @@
 
         .nav-links a:hover {
             color: #1a73e8;
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .toggle-button {
@@ -66,6 +66,98 @@
             display: none;
         }
 
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            height: 100vh;
+            background-color: #1a73e8; 
+            color: white;
+            text-align: center;
+            flex-direction: column;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .cta-button {
+            padding: 15px 35px;
+            font-size: 18px;
+            background-color: #fff;
+            color: #1a73e8;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ddd;
+            transform: translateY(-5px);
+        }
+
+        .company-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            gap: 30px;
+        }
+
+        .company-logos i {
+            font-size: 40px;
+            color: #fff;
+            opacity: 0.8;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .company-logos i:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .cta-button {
+                font-size: 16px;
+            }
+
+            .company-logos i {
+                font-size: 30px;
+            }
+
+            .toggle-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Sliding Menu */
         .main-menu {
             position: fixed;
             top: 0;
@@ -109,76 +201,6 @@
             text-decoration: none;
         }
 
-        @media (max-width: 768px) {
-            .toggle-button {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            height: 100vh; /* Full viewport height */
-            position: relative;
-            background-color: #fff; /* Solid white background */
-            overflow: hidden;
-            flex-direction: column;
-            text-align: center;
-            margin-bottom: 0; /* Ensure no margin below the hero section */
-        }
-
-        .hero-icon {
-            font-size: 80px; /* Big icon size */
-            color: #333;
-            margin-bottom: 40px; /* Space between the big icon and the logos */
-        }
-
-        .company-logos {
-            display: flex;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: scrollLogos 20s linear infinite;
-            gap: 50px; /* More spacing between the company icons */
-            justify-content: center;
-            align-items: center;
-        }
-
-        .company-logos i {
-            font-size: 40px; /* Icon size */
-            color: #333;
-        }
-
-        /* Animation for scrolling logos */
-        @keyframes scrollLogos {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* Make sure scrolling only happens in sections below the hero */
-        .hero + section {
-            padding-top: 50px;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .hero-icon {
-                font-size: 60px;
-            }
-            .company-logos i {
-                font-size: 30px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -202,20 +224,10 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-icon">
-            <i class="fas fa-cogs"></i> <!-- Replace with any desired icon -->
-        </div>
+        <h1>Innovate with Confidence</h1>
+        <p>We provide cutting-edge software solutions to elevate your business and empower your team to achieve more. Transform your ideas into reality with Mapengo Innovations.</p>
+        <button class="cta-button" onclick="window.location.href='#contact'">Get Started</button>
         <div class="company-logos">
-            <!-- Add company icons here -->
-            <i class="fab fa-apple"></i>
-            <i class="fab fa-google"></i>
-            <i class="fab fa-amazon"></i>
-            <i class="fab fa-microsoft"></i>
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-instagram"></i>
-            <!-- Repeat the icons to create the infinite scrolling effect -->
             <i class="fab fa-apple"></i>
             <i class="fab fa-google"></i>
             <i class="fab fa-amazon"></i>
@@ -245,34 +257,26 @@
         const mainMenu = document.querySelector("#mainMenu");
         const closeMenuButton = document.querySelector("#closeMenuButton");
 
-        // Open or close the menu when the hamburger button is clicked
         toggleButton.addEventListener('click', function () {
             mainMenu.classList.toggle('active');
-            if (mainMenu.classList.contains("active")) {
-                toggleButton.innerHTML = "&#215;"; // Close icon
-            } else {
-                toggleButton.innerHTML = "&#9776;"; // Hamburger icon
-            }
+            toggleButton.innerHTML = mainMenu.classList.contains("active") ? "&#215;" : "&#9776;";
         });
 
-        // Close the menu when the close button (×) is clicked
         closeMenuButton.addEventListener('click', function () {
             mainMenu.classList.remove('active');
-            toggleButton.innerHTML = "&#9776;"; // Change back to hamburger icon
+            toggleButton.innerHTML = "&#9776;";
         });
 
-        // Close the menu when clicking outside of the menu (on the body)
         document.addEventListener('click', function(event) {
             if (!mainMenu.contains(event.target) && !toggleButton.contains(event.target)) {
                 mainMenu.classList.remove('active');
-                toggleButton.innerHTML = "&#9776;"; // Change back to hamburger icon
+                toggleButton.innerHTML = "&#9776;";
             }
         });
 
-        // Helper function for navigation that closes the menu on click
         function closeMenuAndNavigate(target) {
             mainMenu.classList.remove('active');
-            toggleButton.innerHTML = "&#9776;"; 
+            toggleButton.innerHTML = "&#9776;";
             document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
         }
     </script>
