@@ -243,4 +243,71 @@
 </head>
 <body>
 
-   
+   <header class="navbar" id="navbar">
+        <div class="logo">
+            <img src="HERO PIC.jpg" alt="Mapengo Innovations">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
+                <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
+                <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
+                <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
+                <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+                <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="toggle-button" id="toggleButton">&#9776;</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Innovate with Confidence</h1>
+        <p>We provide cutting-edge software solutions to elevate your business and empower your team to achieve more. Transform your ideas into reality with Mapengo Innovations.</p>
+        <button class="cta-button" onclick="window.location.href='#contact'">Get Started</button>
+    </section>
+
+    <!-- Sliding Menu -->
+    <div id="mainMenu" class="main-menu">
+        <span class="close-btn" id="closeMenuButton">&#215;</span>
+        <ul>
+            <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
+            <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
+            <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
+            <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
+            <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+            <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const toggleButton = document.querySelector("#toggleButton");
+        const mainMenu = document.querySelector("#mainMenu");
+        const closeMenuButton = document.querySelector("#closeMenuButton");
+
+        toggleButton.addEventListener('click', function () {
+            mainMenu.classList.toggle('active');
+            toggleButton.innerHTML = mainMenu.classList.contains("active") ? "&#215;" : "&#9776;";
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            mainMenu.classList.remove('active');
+            toggleButton.innerHTML = "&#9776;";
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!mainMenu.contains(event.target) && !toggleButton.contains(event.target)) {
+                mainMenu.classList.remove('active');
+                toggleButton.innerHTML = "&#9776;";
+            }
+        });
+
+        function closeMenuAndNavigate(target) {
+            mainMenu.classList.remove('active');
+            toggleButton.innerHTML = "&#9776;";
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html> 
