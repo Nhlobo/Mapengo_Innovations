@@ -125,30 +125,33 @@
             justify-content: center;
             align-items: center;
             padding: 0;
-            height: 100vh;
+            height: 100vh; /* Full viewport height */
             position: relative;
             background-color: #fff; /* Solid white background */
             overflow: hidden;
             flex-direction: column;
             text-align: center;
+            margin-bottom: 0; /* Ensure no margin below the hero section */
         }
 
         .hero-icon {
             font-size: 80px; /* Big icon size */
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 40px; /* Space between the big icon and the logos */
         }
 
         .company-logos {
             display: flex;
             overflow: hidden;
             white-space: nowrap;
-            animation: scrollLogos 15s linear infinite;
-            gap: 30px;
+            animation: scrollLogos 20s linear infinite;
+            gap: 50px; /* More spacing between the company icons */
+            justify-content: center;
+            align-items: center;
         }
 
         .company-logos i {
-            font-size: 40px;
+            font-size: 40px; /* Icon size */
             color: #333;
         }
 
@@ -160,6 +163,11 @@
             100% {
                 transform: translateX(-100%);
             }
+        }
+
+        /* Make sure scrolling only happens in sections below the hero */
+        .hero + section {
+            padding-top: 50px;
         }
 
         /* Responsive Styles */
