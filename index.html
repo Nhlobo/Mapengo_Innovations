@@ -127,71 +127,48 @@
             padding: 0;
             height: 100vh;
             position: relative;
-            background-image: url('your-background-image.jpg'); /* Add your image path here */
-            background-size: cover;
-            background-position: center;
+            background-color: #fff; /* Solid white background */
             overflow: hidden;
-        }
-
-        .hero-content {
-            display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
             text-align: center;
-            color: white;
-            z-index: 1;
         }
 
-        .hero-subtext {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: #ddd;
+        .hero-icon {
+            font-size: 80px; /* Big icon size */
+            color: #333;
+            margin-bottom: 20px;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .company-logos {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: scrollLogos 15s linear infinite;
+            gap: 30px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
+        .company-logos i {
+            font-size: 40px;
+            color: #333;
+        }
+
+        /* Animation for scrolling logos */
+        @keyframes scrollLogos {
+            0% {
+                transform: translateX(100%);
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            100% {
+                transform: translateX(-100%);
             }
         }
 
         /* Responsive Styles */
         @media (max-width: 768px) {
-            .toggle-button {
-                display: block;
+            .hero-icon {
+                font-size: 60px;
             }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content {
-                gap: 15px;
-            }
-
-            .hero-text {
-                font-size: 2rem;
-            }
-
-            .cta-btn {
-                padding: 12px 25px;
-                font-size: 14px;
+            .company-logos i {
+                font-size: 30px;
             }
         }
     </style>
@@ -217,10 +194,29 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <video autoplay muted loop>
-            <source src="5473798-uhd_4096_2160_25fps.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="hero-icon">
+            <i class="fas fa-cogs"></i> <!-- Replace with any desired icon -->
+        </div>
+        <div class="company-logos">
+            <!-- Add company icons here -->
+            <i class="fab fa-apple"></i>
+            <i class="fab fa-google"></i>
+            <i class="fab fa-amazon"></i>
+            <i class="fab fa-microsoft"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-instagram"></i>
+            <!-- Repeat the icons to create the infinite scrolling effect -->
+            <i class="fab fa-apple"></i>
+            <i class="fab fa-google"></i>
+            <i class="fab fa-amazon"></i>
+            <i class="fab fa-microsoft"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
     </section>
 
     <!-- Sliding Menu -->
