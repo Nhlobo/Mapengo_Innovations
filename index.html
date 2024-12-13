@@ -73,12 +73,15 @@
             align-items: center;
             padding: 0;
             height: 100vh;
-            background-color: #1a73e8; 
-            color: white;
+            background-color: #fff; 
+            color: #333;
             text-align: center;
             flex-direction: column;
             margin-bottom: 0;
             position: relative;
+            background-image: url('YOUR_BACKGROUND_IMAGE_PATH_HERE'); /* Add your background image here */
+            background-size: cover;
+            background-position: center;
         }
 
         .hero h1 {
@@ -86,19 +89,21 @@
             font-weight: 700;
             margin-bottom: 20px;
             letter-spacing: 1px;
+            color: #fff;
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             max-width: 800px;
+            color: #fff;
         }
 
         .cta-button {
             padding: 15px 35px;
             font-size: 18px;
-            background-color: #fff;
-            color: #1a73e8;
+            background-color: #1a73e8;
+            color: #fff;
             border: none;
             border-radius: 50px;
             cursor: pointer;
@@ -106,7 +111,7 @@
         }
 
         .cta-button:hover {
-            background-color: #ddd;
+            background-color: #0c5db7;
             transform: translateY(-5px);
         }
 
@@ -116,18 +121,6 @@
             align-items: center;
             margin-top: 50px;
             gap: 30px;
-        }
-
-        .company-logos i {
-            font-size: 40px;
-            color: #fff;
-            opacity: 0.8;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .company-logos i:hover {
-            opacity: 1;
-            transform: scale(1.1);
         }
 
         @media (max-width: 768px) {
@@ -227,16 +220,6 @@
         <h1>Innovate with Confidence</h1>
         <p>We provide cutting-edge software solutions to elevate your business and empower your team to achieve more. Transform your ideas into reality with Mapengo Innovations.</p>
         <button class="cta-button" onclick="window.location.href='#contact'">Get Started</button>
-        <div class="company-logos">
-            <i class="fab fa-apple"></i>
-            <i class="fab fa-google"></i>
-            <i class="fab fa-amazon"></i>
-            <i class="fab fa-microsoft"></i>
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-instagram"></i>
-        </div>
     </section>
 
     <!-- Sliding Menu -->
