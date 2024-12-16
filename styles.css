@@ -1,3 +1,193 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            height: 50px;
+            max-width: 100%;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1a73e8;
+            transform: translateY(-3px);
+        }
+
+        .toggle-button {
+            font-size: 30px;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            height: 100vh;
+            color: #333;
+            text-align: center;
+            flex-direction: column;
+            margin-bottom: 0;
+            position: relative;
+            background: linear-gradient(135deg, #000, #fff); /* Smooth black to white gradient */
+            background-size: 200% 200%;
+            animation: gradientAnimation 8s ease infinite;
+        }
+
+        /* Gradient Animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 100% 100%;
+            }
+            50% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            color: #fff;
+        }
+
+        .cta-button {
+            padding: 15px 35px;
+            font-size: 18px;
+            background-color: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0c5db7;
+            transform: translateY(-5px);
+        }
+
+        /* Sliding Menu with Glassmorphism Effect */
+        .main-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+            backdrop-filter: blur(15px); /* Apply blur effect */
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Gradient + Transparency */
+            color: white;
+            transition: right 0.3s ease-in-out;
+            padding-top: 80px;
+            z-index: 2000;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-menu.active {
+            right: 0;
+        }
+
+        .main-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 25px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .main-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .main-menu ul li {
+            padding: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .main-menu ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .cta-button {
+                font-size: 16px;
+            }
+
+            .toggle-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
 /* General Reset */
 * {
   margin: 0;
