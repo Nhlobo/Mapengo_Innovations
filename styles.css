@@ -124,95 +124,39 @@ body {
     text-align: center;
     flex-direction: column;
     background: linear-gradient(135deg, #000, #fff);
-    background-size: 200% 200%;
-    animation: gradientAnimation 8s ease infinite;
+    background-size: 200% 200%; /* Ensures the gradient spans the entire background */
+    animation: gradientAnimation 8s ease infinite; /* Gradient animation */
     width: 100%; /* Full width */
     margin: 0; /* Remove margins */
     backdrop-filter: blur(15px); /* Glassmorphism effect */
 }
 
+/* Keep the same gradient animation */
 @keyframes gradientAnimation {
     0% { background-position: 100% 100%; }
     50% { background-position: 0% 0%; }
     100% { background-position: 100% 100%; }
 }
 
-.hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 800px;
-}
-
-.hero .cta-button {
-    padding: 12px 30px;
-    font-size: 16px;
-    background-color: #1a73e8;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.hero .cta-button:hover {
-    background-color: #0f58c7;
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #f8f8f8;
-    color: #666;
-    font-size: 14px;
-    width: 100%; /* Full width */
-    margin: 0;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Show hamburger menu and hide nav links */
-    .nav-links {
-        display: none; /* Hide nav links on smaller screens */
-    }
-
-    .toggle-button {
-        display: block; /* Show hamburger on small screens */
-    }
-
-    /* Make the sliding menu visible on mobile */
-    .main-menu {
-        left: -300px; /* Hidden by default */
-    }
-
     .hero {
-        backdrop-filter: blur(15px); /* Hero matching glassmorphism */
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Matching gradient */
-        background-size: 200% 200%;
+        /* Maintain the same gradient on smaller screens */
+        background: linear-gradient(135deg, #000, #fff);
+        background-size: 200% 200%; /* Ensures consistency across screen sizes */
+        animation: gradientAnimation 8s ease infinite;
+    }
+}
+
+/* Adjustments for even smaller screens if necessary */
+@media (max-width: 480px) {
+    .hero {
+        /* You can tweak the gradient's properties or keep it the same */
+        background: linear-gradient(135deg, #000, #fff);
+        background-size: 200% 200%; /* Keep the same background size */
         animation: gradientAnimation 8s ease infinite;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    .cta-button {
-        padding: 12px 30px;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
     .hero h1 {
         font-size: 2rem;
     }
@@ -220,18 +164,5 @@ footer {
     .hero p {
         font-size: 1rem;
     }
-
-    .cta-button {
-        padding: 12px 30px;
-        font-size: 16px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navbar {
-        padding: 20px;
-    }
 }
+
