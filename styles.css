@@ -18,18 +18,20 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Navbar Styles */
+/* Navbar Styles (for larger screens) */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #fff;
+    background-color: transparent; /* Transparent for the glassmorphism effect */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
     flex-wrap: wrap;
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
 }
 
 /* Logo Styles */
@@ -46,7 +48,7 @@ body {
 }
 
 .nav-links a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -56,6 +58,13 @@ body {
 .nav-links a:hover {
     color: #1a73e8;
     transform: translateY(-3px);
+}
+
+/* Hamburger Menu (hidden on larger screens) */
+.toggle-button {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
 }
 
 /* Hero Section */
@@ -71,11 +80,11 @@ body {
     background: linear-gradient(135deg, #000, #fff);
     background-size: 200% 200%;
     animation: gradientAnimation 8s ease infinite;
-    width: 100%; /* Ensures the hero section takes full width */
-    margin: 0; /* Removes any margin around the hero */
+    width: 100%; /* Full width */
+    margin: 0; /* Remove margins */
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
 }
 
-/* Gradient Animation */
 @keyframes gradientAnimation {
     0% { background-position: 100% 100%; }
     50% { background-position: 0% 0%; }
@@ -95,32 +104,61 @@ body {
     max-width: 800px;
 }
 
-/* Call to Action Button */
-.cta-button {
-    padding: 15px 35px;
-    font-size: 18px;
-    background-color: #1a73e8;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+/* Sliding Menu for smaller screens */
+.main-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Matching gradient with hero */
+    color: white;
+    transition: right 0.3s ease-in-out;
+    padding-top: 80px;
+    z-index: 2000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
 }
 
-.cta-button:hover {
-    background-color: #0c5db7;
-    transform: translateY(-5px);
+.main-menu.active {
+    right: 0;
+}
+
+.main-menu .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-menu ul li {
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.main-menu ul li a {
+    color: white;
+    text-decoration: none;
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
-    padding: 20px 0; /* Reduced padding for full width */
+    padding: 20px 0;
     background: #f8f8f8;
     color: #666;
     font-size: 14px;
-    width: 100%; /* Ensures the footer takes full width */
-    margin: 0; /* Removes any margin around the footer */
+    width: 100%; /* Full width */
+    margin: 0;
 }
 
 /* Social Media Icons */
@@ -164,4 +202,89 @@ footer {
 
 .footer-links a:hover {
     color: #1e293b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Show hamburger menu and hide navbar */
+    .nav-links {
+        display: none; /* Hide nav links on smaller screens */
+    }
+
+    .toggle-button {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    /* Make the sliding menu visible on mobile */
+    .main-menu {
+        right: -300px; /* Hidden by default */
+    }
+
+    .hero {
+        backdrop-filter: blur(15px); /* Hero matching glassmorphism */
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Matching gradient */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .contact-form {
+        gap: 10px;
+    }
+
+    .contact h1 {
+        font-size: 28px;
+    }
+
+    .whatsapp-icon {
+        bottom: 120px;
+        right: 100px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Add responsive toggle for the sliding menu */
+@media (max-width: 768px) {
+    .toggle-button.active {
+        color: white;
+    }
 }
