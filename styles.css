@@ -1,4 +1,4 @@
- /* Global Reset */
+  /* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -201,6 +201,7 @@ section {
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     padding: 2rem 1rem;
+    margin-bottom: 20px; /* Ensure there's space between sections */
 }
 
 h1, .section-title {
@@ -513,6 +514,11 @@ footer {
         padding: 20px;
     }
 
+    section {
+        padding: 1rem;
+        margin-bottom: 15px;
+    }
+
     .contact h1 {
         font-size: 24px;
     }
@@ -528,4 +534,40 @@ footer {
         font-size: 14px;
     }
 }
-      
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .contact-form {
+        gap: 10px;
+    }
+
+    .contact h1 {
+        font-size: 28px;
+    }
+
+    .whatsapp-icon {
+        bottom: 120px;
+        right: 100px;
+    }
+}
