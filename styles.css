@@ -17,7 +17,7 @@ body {
     padding: 0;
 }
 
-/* Navbar Styles (for larger screens) */
+/* Navbar Styles (for all screens) */
 .navbar {
     display: flex;
     justify-content: space-between;
