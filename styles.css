@@ -184,7 +184,7 @@ footer {
         backdrop-filter: blur(15px); /* Hero matching glassmorphism */
         background: 
             linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)), 
-            url('logo.png'); /* Same image */
+            url('your-image.jpg'); /* Same image */
         background-size: 200% 200%, cover;
         animation: gradientAnimation 8s ease infinite;
     }
