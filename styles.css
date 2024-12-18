@@ -271,10 +271,11 @@ footer {
 /* Section Styles */
 section {
     background: #ffffff;
-    border-radius: 12px;
+    /* Remove border-radius to prevent curved corners */
+    border-radius: 0; 
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     padding: 2rem 1rem;
-    margin-bottom: 20px; /* Ensure there's space between sections */
+    margin: 0; /* Remove margin to make sections stretch across the whole screen */
 }
 
 h1, .section-title {
