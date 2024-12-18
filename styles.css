@@ -237,23 +237,25 @@ footer {
 }
 /* Testimonials Section */
 #testimonials {
-    background: rgba(255, 255, 255, 0.1); /* Glassmorphism background */
+    background: rgba(255, 255, 255, 0.2); /* Glassmorphism background with slight transparency */
     backdrop-filter: blur(15px); /* Glassmorphism effect */
     border-radius: 10px;
-    padding: 40px;
+    padding: 50px 30px;
     margin: 60px auto;
     max-width: 1200px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: gradientAnimation 8s ease infinite; /* Background gradient animation */
 }
 
 #testimonials .section-title {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #333;
+    color: #fff;
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    animation: fadeIn 2s ease-in-out; /* Fade in animation */
 }
 
 .testimonials-container {
@@ -263,18 +265,19 @@ footer {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.2); /* Glassmorphism card background */
+    background: rgba(255, 255, 255, 0.2); /* Glassmorphism background with slight transparency */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px); /* Slight elevation on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
 }
 
 .card .rating {
@@ -303,14 +306,33 @@ footer {
 .card .title {
     font-style: italic;
     font-size: 1.1rem;
-    color: #666;
+    color: #ddd;
     margin-bottom: 20px;
 }
 
 .card h4 {
-    font-size: 1.1rem;
-    color: #333;
+    font-size: 1.2rem;
+    color: #fff;
     font-weight: 600;
+}
+
+/* Glassmorphism Effect Animation for Background */
+@keyframes gradientAnimation {
+    0% { background-position: 100% 100%; }
+    50% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Fade-In Effect for Elements */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Design for Testimonials */
@@ -343,7 +365,7 @@ footer {
     }
 
     #testimonials {
-        padding: 30px;
+        padding: 40px 20px;
     }
 
     .card .rating label {
