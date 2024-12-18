@@ -123,8 +123,11 @@ body {
     color: #fff;
     text-align: center;
     flex-direction: column;
-    background: linear-gradient(135deg, #000, #fff);
-    background-size: 200% 200%;
+    background: 
+        linear-gradient(135deg, #000, #fff), /* Gradient background */
+        url('your-image.jpg'); /* Background image on the left */
+    background-size: 200% 200%, cover; /* Gradient animation and image size */
+    background-position: left center, center center; /* Position gradient and image */
     animation: gradientAnimation 8s ease infinite;
     width: 100%; /* Full width */
     margin: 0; /* Remove margins */
@@ -132,9 +135,9 @@ body {
 }
 
 @keyframes gradientAnimation {
-    0% { background-position: 100% 100%; }
-    50% { background-position: 0% 0%; }
-    100% { background-position: 100% 100%; }
+    0% { background-position: 100% 100%, left center; }
+    50% { background-position: 0% 0%, left center; }
+    100% { background-position: 100% 100%, left center; }
 }
 
 .hero h1 {
@@ -177,24 +180,12 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Show hamburger menu and hide nav links */
-    .nav-links {
-        display: none; /* Hide nav links on smaller screens */
-    }
-
-    .toggle-button {
-        display: block; /* Show hamburger on small screens */
-    }
-
-    /* Make the sliding menu visible on mobile */
-    .main-menu {
-        left: -300px; /* Hidden by default */
-    }
-
     .hero {
         backdrop-filter: blur(15px); /* Hero matching glassmorphism */
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Matching gradient */
-        background-size: 200% 200%;
+        background: 
+            linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)), 
+            url('your-image.jpg'); /* Same image */
+        background-size: 200% 200%, cover;
         animation: gradientAnimation 8s ease infinite;
     }
 
