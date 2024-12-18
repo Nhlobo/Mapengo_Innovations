@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cookie Policy for our website">
+    <title>Cookie Policy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="cookie.html">Cookie Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Cookie Policy</h1>
+            <p>Effective Date: [Insert Date]</p>
+
+            <h2>Introduction</h2>
+            <p>Our website uses cookies to improve your experience. By continuing to browse our website, you agree to our use of cookies.</p>
+
+            <h2>What are Cookies?</h2>
+            <p>Cookies are small files that are stored on your device. These cookies help improve the performance of the website and enable certain features, such as remembering preferences or login details.</p>
+
+            <h2>Types of Cookies We Use</h2>
+            <ul>
+                <li>Essential Cookies: Necessary for the website's functionality.</li>
+                <li>Analytics Cookies: Help us understand how our website is used.</li>
+                <li>Advertising Cookies: Track your activity for personalized ads.</li>
+            </ul>
+
+            <h2>How to Manage Cookies</h2>
+            <p>You can manage cookie preferences in your browser settings. You may also choose to disable certain cookies; however, some functionality may be affected.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 [Your Company Name]. All Rights Reserved.</p>
+        <ul>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="cookie.html">Cookie Policy</a></li>
+        </ul>
+    </footer>
+
+    <!-- Cookie Popup -->
+    <div class="cookie-popup">
+        <p>We use cookies to improve your experience. By continuing to use our site, you consent to our use of cookies. <a href="cookie.html">Learn more</a></p>
+        <button onclick="acceptCookies()">Accept</button>
+        <button class="close" onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        // Check if cookies have been accepted already
+        if (!localStorage.getItem('cookiesAccepted')) {
+            // Show the cookie popup after page load
+            window.onload = function() {
+                document.querySelector('.cookie-popup').style.display = 'block';
+            };
+        }
+
+        // Function to accept cookies and hide the popup
+        function acceptCookies() {
+            document.querySelector('.cookie-popup').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+
+        // Function to close the cookie popup
+        function closePopup() {
+            document.querySelector('.cookie-popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
