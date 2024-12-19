@@ -1,4 +1,4 @@
- /* Global Reset */
+  /* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@
 /* Body Styles */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #FF0000;
+  background-color: #f4f7fc;
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
