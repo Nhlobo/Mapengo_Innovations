@@ -17,6 +17,15 @@ body {
   padding: 0;
 }
 
+/* Apply gradient background to the entire page */
+html, body {
+  height: 100%; /* Ensure the gradient covers the full height */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+}
+
+
 /* Navbar Styles (for all screens) */
 .navbar {
   display: flex;
