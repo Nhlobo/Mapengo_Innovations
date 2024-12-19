@@ -717,8 +717,7 @@ footer {
         .chatbot-icon-container {
             position: fixed;
             right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+            bottom: 30px; /* Place it towards the bottom right of the page */
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
@@ -732,7 +731,7 @@ footer {
         }
 
         .chatbot-icon-container:hover {
-            transform: translateY(-50%) scale(1.05);
+            transform: translateY(-5px);
         }
 
         .chatbot-icon {
@@ -743,7 +742,7 @@ footer {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
+            font-size: 28px;
             color: white;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -761,6 +760,7 @@ footer {
             margin-left: 10px;
             font-weight: 500;
             font-family: 'Roboto', sans-serif;
+            display: none; /* Hide text on mobile */
         }
 
         /* Chatbot Section */
@@ -873,8 +873,7 @@ footer {
 
             .chatbot-icon-container {
                 right: 10px;
-                top: 60%;
-                transform: translateY(-50%);
+                bottom: 20px;
                 padding: 6px 10px;
             }
 
@@ -916,8 +915,7 @@ footer {
 
             .chatbot-icon-container {
                 right: 5px;
-                top: 50%;
-                transform: translateY(-50%);
+                bottom: 15px;
                 padding: 5px 8px;
             }
 
