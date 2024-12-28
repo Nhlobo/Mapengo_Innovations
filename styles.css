@@ -308,15 +308,15 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
 /* WhatsApp Icon */
 .whatsapp-icon {
     position: fixed;
-    bottom: 150px;
-    right: 150px;
+    bottom: 90px;
+    right: 90px;
     display: none;
     z-index: 1000;
 }
 
 .whatsapp-icon img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 }
 
 .hidden {
