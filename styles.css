@@ -304,23 +304,7 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
   50% { background-position: 0% 0%; }
   100% { background-position: 100% 100%; }
 }
-/* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
 
-        /* Body Styles */
-        body {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.2)); /* Dark background gradient */
-            color: #fff;
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-            font-size: 1rem;
-        }
 
         /* Sections */
         section {
@@ -440,16 +424,7 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
             }
         }
 /* PORTFOLIO */
- /* General Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Background gradient */
-            color: #fff; /* Text color */
-        }
-
-.portfolio {
+ .portfolio {
             padding: 60px 20px;
             background-color: transparent; /* Make the portfolio section transparent to see the gradient background */
         }
