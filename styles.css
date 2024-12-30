@@ -306,6 +306,15 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
 }
 
 /* PORTFOLIO */
+ /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Background gradient */
+            color: #fff; /* Text color */
+        }
+
 .portfolio {
             padding: 60px 20px;
             background-color: transparent; /* Make the portfolio section transparent to see the gradient background */
