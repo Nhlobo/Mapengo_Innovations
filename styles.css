@@ -714,24 +714,6 @@ footer {
         right: 100px;
     }
 }
- /* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Ensure consistent box sizing */
-    font-family: 'Roboto', sans-serif; /* Ensure uniform font family for all elements */
-}
-
-/* Body Styles */
-body {
-    font-family: 'Inter', sans-serif; /* Keep 'Inter' for the body font */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Consistent background gradient */
-    color: #333; /* Dark text for readability */
-    line-height: 1.6; /* Improve readability with line height */
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    margin: 0;
-    padding: 0;
-}
 
 /* Section Styles */
 section {
@@ -784,25 +766,6 @@ section p {
     transform: translateY(-5px); /* Hover lift effect */
 }
         
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-/* Body Styles */
-body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1));
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
-
 /* Expertise Section */
 .expertise {
     padding: 80px 20px;
