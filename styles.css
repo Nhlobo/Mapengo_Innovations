@@ -769,7 +769,7 @@ section p {
 /* Expertise Section */
 .expertise {
     padding: 80px 20px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)); /* Darker gradient */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)); /* Darker gradient */
     backdrop-filter: blur(15px);
     border-radius: 15px;
     color: white;
