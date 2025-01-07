@@ -6,27 +6,220 @@
     <title>Terms of Service</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            font-size: 12pt;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
             line-height: 1.6;
-            margin: 20px;
+            background-color: #f9f9f9;
             color: #333;
         }
+
         h1, h2 {
-            color: #000;
+            font-family: 'Arial', sans-serif;
+            color: #333;
         }
+
         h1 {
-            font-size: 18pt;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 15px;
         }
+
         h2 {
-            font-size: 14pt;
-            margin-bottom: 5px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #555;
         }
+
         p {
-            margin: 10px 0;
+            margin: 12px 0;
+            font-size: 14px;
+            line-height: 1.6;
         }
+
+        header {
+            background-color: #120fee;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin: 0 12px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #1abc9c;
+        }
+
+        footer {
+            background-color: #120fee;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        footer .footer-bottom {
+            font-size: 11px;
+            color: #95a5a6;
+        }
+
+        footer .footer-links a {
+            font-size: 13px;
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-icons {
+            display: inline-block;
+            margin-top: 12px;
+        }
+
+        footer .social-icons a {
+            margin: 0 8px;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #1abc9c;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            header nav ul {
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin: 8px 0;
+            }
+
+            footer p {
+                font-size: 12px;
+            }
+
+            footer .footer-links a {
+                font-size: 12px;
+            }
+
+            footer .social-icons a {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 17px;
+            }
+
+            header nav ul {
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin: 10px 0;
+            }
+
+            footer p {
+                font-size: 13px;
+            }
+
+            footer .footer-links a {
+                font-size: 13px;
+            }
+
+            footer .social-icons a {
+                font-size: 19px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            body {
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            header nav ul {
+                flex-direction: row;
+            }
+
+            footer p {
+                font-size: 13px;
+            }
+
+            footer .footer-links a {
+                font-size: 14px;
+            }
+
+            footer .social-icons a {
+                font-size: 20px;
+            }
+        }
+
     </style>
     </head>
 <body>
