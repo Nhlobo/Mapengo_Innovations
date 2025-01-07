@@ -920,29 +920,7 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
             }
         }
 
-        /* Button Styling */
-        .btn {
-            position: absolute;
-            left: 20px; /* Position the button on the far left */
-            top: 50%; /* Vertically center the button */
-            transform: translateY(-50%); /* Adjust exactly in the middle */
-            padding: 8px 20px; /* Reduced padding for a smaller button */
-            font-size: 0.9rem; /* Slightly smaller font size */
-            text-transform: uppercase;
-            background-color: #FFD700; /* Golden background */
-            color: #333; /* Dark text color */
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            z-index: 2; /* Make sure the button is above the landscape image */
-        }
-
-        /* Hover effect for Buttons */
-        .btn:hover {
-            background-color: #ffcc00; /* Slightly darker yellow */
-            transform: translateY(-3px); /* Slight hover lift effect */
-        }
+        
 
         /* Ensure responsiveness */
         @media (max-width: 768px) {
