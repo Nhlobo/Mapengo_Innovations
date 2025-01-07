@@ -883,18 +883,7 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Gradient overlay */
         }
 
-        /* Landscape image at the front, fully responsive */
-        .landscape-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures the image covers the entire section */
-            object-position: center; /* Keeps the focus of the image centered */
-        }
-
-        /* Logo wrapper with animation */
+         /* Logo wrapper with animation */
         .logo-wrapper {
             position: absolute;
             bottom: 20px; /* Position logos towards the bottom */
