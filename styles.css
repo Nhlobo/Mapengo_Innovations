@@ -854,7 +854,26 @@ section p {
         justify-items: center; /* Center the cards horizontally */
     }
 }
+
 /* PORTFOLIO SECTION */
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure consistent box sizing */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Body Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
  h1, h2, h3, h4, h5, p {
       font-weight: 500;
     }
@@ -941,8 +960,9 @@ section p {
     .carousel-buttons button:hover {
       background: rgba(0, 0, 0, 0.8);
     }
-/* Button Styling */
-.btn {
+
+  /* View Live Button */
+    .view-live-btn {
     display: inline-block;
     padding: 12px 30px;
     font-size: 1.1rem;
@@ -957,7 +977,7 @@ section p {
 }
 
 /* Hover effect for Buttons */
-.btn:hover {
+ .view-live-btn:hover {
     background-color: #ffcc00; /* Slightly darker yellow */
     transform: translateY(-5px); /* Hover lift effect */
 }
