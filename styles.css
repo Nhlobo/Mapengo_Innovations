@@ -883,22 +883,6 @@ section {
   margin-bottom: 30px; /* Increased space between sections */
 }
 
-/* Title Styles */
-h3, .section-title {
-  font-size: 2.5rem; /* Increased font size for title */
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 1.8rem; /* More space below the title */
-}
-
-/* Paragraph Styles */
-h3, p {
-  font-size: 1rem; /* Slightly larger font size for paragraphs */
-  color: #374151;
-  margin-bottom: 1rem; /* Space after paragraphs */
-  line-height: 1.8; /* Improved line height for readability */
-}
-
 /* Link Style */
 a {
   text-decoration: none;
