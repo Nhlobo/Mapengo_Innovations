@@ -856,7 +856,6 @@ section p {
 }
 
 /* PORTFOLIO SECTION */
-/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -867,21 +866,33 @@ section p {
 /* Body Styles */
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.3)); /* Darker gradient for better contrast */
-  color: #f4f4f4; /* Light color text to ensure readability */
+background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+  color: #333;
   line-height: 1.6;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, p {
-  font-weight: 500;
+/* Section Styles */
+section {
+   background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem;
+    margin-bottom: 20px; /* Ensure there's space between sections */
 }
 
-/* Heading Text Color */
-h1, h2, h3, h4, h5 {
-  color: #f1f1f1; /* Lighter text for better visibility */
+h1, .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+h4, p {
+    font-size: 1rem;
+    color: #374151;
 }
 
 /* Paragraph Text Color */
