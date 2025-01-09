@@ -867,7 +867,7 @@ section p {
 /* Body Styles */
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
@@ -888,22 +888,20 @@ body {
       text-align: center;
     }
 
-    .gallery-intro {
-      margin-bottom: 60px;
-    }
+/* Expertise Item Title */
+.gallery-intro h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
 
-    .gallery-intro h3 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .gallery-intro p {
-      font-size: 18px;
-      color: #777;
-      line-height: 1.8;
-    }
-
+/* Expertise Item Paragraph */
+.gallery-intro p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+    
     .carousel-container {
       position: relative;
       width: 80%;
