@@ -905,22 +905,14 @@ a {
 .gallery-section {
   padding: 60px 0;
   text-align: center;
+   font-size: 2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
 }
 
-/* Expertise Item Title */
-.gallery-intro h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #f1f1f1; /* Lighter text for titles */
-}
 
-/* Expertise Item Paragraph */
-.gallery-intro p {
-  font-size: 1rem;
-  color: #dcdcdc; /* Light grey text for paragraph */
-  margin-bottom: 1rem;
-}
-    
 /* Carousel Styles */
 .carousel-container {
   position: relative;
