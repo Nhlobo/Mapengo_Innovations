@@ -866,9 +866,9 @@ section p {
 /* Body Styles */
 body {
   font-family: 'Inter', sans-serif;
-background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
   color: #333;
-  line-height: 1.6;
+  line-height: 1.8; /* Increased line height for better readability */
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -876,30 +876,36 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
 
 /* Section Styles */
 section {
-   background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    padding: 2rem 1rem;
-    margin-bottom: 20px; /* Ensure there's space between sections */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 1.5rem; /* Increased padding for more spacious sections */
+  margin-bottom: 30px; /* Increased space between sections */
 }
 
+/* Title Styles */
 h3, .section-title {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 1.5rem;
+  font-size: 2.5rem; /* Increased font size for title */
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1.8rem; /* More space below the title */
 }
 
+/* Paragraph Styles */
 h3, p {
-    font-size: 1rem;
-    color: #374151;
+  font-size: 1.125rem; /* Slightly larger font size for paragraphs */
+  color: #374151;
+  margin-bottom: 1rem; /* Space after paragraphs */
+  line-height: 1.8; /* Improved line height for readability */
 }
 
 /* Link Style */
 a {
   text-decoration: none;
   color: #FFD700; /* Golden color for links */
+  font-weight: 500; /* Slightly bolder links */
 }
+
 
 /* Gallery Section */
 .gallery-section {
