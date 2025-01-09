@@ -890,14 +890,13 @@ h1, .section-title {
     margin-bottom: 1.5rem;
 }
 
-h4, p {
-    font-size: 1rem;
-    color: #374151;
-}
 
-/* Paragraph Text Color */
-p {
-  color: #dcdcdc; /* Slightly lighter text for paragraphs */
+h4, p {
+   font-size: 1.1rem;
+    color: #ddd; /* Lighter text for descriptions */
+    line-height: 1.8; /* Improved readability */
+    max-width: 900px;
+    margin: 0 auto; /* Center align text */
 }
 
 /* Link Style */
@@ -1005,3 +1004,21 @@ a {
   background-color: #ffcc00; /* Slightly darker yellow */
   transform: translateY(-5px); /* Hover lift effect */
 }
+
+
+
+
+
+
+
+
+
+
+/* Heading for Sections */
+section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
