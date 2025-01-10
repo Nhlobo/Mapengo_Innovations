@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Mapengo Innovations - Pricing</title>
+   <title>Mapengo Innovations - Services</title>
 
    <!-- Meta Description -->
    <meta name="description" content="Mapengo Innovations offers professional web and app development services. Specializing in custom websites, mobile apps, and e-commerce solutions. Contact us for tailored, innovative solutions for your business.">
@@ -49,7 +49,7 @@
    <!-- Linking Font Awesome for Icons -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
    <style>
-       /* Global Reset */
+     /* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -67,7 +67,133 @@ body {
     margin: 0;
     padding: 0;
 }
-        .container {
+
+/* Navbar Styles (for all screens) */
+.navbar {
+  display: flex;
+  justify-content: center; /* Center navigation links */
+  align-items: center;
+  padding: 20px 50px;
+  background-color: transparent; /* Transparent for the glassmorphism effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: absolute; /* Position navbar over the hero section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(15px); /* Glassmorphism effect */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
+  animation: gradientAnimation 8s ease infinite; /* Gradient animation */
+}
+
+/* Logo Styles */
+.logo img {
+  height: 60px; /* Adjust logo size */
+  max-width: 160%;
+}
+
+/* Navigation Links (for larger screens) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #1a73e8;
+  transform: translateY(-3px);
+}
+
+/* Hamburger Menu (centered on small screens) */
+.toggle-button {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  color: white; /* Set hamburger color to white */
+}
+
+/* Sliding Menu for smaller screens */
+.main-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+  color: white;
+  transition: left 0.3s ease-in-out;
+  padding-top: 80px;
+  z-index: 2000;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+  animation: gradientAnimation 8s ease infinite;
+}
+
+.main-menu.active {
+  left: 0;
+}
+
+.main-menu .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
+
+.main-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.main-menu ul li {
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.main-menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  /* Display hamburger icon on smaller screens */
+  .toggle-button {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Hide default navigation links */
+  .nav-links {
+    display: none;
+  }
+
+  /* Show menu items in main-menu */
+  .main-menu ul {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust any further styles for smaller screens if needed */
+}
+
+.container {
             width: 90%;
             margin: 0 auto;
         }
@@ -206,10 +332,140 @@ body {
                 padding: 12px;
             }
         }
+
+ /* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f8f8f8;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Social Media Icons */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.wrapper .icon {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wrapper .icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip {
+    position: absolute;
+    top: -40px;
+    background: #333;
+    color: white;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.icon:hover .tooltip {
+    opacity: 1;
+}
+
+/* Footer Links */
+.footer-links {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: #1e293b;
+}
+      
     </style>
 </head>
 
 <body>
+<header class="navbar" id="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Mapengo Innovations">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" onclick="closeMenuAndNavigate('index.html')">Home</a></li>
+                <li><a href="about.html" onclick="closeMenuAndNavigate('about.html')">About</a></li>
+                <li><a href="services.html" onclick="closeMenuAndNavigate('services.html')">Services</a></li>
+                <li><a href="portfolio.html" onclick="closeMenuAndNavigate('portfolio.html')">Portfolio</a></li>
+                <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+                <li><a href="contact" onclick="closeMenuAndNavigate('contact')">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="toggle-button" id="toggleButton">&#9776;</div>
+    </header>
+
+    <!-- Sliding Menu -->
+    <div id="mainMenu" class="main-menu">
+        <span class="close-btn" id="closeMenuButton">&#215;</span>
+        <ul>
+            <li><a href="index.html" onclick="closeMenuAndNavigate('index.html')">Home</a></li>
+            <li><a href="about.html" onclick="closeMenuAndNavigate('about.html')">About</a></li>
+            <li><a href="services.html" onclick="closeMenuAndNavigate('services.html')">Services</a></li>
+            <li><a href="portfolio.html" onclick="closeMenuAndNavigate('portfolio.html')">Portfolio</a></li>
+            <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+            <li><a href="contact" onclick="closeMenuAndNavigate('contact')">Contact</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const toggleButton = document.querySelector("#toggleButton");
+        const mainMenu = document.querySelector("#mainMenu");
+        const closeMenuButton = document.querySelector("#closeMenuButton");
+
+        toggleButton.addEventListener('click', function () {
+            mainMenu.classList.toggle('active');
+            toggleButton.innerHTML = mainMenu.classList.contains("active") ? "&#215;" : "&#9776;";
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            mainMenu.classList.remove('active');
+            toggleButton.innerHTML = "&#9776;";
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!mainMenu.contains(event.target) && !toggleButton.contains(event.target)) {
+                mainMenu.classList.remove('active');
+                toggleButton.innerHTML = "&#9776;";
+            }
+        });
+
+        function closeMenuAndNavigate(target) {
+            mainMenu.classList.remove('active');
+            toggleButton.innerHTML = "&#9776;";
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+<!-- Services Section -->
     <div class="container">
         <h2>Website & App Development Pricing</h2>
         <div class="wrapper">
@@ -289,9 +545,7 @@ body {
                     </div>
                 </div>
 
-                
 
-                
                 <!-- App Development Tab Content -->
                 <div id="app" class="tab-section" style="display:none;">
                     <div class="pricing-card" id="app-basic">
@@ -377,8 +631,9 @@ body {
         // Initial state: Show Website Development first
         document.getElementById("website").style.display = 'block';
     </script>
-   
-    <footer>
+
+      </section>
+   <footer>
     <ul class="wrapper">
       <li class="icon facebook" onclick="redirectTo('https://facebook.com')">
         <span class="tooltip">Facebook</span>
