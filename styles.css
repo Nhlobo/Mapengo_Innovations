@@ -1,4 +1,4 @@
-        /* Global Reset */
+         /* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -550,11 +550,11 @@ button:active {
     background-color: #006f99;
 }
 
- /* Footer Styles */
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1));
+    background: #f8f8f8;
     color: #666;
     font-size: 14px;
 }
