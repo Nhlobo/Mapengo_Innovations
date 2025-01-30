@@ -194,27 +194,189 @@ acceptCookiesButton.addEventListener('click', () => {
   });
 </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const whatsAppIcon = document.getElementById("whatsAppIcon");
+  <!-- Chatbot Icon -->
+    <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
 
-        // Function to check if user has scrolled near the footer
-        function checkTriggerPoint() {
-            const scrollPosition = window.scrollY + window.innerHeight; // Bottom of the viewport
-            const triggerPoint = document.body.offsetHeight - 300; // 300px above the bottom
-            return scrollPosition >= triggerPoint;
+    <div id="chatbot-container">
+        <!-- Close Button -->
+    <div id="close-chatbot">
+        <span>&#10006;</span>
+    </div>
+        <div id="chatbot-body">
+            <div class="chatbot-message">
+                <p>Hi! I can help you learn more about our process, services, and pricing. What would you like to know?</p>
+            </div>
+        </div>
+        <div id="chatbot-options">
+            <button onclick="showProcessOptions()">Our Process</button>
+            <button onclick="showServices()">Our Services</button>
+            <button onclick="showPricing()">Pricing</button>
+            <button onclick="showLinks()">Terms & Privacy Policy</button>
+        </div>
+    </div>
+
+    <script>
+        let previousMessages = [];
+        let previousOptions = [];
+
+        function toggleChatbot() {
+            const chatbotContainer = document.getElementById('chatbot-container');
+            if (chatbotContainer.style.display === "none" || chatbotContainer.style.display === "") {
+                chatbotContainer.style.display = "block"; // Show the chatbot
+            } else {
+                chatbotContainer.style.display = "none"; // Hide the chatbot
+            }
         }
 
-        // Event listener for scrolling
-        window.addEventListener("scroll", () => {
-            if (checkTriggerPoint()) {
-                whatsAppIcon.classList.remove("hidden"); // Show the WhatsApp icon
-            } else {
-                whatsAppIcon.classList.add("hidden"); // Hide the WhatsApp icon
+               
+        function showProcessOptions() {
+            previousMessages.push(document.getElementById('chatbot-body').innerHTML);
+            previousOptions.push(document.getElementById('chatbot-options').innerHTML);
+
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotOptions = document.getElementById('chatbot-options');
+
+            chatbotBody.innerHTML = 
+                `<div class="chatbot-message">
+                    <p><strong>Step 1: Initial Meeting</strong></p>
+                    <button class="collapsible">Click to know more</button>
+                    <div class="content">
+                        <p>We start with either an in-person or online meeting to discuss your project requirements in detail.</p>
+                        <p><strong>Outcome:</strong> We provide recommendations to help you achieve the best results.</p>
+                    </div>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>Step 2: Agreement & Payment</strong></p>
+                    <button class="collapsible">Click to know more</button>
+                    <div class="content">
+                        <p>After the meeting, we prepare and send you an online contract outlining the agreed terms. Once you sign it, we send you an invoice.</p>
+                        <p><strong>Payment:</strong> You pay 50% upfront to start the project.</p>
+                    </div>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>Step 3: Development Phase</strong></p>
+                    <button class="collapsible">Click to know more</button>
+                    <div class="content">
+                        <p>We keep you updated regularly during the development process to ensure the project aligns with your expectations.</p>
+                        <p>We welcome your feedback to make necessary adjustments.</p>
+                    </div>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>Step 4: Testing & Finalization</strong></p>
+                    <button class="collapsible">Click to know more</button>
+                    <div class="content">
+                        <p>Before finalizing, we conduct thorough testing to ensure the project meets our high standards.</p>
+                        <p>We provide a comprehensive walkthrough of the finished product to confirm it’s what you envisioned.</p>
+                    </div>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>Step 5: Final Payment & Delivery</strong></p>
+                    <button class="collapsible">Click to know more</button>
+                    <div class="content">
+                        <p>Once the project is ready, you pay the remaining 50% balance, and we either deploy it live or hand it over to you based on your preference.</p>
+                    </div>
+                </div>`;
+
+            chatbotOptions.innerHTML = 
+                `<button onclick="goBack()">Back</button>`;
+
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
             }
+        }
+
+        function showServices() {
+            previousMessages.push(document.getElementById('chatbot-body').innerHTML);
+            previousOptions.push(document.getElementById('chatbot-options').innerHTML);
+
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotOptions = document.getElementById('chatbot-options');
+
+            chatbotBody.innerHTML = 
+                `<div class="chatbot-message">
+                    <p><strong>Web Development</strong></p>
+                    <p>Custom websites built with performance, security, and user experience in mind.</p>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>Mobile Apps</strong></p>
+                    <p>Innovative mobile apps for Android and iOS that engage and retain users.</p>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>E-Commerce</strong></p>
+                    <p>Scalable e-commerce platforms with seamless integration and user-friendly designs.</p>
+                </div>`;
+
+            chatbotOptions.innerHTML = 
+                `<button onclick="goBack()">Back</button>
+                 <button onclick="goToPage('services.html')">Learn More About Our Services</button>`;
+        }
+
+        function showPricing() {
+            previousMessages.push(document.getElementById('chatbot-body').innerHTML);
+            previousOptions.push(document.getElementById('chatbot-options').innerHTML);
+
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotOptions = document.getElementById('chatbot-options');
+
+            chatbotBody.innerHTML = `<p>To view our pricing information, please click the button below.</p>`;
+            chatbotOptions.innerHTML = 
+                `<button onclick="goBack()">Back</button>
+                 <button onclick="goToPage('pricing.html')">View Pricing</button>`;
+        }
+
+        function showLinks() {
+            previousMessages.push(document.getElementById('chatbot-body').innerHTML);
+            previousOptions.push(document.getElementById('chatbot-options').innerHTML);
+
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotOptions = document.getElementById('chatbot-options');
+
+            chatbotBody.innerHTML = 
+                `<p>For our Terms of Service and Privacy Policy, click the links below:</p>`;
+            chatbotOptions.innerHTML = 
+                `<button onclick="goToPage('terms.html')">Terms of Service</button>
+                 <button onclick="goToPage('privacy.html')">Privacy Policy</button>
+                 <button onclick="goBack()">Back</button>`;
+        }
+
+        function goBack() {
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotOptions = document.getElementById('chatbot-options');
+
+            chatbotBody.innerHTML = previousMessages.pop();
+            chatbotOptions.innerHTML = previousOptions.pop();
+        }
+
+        function goToPage(url) {
+            window.location.href = url;
+        }
+
+        // Get the close button and the chatbot container
+        const closeButton = document.getElementById("close-chatbot");
+        const chatbotContainer = document.getElementById("chatbot-container");
+
+        // When the close button is clicked, hide the chatbot container
+        closeButton.addEventListener("click", function() {
+        chatbotContainer.style.display = "none"; // Hide the chatbot
         });
-    });
-</script>
+
+    </script>
+    
+    <!-- WhatsApp Icon Section -->
+<section id="whatsapp-icon-section">
+    <a href="https://wa.me/0665520197" id="whatsAppIcon" class="whatsapp-icon" target="_blank">
+        <img src="4102606_applications_media_social_whatsapp_icon.png" alt="WhatsApp Icon">
+    </a>
+</section>
    
 <!-- ================= TESTIMONIALS ================= -->
 <section id="testimonials" class="container">
