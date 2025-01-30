@@ -618,11 +618,6 @@ button:hover {
     z-index: 9999;  /* Ensure it stays above other content */
     width: 50px;    /* Set the width of the icon */
     height: 50px;   /* Set the height of the icon */
-    background-color: #25D366; /* WhatsApp green background color */
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center;     /* Center the image vertically */
-    border-radius: 50%;      /* Make the background circular (optional) */
 }
 
 .whatsapp-icon img {
@@ -630,6 +625,7 @@ button:hover {
     height: 100%;   /* Ensure the image fills the anchor completely */
     object-fit: contain; /* Maintain aspect ratio of the icon */
 }
+
 
 /* Contact Section */
 .contact {
@@ -897,4 +893,4 @@ section p {
     background-color: #ffcc00; /* Slightly darker yellow */
     transform: translateY(-5px); /* Hover lift effect */
 }
-        
+         
