@@ -1,339 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing Plans</title>
+    <title>Featured Projects</title>
     <style>
-       /* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Ensure consistent box sizing */
-    font-family: 'Roboto', sans-serif; /* Ensure uniform font family for all elements */
-}
-
-/* Body Styles */
-body {
-    font-family: 'Inter', sans-serif; /* Keep 'Inter' for the body font */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.2)); /* Consistent background gradient */
-    color: #333; /* Dark text for readability */
-    line-height: 1.6; /* Improve readability with line height */
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    margin: 0;
-    padding: 0;
-}
-        .container {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        h2 {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 32px;
-        }
-
-        .wrapper {
-            max-width: 1200px;
-            margin: 50px auto;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            padding: 20px;
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            justify-content: space-evenly;
-            padding: 20px;
-            background: #808080;
-            border-radius: 16px 16px 0 0;
-            position: relative;
-        }
-
-        .tabs label {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
             color: #fff;
-        }
-
-        .tabs .slider {
-            position: absolute;
-            height: 4px;
-            background-color: #fff;
-            bottom: 0;
-            transition: all 0.3s ease;
-        }
-
-        /* Centered card layout */
-        .pricing-card {
-            width: 80%;
-            max-width: 400px;
-            margin: 50px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            text-align: center;
-            padding: 30px;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .pricing-card .card-header {
-            background: #808080;
-            padding: 20px;
-            color: #fff;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .pricing-card .price {
-            font-size: 40px;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        .pricing-card .price span {
-            font-size: 16px;
-        }
-
-        .pricing-card ul {
-            list-style-type: none;
-            padding: 0;
             margin: 0;
+            padding: 0;
         }
 
-        .pricing-card ul li {
-            padding: 12px;
+        .featured-projects {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .featured-projects h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .featured-projects p {
             font-size: 16px;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            align-items: center;
+            margin-bottom: 20px;
         }
 
-        .pricing-card ul li i {
-            margin-right: 10px;
-            color: #808080;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
 
-        .pricing-card button {
+        .project {
+            background-color: #111;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .project img {
             width: 100%;
-            padding: 15px;
-            background: #808080;
-            color: #fff;
-            border: none;
-            border-radius: 0 0 8px 8px;
+            height: auto;
+            display: block;
+        }
+
+        .project h3 {
             font-size: 18px;
-            cursor: pointer;
+            margin: 10px 0;
         }
 
-        .pricing-card button:hover {
-            transform: scale(0.98);
+        .view-site {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
         }
 
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .pricing-card {
-                width: 90%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .pricing-card {
-                width: 100%;
-            }
-
-            .tabs {
-                flex-direction: column;
-            }
-
-            .tabs label {
-                font-size: 16px;
-                padding: 12px;
-            }
+        .view-site:hover {
+            background-color: #555;
         }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <h2>Website & App Development Pricing</h2>
-        <div class="wrapper">
-            <div class="tabs">
-                <input type="radio" id="website-tab" name="tab" checked>
-                <input type="radio" id="app-tab" name="tab">
-
-                <label for="website-tab" class="tab-label">Website Development</label>
-                <label for="app-tab" class="tab-label">App Development</label>
-
-                <div class="slider"></div>
+    <section class="featured-projects">
+        <h2>Featured Projects</h2>
+        <p>A showcase of selected projects highlighting my skills and experience.</p>
+        <div class="projects-grid">
+            <!-- Personal Website -->
+            <div class="project">
+                <img src="images/personal-website.jpg" alt="Personal Website">
+                <h3>Personal Website</h3>
+                <a href="https://personal-website-example.com" class="view-site">View Site</a>
             </div>
-
-            <!-- Pricing Content -->
-            <div class="tab-content">
-                <!-- Website Development Tab Content -->
-                <div id="website" class="tab-section">
-                    <div class="pricing-card" id="website-basic">
-                        <div class="card-header">Basic Website</div>
-                        <div class="price">R3,000 <span>From</span></div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Pages: 1-3 pages</li>
-                            <li><i class="fas fa-check"></i> Individuals, bloggers, personal portfolios</li>
-                            <li><i class="fas fa-check"></i> Custom landing page design</li>
-                            <li><i class="fas fa-check"></i> Contact form integration</li>
-                            <li><i class="fas fa-check"></i> Basic SEO setup</li>
-                            <li><i class="fas fa-check"></i> Responsive design (mobile-friendly)</li>
-                        </ul>
-                        <button onclick="nextCard('website')">Next Plan</button>
-                    </div>
-
-                    <div class="pricing-card" id="website-standard" style="display:none;">
-                        <div class="card-header">Standard Website</div>
-                        <div class="price">R6,000 <span>From</span></div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Pages: 4-8 pages</li>
-                            <li><i class="fas fa-check"></i> Small businesses, consultants, or non-profits.</li>
-                            <li><i class="fas fa-check"></i> Custom homepage and inner page design</li>
-                            <li><i class="fas fa-check"></i> Contact form, gallery, or blog</li>
-                            <li><i class="fas fa-check"></i> Basic SEO optimization</li>
-                            <li><i class="fas fa-check"></i> Social media integration</li>
-                            <li><i class="fas fa-check"></i> Mobile responsiveness</li>
-                            
-                        </ul>
-                        <button onclick="nextCard('website')">Next Plan</button>
-                    </div>
-
-                    <div class="pricing-card" id="website-premium" style="display:none;">
-                        <div class="card-header">Premium Website</div>
-                        <div class="price">R12,000 <span>From</span></div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Pages: 8-16 pages</li>
-                            <li><i class="fas fa-check"></i> Growing businesses, service providers, or organizations.</li>
-                            <li><i class="fas fa-check"></i> Custom homepage and multiple service/product pages</li>
-                            <li><i class="fas fa-check"></i> Blog or portfolio section</li>
-                            <li><i class="fas fa-check"></i> Advanced SEO setup</li>
-                            <li><i class="fas fa-check"></i> Social media, chat integration, and more</li>
-                            <li><i class="fas fa-check"></i> Newsletter subscription form</li>
-                        </ul>
-                        <button onclick="nextCard('website')">Next Plan</button>
-                    </div>
-                </div>
-
-                <div class="pricing-card" id="website-premium" style="display:none;">
-                        <div class="card-header">E-commerce Package</div>
-                        <div class="price">R10,000 <span>From</span></div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Pages: Custom (varies by product catalog)</li>
-                            <li><i class="fas fa-check"></i> Retail businesses, online stores, or product-based companies.</li>
-                            <li><i class="fas fa-check"></i> Online store setup with WooCommerce/Shopify/Wix</li>
-                            <li><i class="fas fa-check"></i> Payment gateway integration</li>
-                            <li><i class="fas fa-check"></i> Inventory management system</li>
-                            <li><i class="fas fa-check"></i> Product pages with images, descriptions, and reviews</li>
-                            <li><i class="fas fa-check"></i> Basic SEO, user account management, shipping, and taxes</li>
-                        </ul>
-                        <button onclick="nextCard('website')">Next Plan</button>
-                    </div>
-                </div>
-
-                
-
-                
-                <!-- App Development Tab Content -->
-                <div id="app" class="tab-section" style="display:none;">
-                    <div class="pricing-card" id="app-basic">
-                        <div class="card-header">Basic App</div>
-                        <div class="price">R50,000 <span>From</span></div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Development Time: 2-4 months</li>
-                            <li><i class="fas fa-check"></i> Simple apps with limited features.</li>
-                            <li><i class="fas fa-check"></i> User login and registration</li>
-                            <li><i class="fas fa-check"></i> Basic UI/UX design</li>
-                            <li><i class="fas fa-check"></i> Simple functionality (form submission, calculators)</li>
-                            <li><i class="fas fa-check"></i> Push notifications (optional)</li>
-                        </ul>
-                        <button onclick="nextCard('app')">Next Plan</button>
-                    </div>
-
-                    <div class="pricing-card" id="app-standard" style="display:none;">
-                        <div class="card-header">Standard App</div>
-                        <div class="price">R75,000 <span>From</span></div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Development Time: 4-6 months</li>
-                            <li><i class="fas fa-check"></i> Apps with medium complexity.</li>
-                            <li><i class="fas fa-check"></i> User profiles and login system</li>
-                            <li><i class="fas fa-check"></i> Advanced UI/UX design with custom features</li>
-                            <li><i class="fas fa-check"></i> Integration with third-party APIs</li>
-                            <li><i class="fas fa-check"></i> Admin dashboard for content management</li>
-                            
-                        </ul>
-                        <button onclick="nextCard('app')">Next Plan</button>
-                    </div>
-
-                    <div class="pricing-card" id="app-premium" style="display:none;">
-                        <div class="card-header">Premium App</div>
-                        <div class="price">R120,000 <span>From</span></div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Development Time: 9-12 months</li>
-                            <li><i class="fas fa-check"></i> Complex apps with custom features.</li>
-                            <li><i class="fas fa-check"></i> Complete custom app design and development</li>
-                            <li><i class="fas fa-check"></i> Multiple integrations (payment gateways, cloud storage, etc.)</li>
-                            <li><i class="fas fa-check"></i> Real-time features (chat, live tracking)</li>
-                            <li><i class="fas fa-check"></i> Advanced user roles and permissions</li>
-                         </ul>
-                        <button onclick="nextCard('app')">Next Plan</button>
-                    </div>
-                </div>
+            <!-- Business Website -->
+            <div class="project">
+                <img src="images/business-website.jpg" alt="Business Website">
+                <h3>Business Website</h3>
+                <a href="https://business-website-example.com" class="view-site">View Site</a>
+            </div>
+            <!-- E-commerce Website -->
+            <div class="project">
+                <img src="images/ecommerce-website.jpg" alt="E-commerce Website">
+                <h3>E-commerce Website</h3>
+                <a href="https://ecommerce-website-example.com" class="view-site">View Site</a>
+            </div>
+            <!-- Basic App -->
+            <div class="project">
+                <img src="images/basic-app.jpg" alt="Basic App">
+                <h3>Basic App</h3>
+                <a href="https://basic-app-example.com" class="view-site">View Site</a>
+            </div>
+            <!-- Premium App -->
+            <div class="project">
+                <img src="images/premium-app.jpg" alt="Premium App">
+                <h3>Premium App</h3>
+                <a href="https://premium-app-example.com" class="view-site">View Site</a>
+            </div>
+            <!-- Additional App -->
+            <div class="project">
+                <img src="images/additional-app.jpg" alt="Additional App">
+                <h3>Additional App</h3>
+                <a href="https://additional-app-example.com" class="view-site">View Site</a>
             </div>
         </div>
-    </div>
-
-    <!-- FontAwesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-    <script>
-        // Function to cycle through the pricing cards
-        function nextCard(type) {
-            const basicCard = document.getElementById(`${type}-basic`);
-            const standardCard = document.getElementById(`${type}-standard`);
-            const premiumCard = document.getElementById(`${type}-premium`);
-
-            if (basicCard.style.display !== 'none') {
-                basicCard.style.display = 'none';
-                standardCard.style.display = 'block';
-            } else if (standardCard.style.display !== 'none') {
-                standardCard.style.display = 'none';
-                premiumCard.style.display = 'block';
-            } else if (premiumCard.style.display !== 'none') {
-                premiumCard.style.display = 'none';
-                basicCard.style.display = 'block';
-            }
-        }
-
-        // Switch tabs logic
-        document.getElementById("website-tab").addEventListener("click", () => {
-            document.getElementById("website").style.display = 'block';
-            document.getElementById("app").style.display = 'none';
-        });
-
-        document.getElementById("app-tab").addEventListener("click", () => {
-            document.getElementById("app").style.display = 'block';
-            document.getElementById("website").style.display = 'none';
-        });
-
-        // Initial state: Show Website Development first
-        document.getElementById("website").style.display = 'block';
-    </script>
+    </section>
 </body>
-
-</html>
+    </html>
+    
