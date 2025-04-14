@@ -32,8 +32,7 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
   z-index: 1000;
   backdrop-filter: blur(15px); /* Glassmorphism effect */
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
-  animation: gradientAnimation 8s ease infinite; /* Gradient animation */
-}
+ }
 
 /* Logo Styles */
 .logo img {
@@ -84,7 +83,7 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
   padding-top: 80px;
   z-index: 2000;
   box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-  animation: gradientAnimation 8s ease infinite;
+  
 }
 
 .main-menu.active {
@@ -257,7 +256,6 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
   width: 100%;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
   backdrop-filter: blur(15px);
-  animation: gradientAnimation 8s ease infinite;
   z-index: 2000;
   padding: 20px;
   text-align: center;
