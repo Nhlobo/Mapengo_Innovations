@@ -196,124 +196,146 @@
       min-height: 100vh;
       padding-bottom: 20px;
     }
-/* Wrapper */
-.gradient-wrapper {
-  max-width: 1000px;
-  margin: auto;
-  padding: 2rem;
-}
 
-/* Landscape Image */
+
+   /* Image Wrapper - Full Width Landscape */
 .about-img {
   position: relative;
   width: 100%;
+  max-width: 1080px;
   height: auto;
+  margin: 0 auto 2rem auto;
   overflow: hidden;
-  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .about-img img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  display: block;
   object-fit: cover;
+  border-radius: 12px;
 }
 
-/* Section Headings */
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #003366;
-  text-align: center;
+/* Optional Overlay */
+.about-img .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+  border-radius: 12px;
+  pointer-events: none;
 }
 
-h2.subheading {
-  font-size: 1.8rem;
-  color: #005b96;
-  margin-top: 2.5rem;
+/* Responsive Text Styling */
+h1, h2 {
+  font-weight: 700;
+  color: #222;
   margin-bottom: 1rem;
-  border-left: 5px solid #005b96;
-  padding-left: 1rem;
 }
 
-/* Paragraphs */
-section p {
+p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Wrapper for Gradient Section */
+.gradient-wrapper {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1));
+  color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-wrapper h1, 
+.gradient-wrapper h2 {
+  color: #fff;
+}
+
+/* Sections Styling */
+section {
+  padding: 2rem;
+  background-color: #fff;
+  margin: 2rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.subheading {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  font-size: 1.1rem;
-  text-align: justify;
+  color: #444;
+  text-transform: uppercase;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
 }
 
 /* Founder Image */
 .section-img {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin: 1.5rem 0;
 }
 
 .section-img img {
-  width: 250px;
-  border-radius: 100px;
-  border: 3px solid #005b96;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* List Styling */
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul li {
-  background: #e3f2fd;
-  padding: 0.8rem 1rem;
-  border-left: 5px solid #2196f3;
-  margin-bottom: 0.5rem;
-  border-radius: 4px;
-}
-
-/* Call To Action Button */
+/* CTA */
 .cta-button {
   display: inline-block;
+  background-color: #FFD700;
+  color: #fff;
   padding: 0.75rem 1.5rem;
-  background-color: #0077cc;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+  font-size: 1rem;
   border-radius: 5px;
-  transition: background 0.3s ease;
-  margin-top: 1rem;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
 }
-
 .cta-button:hover {
-  background-color: #005fa3;
+  background-color: #e6c200;
 }
 
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-  .gradient-wrapper {
-    padding: 1rem;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-img img {
+    max-width: 100%;
+    border-radius: 8px;
   }
 
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2.subheading {
-    font-size: 1.5rem;
+  .section-img {
+    flex-direction: column;
+    align-items: center;
   }
 
   .section-img img {
-    width: 180px;
+    max-width: 90%;
   }
 
-  section p {
-    font-size: 1rem;
+  .gradient-wrapper {
+    padding: 1.5rem;
   }
 }
 
-      
-
-
-/
+/* Call-to-Action */
 .cta-button {
   display: inline-block;
   background-color: #FFD700;
@@ -328,7 +350,8 @@ ul li {
   background-color: #FFD700;
 }
 
-/* Footer Styles */
+
+      /* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
@@ -466,7 +489,7 @@ footer {
    <div class="gradient-wrapper">
   <section>
     <div class="about-img">
-      <img src="images/20250418_174645.jpg" alt="Mapengo Landscape">
+      <img src="your-landscape-image.jpg" alt="Mapengo Landscape">
       <div class="overlay"></div>
     </div>
     <h1>About Mapengo Innovations</h1>
@@ -476,7 +499,7 @@ footer {
   <section>
     <h2 class="subheading">Meet the Founder</h2>
     <div class="section-img">
-      <img src="images/your-founder-image.jpg" alt="Founder: Novice Nhlovo Mathebula">
+      <img src="your-founder-image.jpg" alt="Founder: Novice Nhlovo Mathebula">
     </div>
     <p>Novice Nhlovo Mathebula is a Software Engineer and ALX graduate with a passion for solving real-world problems through technology. His mission is to make digital solutions more accessible, impactful, and tailored to businesses of all sizes.</p>
   </section>
