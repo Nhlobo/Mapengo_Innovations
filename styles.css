@@ -872,18 +872,32 @@ section p {
 
 
 
-  .showcase-wrapper {
-      overflow: hidden;
-      padding: 2rem 0;
-      width: 100%;
-    }
+  /* Carousel Wrapper - enable touch scrolling */
+.showcase-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding: 2rem 0;
+  width: 100%;
+  position: relative;
+}
 
-    .showcase-track {
-      display: flex;
-      flex-wrap: nowrap;
-      animation: scrollLoop 20s linear infinite;
-      gap: 2rem;
-    }
+/* Carousel Track */
+.showcase-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  animation: scrollLoop 40s linear infinite;
+  width: max-content;
+  will-change: transform;
+  pointer-events: auto;
+}
+
+/* Allow scrolling with swipe (touch) */
+.showcase-wrapper::-webkit-scrollbar {
+  display: none;
+}
 
     .showcase-track:hover {
       animation-play-state: paused;
