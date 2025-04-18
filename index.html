@@ -371,6 +371,7 @@ acceptCookiesButton.addEventListener('click', () => {
 
     </script>
 
+  <section id="showcase-section">
    <!-- Carousel -->
   <div class="showcase-wrapper">
     <div class="showcase-track">
@@ -425,7 +426,26 @@ acceptCookiesButton.addEventListener('click', () => {
       <div class="stat-label">Digital Solutions Delivered</div>
     </div>
   </div>
+     <script>
+  const wrapper = document.querySelector('.showcase-wrapper');
+  const track = document.querySelector('.showcase-track');
 
+  let isTouching = false;
+
+  wrapper.addEventListener('touchstart', () => {
+    track.style.animationPlayState = 'paused';
+    isTouching = true;
+  });
+
+  wrapper.addEventListener('touchend', () => {
+    if (isTouching) {
+      track.style.animationPlayState = 'running';
+      isTouching = false;
+    }
+  });
+</script>
+ 
+</section>
 
    
    
