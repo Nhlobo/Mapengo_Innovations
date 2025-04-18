@@ -1061,10 +1061,11 @@ section p {
     }
 
     .companies-title {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      color: #fff;
-    }
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
 
     .companies-logos {
       display: flex;
