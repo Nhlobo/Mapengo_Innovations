@@ -164,9 +164,63 @@ body {
             }
         }
     </style>
-</head>
-
 <body>
+<header class="navbar" id="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Mapengo Innovations">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" onclick="closeMenuAndNavigate('index.html')">Home</a></li>
+                <li><a href="about.html" onclick="closeMenuAndNavigate('about.html')">About</a></li>
+                <li><a href="services.html" onclick="closeMenuAndNavigate('services.html')">Services</a></li>
+                <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+             </ul>
+        </nav>
+        <div class="toggle-button" id="toggleButton">&#9776;</div>
+    </header>
+
+    <!-- Sliding Menu -->
+    <div id="mainMenu" class="main-menu">
+        <span class="close-btn" id="closeMenuButton">&#215;</span>
+        <ul>
+            <li><a href="index.html" onclick="closeMenuAndNavigate('index.html')">Home</a></li>
+            <li><a href="about.html" onclick="closeMenuAndNavigate('about.html')">About</a></li>
+            <li><a href="services.html" onclick="closeMenuAndNavigate('services.html')">Services</a></li>
+            <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+            <li><a href="contact" onclick="closeMenuAndNavigate('contact')">Contact</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const toggleButton = document.querySelector("#toggleButton");
+        const mainMenu = document.querySelector("#mainMenu");
+        const closeMenuButton = document.querySelector("#closeMenuButton");
+
+        toggleButton.addEventListener('click', function () {
+            mainMenu.classList.toggle('active');
+            toggleButton.innerHTML = mainMenu.classList.contains("active") ? "&#215;" : "&#9776;";
+        });
+
+        closeMenuButton.addEventListener('click', function () {
+            mainMenu.classList.remove('active');
+            toggleButton.innerHTML = "&#9776;";
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!mainMenu.contains(event.target) && !toggleButton.contains(event.target)) {
+                mainMenu.classList.remove('active');
+                toggleButton.innerHTML = "&#9776;";
+            }
+        });
+
+        function closeMenuAndNavigate(target) {
+            mainMenu.classList.remove('active');
+            toggleButton.innerHTML = "&#9776;";
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
     <div class="container">
         <h2>Website & App Development Pricing</h2>
         <div class="wrapper">
