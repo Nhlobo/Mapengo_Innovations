@@ -432,7 +432,171 @@ footer {
 .footer-links a:hover {
     color: #1e293b;
 }
-      
+
+/* Chatbot Container with Glassmorphism */
+#chatbot-container {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blurring the background behind the container */
+    border-radius: 12px; /* Matching rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Same shadow for depth */
+    overflow: hidden;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    margin: 0; /* No global margin affecting other sections */
+    width: 90%; /* Use percentage for responsiveness */
+    max-width: 400px; /* Maximum width */
+    transition: all 0.3s ease; /* Smooth transition for changes in size */
+}
+
+/* Close Button */
+#close-chatbot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px; /* Smaller width */
+    height: 30px; /* Smaller height */
+    background-color: rgba(255, 0, 0, 0.8); /* Slightly transparent red */
+    color: white; /* White color for X */
+    border-radius: 50%; /* Circular button */
+    font-size: 9px; /* Smaller X */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1100; /* Ensure it's above all other content */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#close-chatbot:hover {
+    background-color: rgba(255, 0, 0, 1); /* Solid red when hovered */
+    transform: scale(1.1); /* Slightly enlarge when hovered */
+}
+
+/* Ensure the X inside the button is centered */
+#close-chatbot span {
+    font-size: 18px; /* X is smaller */
+    font-weight: bold;
+}
+
+        
+#close-chatbot span {
+    font-size: 28px; /* Larger X */
+}
+
+
+/* Chatbot Body with Glass Effect */
+#chatbot-body {
+    padding: 10px 20px; /* Reduced padding for better fit */
+    height: auto; /* Allow height to grow with content */
+    max-height: 300px; /* Max height for message body */
+    overflow-y: auto; /* Allows scrolling if content exceeds max height */
+    border-bottom: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.5); /* Slightly more opaque for readability */
+    backdrop-filter: blur(8px); /* Consistent blur effect */
+}
+
+/* Chatbot Options with Glass Effect */
+#chatbot-options {
+    padding: 10px 20px; /* Reduced padding for better fit */
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.5); /* Slightly more opaque for readability */
+    backdrop-filter: blur(8px); /* Consistent blur effect */
+}
+
+/* Chatbot Message with Glass Effect */
+.chatbot-message {
+    margin: 5px 0; /* Reduced margin to make messages closer */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+    border-radius: 12px; /* Same rounded corners as FAQ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Same shadow as FAQ section */
+    max-width: 100%; /* Ensure message doesn’t overflow */
+    word-wrap: break-word; /* Prevent long words from breaking layout */
+}
+
+/* Chatbot Button with Glass Effect */
+button.collapsible {
+    background-color: rgba(0, 176, 255, 0.8); /* Semi-transparent background with a hint of blue */
+    color: white;
+    padding: 12px; /* Reduced padding to fit better */
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 12px; /* Matching rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+button.collapsible.active, button.collapsible:hover {
+    background-color: rgba(0, 176, 255, 1); /* Solid blue when hovered */
+}
+
+/* General Chatbot Button with Glass Effect */
+button {
+    background-color: rgba(0, 176, 255, 0.8); /* Semi-transparent background */
+    color: white;
+    padding: 12px; /* Matching padding */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px 0; /* Reduced margin for closer fit */
+    border-radius: 12px; /* Rounded corners matching FAQ */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 176, 255, 1); /* Solid blue on hover */
+}
+
+/* Chatbot Icon with Glass Effect */
+#chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(52, 152, 219, 0.8); /* Semi-transparent blue */
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Same shadow as FAQ section */
+    transition: background-color 0.3s ease;
+}
+
+/* Adding a slight hover effect on the chatbot icon */
+#chatbot-icon:hover {
+    background-color: rgba(41, 128, 185, 1); /* Darker blue on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* WhatsApp Icon Styling - Same as Chatbot Icon */
+#whatsapp-icon {
+    position: fixed;
+    bottom: 90px; /* Space above chatbot */
+    right: 20px;
+    background-color: rgba(37, 211, 102, 0.8); /* WhatsApp green */
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#whatsapp-icon:hover {
+    background-color: rgba(37, 211, 102, 1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}      
     </style>
 </head>
 
