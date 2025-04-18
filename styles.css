@@ -872,43 +872,49 @@ section p {
 
 
 
-
-
-
-
-    /* Carousel */
-    .showcase-wrapper {
-      width: 100%;
+  .showcase-wrapper {
       overflow: hidden;
-      margin-bottom: 4rem;
-      display: flex;
-      justify-content: center;
+      padding: 2rem 0;
+      width: 100%;
     }
 
     .showcase-track {
       display: flex;
-      animation: scrollLoop 25s linear infinite;
-      width: fit-content;
+      flex-wrap: nowrap;
+      animation: scrollLoop 20s linear infinite;
+      gap: 2rem;
+    }
+
+    .showcase-track:hover {
+      animation-play-state: paused;
     }
 
     .showcase-item {
-  flex: 0 0 auto;
-  width: 90vw;
-  max-width: 500px;
-  height: 300px; /* set consistent height */
-  margin-right: 2vw;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  background: #1f1f1f;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  border: 2px solid #2a2a2a;
-}
+      min-width: 350px;
+      height: 450px;
+      background-color: #1f1f1f;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4),
+                  inset 0 0 8px rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #2b2b2b;
+      transform: rotateY(-10deg) rotateX(2deg);
+      transition: transform 0.4s ease;
+    }
 
+    .showcase-item:hover {
+      transform: rotateY(0deg) scale(1.03);
+    }
 
     .showcase-item img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
     }
 
     @keyframes scrollLoop {
@@ -916,16 +922,18 @@ section p {
       100% { transform: translateX(-50%); }
     }
 
-    @media (min-width: 768px) {
-      .showcase-item {
-        width: 420px;
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .showcase-track {
+        animation: scrollLoop 10s linear infinite;
+        gap: 1rem;
       }
 
-      .showcase-track {
-        animation-duration: 35s;
+      .showcase-item {
+        min-width: 250px;
+        height: 350px;
       }
     }
-
     /* Tagline */
 .tagline {
   font-size: 1.4rem;
