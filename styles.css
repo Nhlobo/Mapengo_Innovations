@@ -609,12 +609,6 @@ button:hover {
 }
 
 /* Contact Section */
-.contact {
-   background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1));
-    padding: 60px 20px;
-    border-radius: 12px;
-   }
-
 .contact-container {
     max-width: 800px;
     margin: 0 auto;
