@@ -397,7 +397,7 @@ h4, p {
 
 /* FAQ Section */
 .faq-section {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+  
     margin: 50px auto;
     max-width: 800px;
     padding: 2rem;
