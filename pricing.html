@@ -384,20 +384,21 @@ footer {
 }
 
 .wrapper .icon {
-    width: 3em;
-    height: 3em;
-    display: flex;
+    width: auto; /* or remove entirely */
+    height: auto; /* or remove entirely */
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: none; /* remove background */
+    border-radius: 0; /* remove circle shape */
+    box-shadow: none; /* remove shadow */
+    transition: transform 0.2s ease;
+    font-size: 1.5em; /* size your icons appropriately */
 }
 
 .wrapper .icon:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: none; /* ensure no hover shadow */
 }
 
 .tooltip {
@@ -417,21 +418,6 @@ footer {
     opacity: 1;
 }
 
-/* Footer Links */
-.footer-links {
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-.footer-links a {
-    color: #666;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer-links a:hover {
-    color: #1e293b;
-}
 
 /* Chatbot Container with Glassmorphism */
 #chatbot-container {
