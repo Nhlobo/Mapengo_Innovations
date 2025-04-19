@@ -49,6 +49,9 @@
    <!-- Linking Font Awesome for Icons -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+   <!-- Preload the first image -->
+   <link rel="preload" href="images/try.png" as="image">
+
    <style>
       /* Global Reset */
       * {
@@ -646,21 +649,21 @@
          <div class="expertise-grid">
             <div class="expertise-item">
                <div class="expertise-img-container">
-                  <img src="images/try.png" alt="Web Development" class="expertise-img">
+                  <img src="images/try.png" alt="Web Development" class="expertise-img" loading="lazy">
                </div>
                <h3>Web Development</h3>
                <p>Custom websites built with performance, security, and user experience in mind.</p>
             </div>
             <div class="expertise-item">
                <div class="expertise-img-container">
-                  <img src="images/mobile-application.jpeg" alt="Mobile Apps" class="expertise-img">
+                  <img src="images/mobile-application.jpeg" alt="Mobile Apps" class="expertise-img" loading="lazy">
                </div>
                <h3>Mobile Apps</h3>
                <p>Innovative mobile apps for Android and iOS that engage and retain users.</p>
             </div>
             <div class="expertise-item">
                <div class="expertise-img-container">
-                  <img src="images/preview-600x450.png" alt="E-Commerce" class="expertise-img">
+                  <img src="images/preview-600x450.png" alt="E-Commerce" class="expertise-img" loading="lazy">
                </div>
                <h3>E-Commerce</h3>
                <p>Scalable e-commerce platforms with seamless integration and user-friendly designs.</p>
