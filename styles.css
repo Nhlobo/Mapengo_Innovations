@@ -324,76 +324,65 @@ h4, p {
     color: #374151;
 }
 
-/* Testimonials Section */
-#testimonials {
-    padding: 2rem 0.5rem;
+
+
+
+
+
+
+
+
+/* we build what you need */
+section {
+    padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+    backdrop-filter: blur(20px); /* Add background blur */
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    margin-top: 80px;
     text-align: center;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimonials-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    scroll-snap-type: x mandatory;
-    padding: 0 10px;
-    margin: 0 auto;
-    max-width: 90%;
+
+/* Heading for Sections */
+section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
 }
 
-.card {
-    background: #ffffff;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    flex-shrink: 0;
-    width: 250px;
-    margin: 1rem;
-    color: #111827;
-    position: relative;
-}
-
-/* Rating Stars */
-.rating {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    gap: 5px;
-    z-index: 10;
-}
-
-.rating label {
-    font-size: 24px;
-    color: #ddd;
-    cursor: pointer;
-}
-
-.rating label:hover {
-    color: #ff9800;
-}
-
-.rating label:nth-child(-n+5) {
-    color: #ff9800;
-}
-
-/* Testimonial Image */
-.testimonial-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    margin-top: 10px;
-    object-fit: cover;
-}
-
-/* Testimonial Text */
-.title {
+/* Paragraph styling for Sections */
+section p {
     font-size: 1.1rem;
-    font-style: italic;
-    margin-bottom: 1rem;
-    color: #374151;
+    color: #ddd; /* Lighter text for descriptions */
+    line-height: 1.8; /* Improved readability */
+    max-width: 900px;
+    margin: 0 auto; /* Center align text */
 }
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    background-color: #FFD700; /* Golden background */
+    color: #333; /* Dark text color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for Buttons */
+.btn:hover {
+    background-color: #ffcc00; /* Slightly darker yellow */
+    transform: translateY(-5px); /* Hover lift effect */
+}
+
 
 /* FAQ Section */
 .faq-section {
@@ -464,259 +453,6 @@ h4, p {
     max-height: 100px;
     padding: 15px 20px;
 }
-
-/* Chatbot Container with Glassmorphism */
-#chatbot-container {
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Blurring the background behind the container */
-    border-radius: 12px; /* Matching rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Same shadow for depth */
-    overflow: hidden;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: none; /* Hidden by default */
-    z-index: 1000;
-    margin: 0; /* No global margin affecting other sections */
-    width: 90%; /* Use percentage for responsiveness */
-    max-width: 400px; /* Maximum width */
-    transition: all 0.3s ease; /* Smooth transition for changes in size */
-}
-
-/* Close Button */
-#close-chatbot {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px; /* Smaller width */
-    height: 30px; /* Smaller height */
-    background-color: rgba(255, 0, 0, 0.8); /* Slightly transparent red */
-    color: white; /* White color for X */
-    border-radius: 50%; /* Circular button */
-    font-size: 9px; /* Smaller X */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1100; /* Ensure it's above all other content */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#close-chatbot:hover {
-    background-color: rgba(255, 0, 0, 1); /* Solid red when hovered */
-    transform: scale(1.1); /* Slightly enlarge when hovered */
-}
-
-/* Ensure the X inside the button is centered */
-#close-chatbot span {
-    font-size: 18px; /* X is smaller */
-    font-weight: bold;
-}
-
-        
-#close-chatbot span {
-    font-size: 28px; /* Larger X */
-}
-
-
-/* Chatbot Body with Glass Effect */
-#chatbot-body {
-    padding: 10px 20px; /* Reduced padding for better fit */
-    height: auto; /* Allow height to grow with content */
-    max-height: 300px; /* Max height for message body */
-    overflow-y: auto; /* Allows scrolling if content exceeds max height */
-    border-bottom: 1px solid #ddd;
-    background: rgba(255, 255, 255, 0.5); /* Slightly more opaque for readability */
-    backdrop-filter: blur(8px); /* Consistent blur effect */
-}
-
-/* Chatbot Options with Glass Effect */
-#chatbot-options {
-    padding: 10px 20px; /* Reduced padding for better fit */
-    display: flex;
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.5); /* Slightly more opaque for readability */
-    backdrop-filter: blur(8px); /* Consistent blur effect */
-}
-
-/* Chatbot Message with Glass Effect */
-.chatbot-message {
-    margin: 5px 0; /* Reduced margin to make messages closer */
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
-    border-radius: 12px; /* Same rounded corners as FAQ */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Same shadow as FAQ section */
-    max-width: 100%; /* Ensure message doesn’t overflow */
-    word-wrap: break-word; /* Prevent long words from breaking layout */
-}
-
-/* Chatbot Button with Glass Effect */
-button.collapsible {
-    background-color: rgba(0, 176, 255, 0.8); /* Semi-transparent background with a hint of blue */
-    color: white;
-    padding: 12px; /* Reduced padding to fit better */
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    font-size: 16px;
-    border-radius: 12px; /* Matching rounded corners */
-    transition: background-color 0.3s ease;
-}
-
-button.collapsible.active, button.collapsible:hover {
-    background-color: rgba(0, 176, 255, 1); /* Solid blue when hovered */
-}
-
-/* General Chatbot Button with Glass Effect */
-button {
-    background-color: rgba(0, 176, 255, 0.8); /* Semi-transparent background */
-    color: white;
-    padding: 12px; /* Matching padding */
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px 0; /* Reduced margin for closer fit */
-    border-radius: 12px; /* Rounded corners matching FAQ */
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: rgba(0, 176, 255, 1); /* Solid blue on hover */
-}
-
-/* Chatbot Icon with Glass Effect */
-#chatbot-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgba(52, 152, 219, 0.8); /* Semi-transparent blue */
-    color: white;
-    border-radius: 50%;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Same shadow as FAQ section */
-    transition: background-color 0.3s ease;
-}
-
-/* Adding a slight hover effect on the chatbot icon */
-#chatbot-icon:hover {
-    background-color: rgba(41, 128, 185, 1); /* Darker blue on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* WhatsApp Icon Styling - Same as Chatbot Icon */
-#whatsapp-icon {
-    position: fixed;
-    bottom: 90px; /* Space above chatbot */
-    right: 20px;
-    background-color: rgba(37, 211, 102, 0.8); /* WhatsApp green */
-    color: white;
-    border-radius: 50%;
-    padding: 15px;
-    font-size: 24px;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-#whatsapp-icon:hover {
-    background-color: rgba(37, 211, 102, 1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Contact Section */
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact h1 {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Form Styles */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 5px;
-}
-
-input,
-textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-input:focus,
-textarea:focus {
-    border-color: #00b0ff;
-    outline: none;
-}
-
-textarea {
-    resize: vertical;
-}
-
-button {
-    background-color: #00b0ff;
-    color: white;
-    border: none;
-    padding: 14px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0088cc;
-}
-
-button:active {
-    background-color: #006f99;
-}
-
-         
-
-
-
-
-
-
-
-
-
-
 
 
   /* Carousel Wrapper - enable touch scrolling */
@@ -906,67 +642,148 @@ button:active {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-   
-
-
-/* we build what you need */
-section {
-    padding: 80px 20px;
-    background: rgba(255, 255, 255, 0.1); /* Light transparent background */
-    backdrop-filter: blur(20px); /* Add background blur */
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
-    margin-top: 80px;
+/* Testimonials Section */
+#testimonials {
+    padding: 2rem 0.5rem;
     text-align: center;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+.testimonials-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    padding: 0 10px;
+    margin: 0 auto;
+    max-width: 90%;
+}
 
-/* Heading for Sections */
-section h2 {
-    font-size: 2rem;
+.card {
+    background: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    flex-shrink: 0;
+    width: 250px;
+    margin: 1rem;
+    color: #111827;
+    position: relative;
+}
+
+/* Rating Stars */
+.rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.rating label {
+    font-size: 24px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.rating label:hover {
+    color: #ff9800;
+}
+
+.rating label:nth-child(-n+5) {
+    color: #ff9800;
+}
+
+/* Testimonial Image */
+.testimonial-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+/* Testimonial Text */
+.title {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #374151;
+}
+
+/* Contact Section */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact h1 {
+    text-align: center;
+    font-size: 32px;
     font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-/* Paragraph styling for Sections */
-section p {
-    font-size: 1.1rem;
-    color: #ddd; /* Lighter text for descriptions */
-    line-height: 1.8; /* Improved readability */
-    max-width: 900px;
-    margin: 0 auto; /* Center align text */
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Button Styling */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    background-color: #FFD700; /* Golden background */
-    color: #333; /* Dark text color */
-    border: none;
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-/* Hover effect for Buttons */
-.btn:hover {
-    background-color: #ffcc00; /* Slightly darker yellow */
-    transform: translateY(-5px); /* Hover lift effect */
+input:focus,
+textarea:focus {
+    border-color: #00b0ff;
+    outline: none;
 }
 
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #00b0ff;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0088cc;
+}
+
+button:active {
+    background-color: #006f99;
+}
