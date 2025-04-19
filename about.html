@@ -180,15 +180,11 @@
          font-weight: 700;
          color: #222;
          margin-bottom: 1rem;
-         opacity: 0;
-         animation: slideIn 1s ease-out forwards;
       }
       p {
          margin-bottom: 20px;
          font-size: 1rem;
          color: #555;
-         opacity: 0;
-         animation: slideIn 1s ease-out forwards;
       }
       a {
          text-decoration: none;
@@ -346,10 +342,12 @@
       .about-section h1 {
          font-size: 36px;
          margin-bottom: 20px;
+         animation: slideInFromLeft 1s ease-out;
       }
       .about-section p {
          font-size: 18px;
          line-height: 1.6;
+         animation: slideInFromRight 1s ease-out;
       }
       /* Responsive Design */
       @media (max-width: 768px) {
@@ -402,35 +400,27 @@
             color: #111;
          }
       }
-      /* Our Services Section */
-      .services-section {
-         background-color: #f0f8ff;
-         padding: 40px 20px;
-         border-radius: 10px;
-         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      }
-      .services-section h2 {
-         color: #333;
-         margin-bottom: 20px;
-      }
-      .services-section ul {
-         list-style: none;
-         padding: 0;
-      }
-      .services-section li {
-         margin-bottom: 15px;
-         font-size: 1.1em;
-         color: #555;
-      }
-      /* Animation Keyframes */
-      @keyframes slideIn {
+
+      /* Keyframes for animations */
+      @keyframes slideInFromLeft {
          0% {
+            transform: translateX(-100%);
             opacity: 0;
-            transform: translateY(20px);
          }
          100% {
+            transform: translateX(0);
             opacity: 1;
-            transform: translateY(0);
+         }
+      }
+
+      @keyframes slideInFromRight {
+         0% {
+            transform: translateX(100%);
+            opacity: 0;
+         }
+         100% {
+            transform: translateX(0);
+            opacity: 1;
          }
       }
    </style>
@@ -454,7 +444,7 @@
    </header>
    <!-- Header Image BELOW the navbar -->
    <div class="header-img">
-      <img src="20250418_174645.jpg" alt="Mapengo Innovations">
+      <img src="images/20250418_174645.jpg" alt="Mapengo Innovations">
    </div>
    <!-- Sliding Menu -->
    <div id="mainMenu" class="main-menu">
@@ -511,17 +501,7 @@
       <p>
          Novice started Mapengo Innovations to bridge the gap between businesses and accessible, high-quality digital solutions. His passion for technology and problem-solving drives our mission to make tech work for everyone.
       </p>
-      <div class="flex-sections">
-         <div class="info-box services-section">
-            <h2>Our Services</h2>
-            <ul>
-               <li>Web Development: Modern, responsive websites for every business need.</li>
-               <li>Mobile Apps: User-friendly apps for Android and iOS platforms.</li>
-               <li>Custom Software: Tailored solutions to optimize and streamline operations.</li>
-            </ul>
-         </div>
-      </div>
-   </section>
+    </section>
    <footer>
       <ul class="wrapper">
          <li class="icon facebook" onclick="redirectTo('https://facebook.com')">
