@@ -38,7 +38,6 @@
    </script>
 
    <!-- Google Fonts -->
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
    <!-- Font Awesome -->
@@ -169,125 +168,65 @@
          }
       }
 
-      /* Wrapper with Gradient Background */
-      .gradient-wrapper {
-         background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.4));
-         min-height: 100vh;
-         padding-bottom: 20px;
-      }
-
-      /* Image Wrapper */
-      .about-img {
-         position: relative;
-         width: 100%;
-         max-width: 1080px;
-         height: auto;
-         margin: 0 auto 2rem auto;
-         overflow: hidden;
-         border-radius: 12px;
-         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-      .about-img img {
+      /* Header Image Below Navbar */
+      .header-img img {
          width: 100%;
          height: auto;
          display: block;
-         object-fit: cover;
-         border-radius: 12px;
+         margin-top: 100px;
       }
 
-      /* Responsive Text Styling */
-      h1, h2 {
-         font-weight: 700;
-         color: #222;
-         margin-bottom: 1rem;
-      }
-      p {
-         margin-bottom: 20px;
-         font-size: 1rem;
-         color: #555;
-      }
-      a {
-         text-decoration: none;
-         color: #007bff;
-      }
-      a:hover {
-         text-decoration: underline;
-      }
-
-      /* Wrapper for Gradient Section */
-      .gradient-wrapper {
-         background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1));
-         color: #fff;
-         padding: 2rem;
-         border-radius: 10px;
-         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-      .gradient-wrapper h1,
-      .gradient-wrapper h2 {
-         color: #fff;
-      }
-
-      /* Sections Styling */
-      section {
-         padding: 2rem;
-         background-color: #fff;
-         margin: 2rem 0;
-         border-radius: 10px;
-         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      }
-      .subheading {
-         font-size: 1.5rem;
-         margin-bottom: 1rem;
-         color: #444;
-         text-transform: uppercase;
-         border-left: 4px solid #007bff;
-         padding-left: 10px;
-      }
-
-      /* Founder Image */
-      .section-img {
-         display: flex;
-         justify-content: center;
-         margin: 1.5rem 0;
-      }
-      .section-img img {
-         width: 100%;
-         max-width: 300px;
-         border-radius: 10px;
-         object-fit: cover;
-         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      /* CTA */
-      .cta-button {
-         display: inline-block;
-         background-color: #FFD700;
-         color: #fff;
-         padding: 0.75rem 1.5rem;
-         font-size: 1rem;
-         border-radius: 5px;
-         transition: all 0.3s ease-in-out;
+      /* About Section */
+      .about-section {
+         padding: 50px 20px;
+         max-width: 1000px;
+         margin: 0 auto;
          text-align: center;
       }
-      .cta-button:hover {
-         background-color: #e6c200;
+      .about-section h1 {
+         font-size: 36px;
+         margin-bottom: 20px;
+         animation: slideInFromLeft 1s ease-out;
+      }
+      .about-section p {
+         font-size: 18px;
+         line-height: 1.6;
+         animation: slideInFromRight 1s ease-out;
       }
 
       /* Responsive Design */
       @media (max-width: 768px) {
-         .about-img img {
-            max-width: 100%;
-            border-radius: 8px;
+         .header-img img {
+            margin-top: 120px;
          }
-         .section-img {
-            flex-direction: column;
-            align-items: center;
+         .about-section h1 {
+            font-size: 28px;
          }
-         .section-img img {
-            max-width: 90%;
+         .about-section p {
+            font-size: 16px;
          }
-         .gradient-wrapper {
-            padding: 1.5rem;
+      }
+
+      /* Keyframes for animations */
+      @keyframes slideInFromLeft {
+         0% {
+            transform: translateX(-100%);
+            opacity: 0;
+         }
+         100% {
+            transform: translateX(0);
+            opacity: 1;
+         }
+      }
+
+      @keyframes slideInFromRight {
+         0% {
+            transform: translateX(100%);
+            opacity: 0;
+         }
+         100% {
+            transform: translateX(0);
+            opacity: 1;
          }
       }
 
@@ -352,107 +291,6 @@
       }
       .footer-links a:hover {
          color: #1e293b;
-      }
-
-      /* Header Image Below Navbar */
-      .header-img img {
-         width: 100%;
-         height: auto;
-         display: block;
-         margin-top: 100px;
-      }
-
-      /* About Section */
-      .about-section {
-         padding: 50px 20px;
-         max-width: 1000px;
-         margin: 0 auto;
-         text-align: center;
-      }
-      .about-section h1 {
-         font-size: 36px;
-         margin-bottom: 20px;
-         animation: slideInFromLeft 1s ease-out;
-      }
-      .about-section p {
-         font-size: 18px;
-         line-height: 1.6;
-         animation: slideInFromRight 1s ease-out;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-         .nav-links {
-            display: none;
-         }
-         .toggle-button {
-            display: block;
-         }
-         .header-img img {
-            margin-top: 120px;
-         }
-         .about-section h1 {
-            font-size: 28px;
-         }
-         .about-section p {
-            font-size: 16px;
-         }
-         .flex-sections {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-         }
-         .info-box {
-            flex: 1 1 300px;
-            background-color: #f9f9f9;
-            padding: 1.5rem;
-            border-left: 5px solid #4da6ff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-         }
-         .info-box h2 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            color: #333;
-         }
-         .info-box ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-         }
-         .info-box li {
-            margin-bottom: 0.8rem;
-            color: #555;
-            line-height: 1.6;
-         }
-         .info-box li span {
-            font-weight: 600;
-            color: #111;
-         }
-      }
-
-      /* Keyframes for animations */
-      @keyframes slideInFromLeft {
-         0% {
-            transform: translateX(-100%);
-            opacity: 0;
-         }
-         100% {
-            transform: translateX(0);
-            opacity: 1;
-         }
-      }
-
-      @keyframes slideInFromRight {
-         0% {
-            transform: translateX(100%);
-            opacity: 0;
-         }
-         100% {
-            transform: translateX(0);
-            opacity: 1;
-         }
       }
    </style>
 </head>
