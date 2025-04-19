@@ -293,29 +293,8 @@ body {
     background-color: #0f58c7;
 }
 
-/* Section Styles */
-section {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    padding: 2rem 1rem;
-    margin-bottom: 20px; /* Ensure there's space between sections */
-}
-
-h1, .section-title {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 1.5rem;
-}
-
-h4, p {
-    font-size: 1rem;
-    color: #374151;
-}
-
-/* General Section Styling */
-section {
+/* About Section */
+.about {
     padding: 80px 20px;
     background: rgba(255, 255, 255, 0.1); /* Light transparent background */
     backdrop-filter: blur(20px); /* Add background blur */
@@ -326,16 +305,14 @@ section {
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Heading for Sections */
-section h2 {
+.about h2 {
     font-size: 2rem;
     font-weight: 600;
     color: #1e293b;
     margin-bottom: 1.5rem;
 }
 
-/* Paragraph Styling for Sections */
-section p {
+.about p {
     font-size: 1.1rem;
     color: #ddd; /* Lighter text for descriptions */
     line-height: 1.8; /* Improved readability */
@@ -343,8 +320,7 @@ section p {
     margin: 0 auto; /* Center align text */
 }
 
-/* Button Styling */
-.btn {
+.about .btn {
     display: inline-block;
     padding: 12px 30px;
     font-size: 1.1rem;
@@ -358,79 +334,21 @@ section p {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover Effect for Buttons */
-.btn:hover {
+.about .btn:hover {
     background-color: #ffcc00; /* Slightly darker yellow */
     transform: translateY(-5px); /* Hover lift effect */
 }
 
-/* FAQ Section */
-.faq-section {
-    margin: 50px auto;
-    max-width: 800px;
-    padding: 2rem;
+/* Showcase Section */
+.showcase-section {
+    padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+    backdrop-filter: blur(20px); /* Add background blur */
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    margin-top: 80px;
     text-align: center;
-}
-
-.faq-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.faq-item {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.faq-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.faq-item h3 {
-    padding: 20px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    cursor: pointer;
-    background: #ffffff;
-    margin: 0;
-    transition: background 0.3s ease;
-}
-
-.faq-item h3:hover {
-    background: #f0f0f0;
-}
-
-.faq-item h3::after {
-    content: "+";
-    font-size: 1.5rem;
-    float: right;
-    color: #00b0ff;
-    transition: transform 0.3s ease;
-}
-
-.faq-item.active h3::after {
-    transform: rotate(45deg);
-}
-
-.faq-item p {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 20px;
-    font-size: 1rem;
-    color: #374151;
-    background: #ffffff;
-    border-top: 1px solid #ccc;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.faq-item.active p {
-    max-height: 100px;
-    padding: 15px 20px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Carousel Wrapper - Enable Touch Scrolling */
@@ -618,6 +536,75 @@ section p {
     .tagline {
         font-size: 1.1rem;
     }
+}
+
+/* FAQ Section */
+.faq-section {
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item h3 {
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: #ffffff;
+    margin: 0;
+    transition: background 0.3s ease;
+}
+
+.faq-item h3:hover {
+    background: #f0f0f0;
+}
+
+.faq-item h3::after {
+    content: "+";
+    font-size: 1.5rem;
+    float: right;
+    color: #00b0ff;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active h3::after {
+    transform: rotate(45deg);
+}
+
+.faq-item p {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    font-size: 1rem;
+    color: #374151;
+    background: #ffffff;
+    border-top: 1px solid #ccc;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active p {
+    max-height: 100px;
+    padding: 15px 20px;
 }
 
 /* Testimonials Section */
