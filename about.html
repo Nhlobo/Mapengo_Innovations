@@ -10,6 +10,8 @@
    <meta property="og:description" content="We offer web and app development services, providing custom solutions for websites, mobile apps, and e-commerce platforms.">
    <meta property="og:image" content="https://www.mapengoinnovations.com/images/logo.png">
    <meta property="og:url" content="https://www.mapengoinnovations.com">
+
+   <!-- JSON-LD Schema for Local Business -->
    <script type="application/ld+json">
    {
       "@context": "https://schema.org",
@@ -34,9 +36,14 @@
       ]
    }
    </script>
+
+   <!-- Google Fonts -->
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+   <!-- Font Awesome -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
    <style>
       /* Global Reset */
       * {
@@ -45,18 +52,16 @@
          box-sizing: border-box;
          font-family: 'Inter', sans-serif;
       }
-      
+
       /* Body Styles */
       body {
-       font-family: 'Inter', sans-serif; /* Keep 'Inter' for the body font */
-       background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.2)); /* Consistent background gradient */
-       color: #333; /* Dark text for readability */
-       line-height: 1.6; /* Improve readability with line height */
-       overflow-x: hidden; /* Prevent horizontal scroll */
-       margin: 0;
-       padding: 0;
+         font-family: 'Inter', sans-serif;
+         background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.2));
+         color: #333;
+         line-height: 1.6;
+         overflow-x: hidden;
       }
-      
+
       /* Navbar Styles */
       .navbar {
          display: flex;
@@ -73,11 +78,13 @@
          backdrop-filter: blur(15px);
          background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.3));
       }
+
       /* Logo Styles */
       .logo img {
          height: 60px;
          max-width: 160%;
       }
+
       /* Navigation Links */
       .nav-links {
          list-style: none;
@@ -95,6 +102,7 @@
          color: #1a73e8;
          transform: translateY(-3px);
       }
+
       /* Hamburger Menu */
       .toggle-button {
          font-size: 30px;
@@ -102,6 +110,7 @@
          display: none;
          color: white;
       }
+
       /* Sliding Menu */
       .main-menu {
          position: fixed;
@@ -142,6 +151,7 @@
          color: white;
          text-decoration: none;
       }
+
       /* Responsive Typography */
       @media (max-width: 768px) {
          .toggle-button {
@@ -158,12 +168,14 @@
             padding-left: 0;
          }
       }
+
       /* Wrapper with Gradient Background */
       .gradient-wrapper {
          background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.4));
          min-height: 100vh;
          padding-bottom: 20px;
       }
+
       /* Image Wrapper */
       .about-img {
          position: relative;
@@ -182,6 +194,7 @@
          object-fit: cover;
          border-radius: 12px;
       }
+
       /* Responsive Text Styling */
       h1, h2 {
          font-weight: 700;
@@ -200,6 +213,7 @@
       a:hover {
          text-decoration: underline;
       }
+
       /* Wrapper for Gradient Section */
       .gradient-wrapper {
          background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1));
@@ -212,6 +226,7 @@
       .gradient-wrapper h2 {
          color: #fff;
       }
+
       /* Sections Styling */
       section {
          padding: 2rem;
@@ -228,6 +243,7 @@
          border-left: 4px solid #007bff;
          padding-left: 10px;
       }
+
       /* Founder Image */
       .section-img {
          display: flex;
@@ -241,6 +257,7 @@
          object-fit: cover;
          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
+
       /* CTA */
       .cta-button {
          display: inline-block;
@@ -255,6 +272,7 @@
       .cta-button:hover {
          background-color: #e6c200;
       }
+
       /* Responsive Design */
       @media (max-width: 768px) {
          .about-img img {
@@ -272,6 +290,7 @@
             padding: 1.5rem;
          }
       }
+
       /* Footer Styles */
       footer {
          text-align: center;
@@ -280,6 +299,7 @@
          color: #666;
          font-size: 14px;
       }
+
       /* Social Media Icons */
       .wrapper {
          display: flex;
@@ -319,6 +339,7 @@
       .icon:hover .tooltip {
          opacity: 1;
       }
+
       /* Footer Links */
       .footer-links {
          margin-top: 15px;
@@ -332,6 +353,7 @@
       .footer-links a:hover {
          color: #1e293b;
       }
+
       /* Header Image Below Navbar */
       .header-img img {
          width: 100%;
@@ -339,6 +361,7 @@
          display: block;
          margin-top: 100px;
       }
+
       /* About Section */
       .about-section {
          padding: 50px 20px;
@@ -356,6 +379,7 @@
          line-height: 1.6;
          animation: slideInFromRight 1s ease-out;
       }
+
       /* Responsive Design */
       @media (max-width: 768px) {
          .nav-links {
@@ -433,6 +457,7 @@
    </style>
 </head>
 <body>
+   <!-- Navbar -->
    <header class="navbar" id="navbar">
       <div class="logo">
          <img src="images/logo.png" alt="Mapengo Innovations">
@@ -443,14 +468,16 @@
             <li><a href="about.html" onclick="closeMenuAndNavigate('about.html')">About</a></li>
             <li><a href="services.html" onclick="closeMenuAndNavigate('services.html')">Services</a></li>
             <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
-          </ul>
+         </ul>
       </nav>
       <div class="toggle-button" id="toggleButton">&#9776;</div>
    </header>
+
    <!-- Header Image BELOW the navbar -->
    <div class="header-img">
       <img src="images/20250418_174645.jpg" alt="Mapengo Innovations">
    </div>
+
    <!-- Sliding Menu -->
    <div id="mainMenu" class="main-menu">
       <span class="close-btn" id="closeMenuButton">&#215;</span>
@@ -461,30 +488,38 @@
          <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
       </ul>
    </div>
+
    <script>
+      // Toggle Menu Script
       const toggleButton = document.querySelector("#toggleButton");
       const mainMenu = document.querySelector("#mainMenu");
       const closeMenuButton = document.querySelector("#closeMenuButton");
+
       toggleButton.addEventListener('click', function () {
          mainMenu.classList.toggle('active');
          toggleButton.innerHTML = mainMenu.classList.contains("active") ? "&#215;" : "&#9776;";
       });
+
       closeMenuButton.addEventListener('click', function () {
          mainMenu.classList.remove('active');
          toggleButton.innerHTML = "&#9776;";
       });
+
       document.addEventListener('click', function(event) {
          if (!mainMenu.contains(event.target) && !toggleButton.contains(event.target)) {
             mainMenu.classList.remove('active');
             toggleButton.innerHTML = "&#9776;";
          }
       });
+
       function closeMenuAndNavigate(target) {
          mainMenu.classList.remove('active');
          toggleButton.innerHTML = "&#9776;";
          document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
       }
    </script>
+
+   <!-- About Section -->
    <section id="about">
       <h1>About Mapengo Innovations</h1>
       <p>
@@ -504,9 +539,12 @@
       <p>
          Novice started Mapengo Innovations to bridge the gap between businesses and accessible, high-quality digital solutions. His passion for technology and problem-solving drives our mission to make tech work for everyone.
       </p>
-    </section>
+   </section>
+
+   <!-- Footer -->
    <footer>
       <ul class="wrapper">
+         <!-- Social Media Icons -->
          <li class="icon facebook" onclick="redirectTo('https://facebook.com')">
             <span class="tooltip">Facebook</span>
             <svg
@@ -542,6 +580,7 @@
             </svg>
          </li>
       </ul>
+
       <!-- Privacy & Terms Links -->
       <div class="footer-links">
          <a href="privacy.html">Privacy Policy</a> |
@@ -549,7 +588,9 @@
       </div>
       <p>© 2025 Mapengo Innovations. All rights reserved.</p>
    </footer>
+
    <script>
+      // Redirect Function
       function redirectTo(url) {
          setTimeout(() => {
             window.location.href = url;
