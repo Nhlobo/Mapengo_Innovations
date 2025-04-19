@@ -225,23 +225,52 @@
          padding-left: 10px;
       }
 
-      
+      /* Cookie Policy Section */
+      .cookie-policy-section {
+         padding: 50px 20px;
+         max-width: 1000px;
+         margin: 0 auto;
+         text-align: center;
+         background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1));
+         color: #fff;
+         border-radius: 10px;
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .cookie-policy-section h1 {
+         font-size: 36px;
+         margin-bottom: 20px;
+         animation: slideInFromLeft 1s ease-out;
+      }
+
+      .cookie-policy-section p {
+         font-size: 18px;
+         line-height: 1.6;
+         animation: slideInFromRight 1s ease-out;
+      }
+
+      .cookie-policy-section ul {
+         list-style: none;
+         padding: 0;
+      }
+
+      .cookie-policy-section li {
+         margin-bottom: 10px;
+         font-size: 16px;
+      }
 
       /* Responsive Design */
       @media (max-width: 768px) {
-         .about-img img {
-            max-width: 100%;
-            border-radius: 8px;
+         .cookie-policy-section h1 {
+            font-size: 28px;
          }
-         .section-img {
-            flex-direction: column;
-            align-items: center;
+
+         .cookie-policy-section p {
+            font-size: 16px;
          }
-         .section-img img {
-            max-width: 90%;
-         }
-         .gradient-wrapper {
-            padding: 1.5rem;
+
+         .cookie-policy-section li {
+            font-size: 14px;
          }
       }
 
@@ -306,78 +335,6 @@
       }
       .footer-links a:hover {
          color: #1e293b;
-      }
-
-      
-
-      /* About Section */
-      .about-section {
-         padding: 50px 20px;
-         max-width: 1000px;
-         margin: 0 auto;
-         text-align: center;
-      }
-      .about-section h1 {
-         font-size: 36px;
-         margin-bottom: 20px;
-         animation: slideInFromLeft 1s ease-out;
-      }
-      .about-section p {
-         font-size: 18px;
-         line-height: 1.6;
-         animation: slideInFromRight 1s ease-out;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-         .nav-links {
-            display: none;
-         }
-         .toggle-button {
-            display: block;
-         }
-         .header-img img {
-            margin-top: 120px;
-         }
-         .about-section h1 {
-            font-size: 28px;
-         }
-         .about-section p {
-            font-size: 16px;
-         }
-         .flex-sections {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-         }
-         .info-box {
-            flex: 1 1 300px;
-            background-color: #f9f9f9;
-            padding: 1.5rem;
-            border-left: 5px solid #4da6ff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-         }
-         .info-box h2 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            color: #333;
-         }
-         .info-box ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-         }
-         .info-box li {
-            margin-bottom: 0.8rem;
-            color: #555;
-            line-height: 1.6;
-         }
-         .info-box li span {
-            font-weight: 600;
-            color: #111;
-         }
       }
 
       /* Keyframes for animations */
@@ -462,27 +419,28 @@
       }
    </script>
 
-   <!-- ================= Cookie Policy Section ================= -->
- <section>
-            <h1>Cookie Policy</h1>
-            <p>Effective Date: 23 November 2024</p>
+   <!-- Cookie Policy Section -->
+   <section class="cookie-policy-section">
+      <h1>Cookie Policy</h1>
+      <p>Effective Date: 23 November 2024</p>
 
-            <h1>Introduction</h1>
-            <p>Our website uses cookies to improve your experience. By continuing to browse our website, you agree to our use of cookies.</p>
+      <h2>Introduction</h2>
+      <p>Our website uses cookies to improve your experience. By continuing to browse our website, you agree to our use of cookies.</p>
 
-            <h1>What are Cookies?</h1>
-            <p>Cookies are small files that are stored on your device. These cookies help improve the performance of the website and enable certain features, such as remembering preferences or login details.</p>
+      <h2>What are Cookies?</h2>
+      <p>Cookies are small files that are stored on your device. These cookies help improve the performance of the website and enable certain features, such as remembering preferences or login details.</p>
 
-            <h1>Types of Cookies We Use</h1>
-            <ul>
-                <li>Essential Cookies: Necessary for the website's functionality.</li>
-                <li>Analytics Cookies: Help us understand how our website is used.</li>
-                <li>Advertising Cookies: Track your activity for personalized ads.</li>
-            </ul>
+      <h2>Types of Cookies We Use</h2>
+      <ul>
+         <li>Essential Cookies: Necessary for the website's functionality.</li>
+         <li>Analytics Cookies: Help us understand how our website is used.</li>
+         <li>Advertising Cookies: Track your activity for personalized ads.</li>
+      </ul>
 
-            <h1>How to Manage Cookies</h1>
-            <p>You can manage cookie preferences in your browser settings. You may also choose to disable certain cookies; however, some functionality may be affected.</p>
-        </section>
+      <h2>How to Manage Cookies</h2>
+      <p>You can manage cookie preferences in your browser settings. You may also choose to disable certain cookies; however, some functionality may be affected.</p>
+   </section>
+
    <!-- Footer -->
    <footer>
       <ul class="wrapper">
