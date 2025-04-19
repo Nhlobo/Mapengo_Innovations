@@ -49,6 +49,9 @@
    <!-- Linking Font Awesome for Icons -->
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+   <!-- Preload the first image -->
+   <link rel="preload" href="images/try.png" as="image">
+
    <style>
       /* Global Reset */
       * {
@@ -192,147 +195,198 @@
          /* Adjust any further styles for smaller screens if needed */
       }
 
-      .container {
-         width: 90%;
-         margin: 0 auto;
-      }
-
-      h2 {
+      /* Section Styles */
+      section {
+         padding: 80px 20px;
+         background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+         backdrop-filter: blur(20px); /* Add background blur */
+         border-radius: 15px;
+         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+         margin-top: 80px;
          text-align: center;
-         margin-top: 50px;
-         font-size: 32px;
+         transition: background 0.3s ease, box-shadow 0.3s ease;
       }
 
-      .wrapper {
-         max-width: 1200px;
-         margin: 50px auto;
-         background: #fff;
-         border-radius: 16px;
-         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-         overflow: hidden;
-         padding: 20px;
+      /* Heading for Sections */
+      section h2 {
+         font-size: 2rem;
+         font-weight: 600;
+         color: #1e293b;
+         margin-bottom: 1.5rem;
       }
 
-      /* Tabs */
-      .tabs {
-         display: flex;
-         justify-content: space-evenly;
-         padding: 20px;
-         background: #808080;
-         border-radius: 16px 16px 0 0;
-         position: relative;
+      /* Paragraph styling for Sections */
+      section p {
+         font-size: 1.1rem;
+         color: #ddd; /* Lighter text for descriptions */
+         line-height: 1.8; /* Improved readability */
+         max-width: 900px;
+         margin: 0 auto; /* Center align text */
       }
 
-      .tabs label {
-         flex: 1;
-         text-align: center;
-         padding: 10px;
-         font-size: 18px;
-         font-weight: bold;
-         cursor: pointer;
-         color: #fff;
-      }
-
-      .tabs .slider {
-         position: absolute;
-         height: 4px;
-         background-color: #fff;
-         bottom: 0;
-         transition: all 0.3s ease;
-      }
-
-      /* Centered card layout */
-      .pricing-card {
-         width: 80%;
-         max-width: 400px;
-         margin: 50px auto;
-         background: #fff;
-         border-radius: 8px;
-         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-         transition: transform 0.3s ease;
-         text-align: center;
-         padding: 30px;
-      }
-
-      .pricing-card:hover {
-         transform: translateY(-10px);
-      }
-
-      .pricing-card .card-header {
-         background: #808080;
-         padding: 20px;
-         color: #fff;
-         text-align: center;
-         border-radius: 8px 8px 0 0;
-      }
-
-      .pricing-card .price {
-         font-size: 40px;
-         font-weight: bold;
-         margin: 20px 0;
-      }
-
-      .pricing-card .price span {
-         font-size: 16px;
-      }
-
-      .pricing-card ul {
-         list-style-type: none;
-         padding: 0;
-         margin: 0;
-      }
-
-      .pricing-card ul li {
-         padding: 12px;
-         font-size: 16px;
-         border-bottom: 1px solid #f0f0f0;
-         display: flex;
-         align-items: center;
-      }
-
-      .pricing-card ul li i {
-         margin-right: 10px;
-         color: #808080;
-      }
-
-      .pricing-card button {
-         width: 100%;
-         padding: 15px;
-         background: #808080;
-         color: #fff;
+      /* Button Styling */
+      .btn {
+         display: inline-block;
+         padding: 12px 30px;
+         font-size: 1.1rem;
+         text-transform: uppercase;
+         background-color: #FFD700; /* Golden background */
+         color: #333; /* Dark text color */
          border: none;
-         border-radius: 0 0 8px 8px;
-         font-size: 18px;
-         cursor: pointer;
+         border-radius: 5px;
+         text-decoration: none;
+         margin-top: 20px;
+         transition: background-color 0.3s ease, transform 0.3s ease;
       }
 
-      .pricing-card button:hover {
-         transform: scale(0.98);
+      /* Hover effect for Buttons */
+      .btn:hover {
+         background-color: #ffcc00; /* Slightly darker yellow */
+         transform: translateY(-5px); /* Hover lift effect */
       }
 
-      /* Mobile responsiveness */
-      @media (max-width: 768px) {
-         .pricing-card {
-            width: 90%;
-         }
-      }
+      .pricing-section .container {
+   width: 90%;
+   margin: 0 auto;
+}
 
-      @media (max-width: 480px) {
-         .pricing-card {
-            width: 100%;
-         }
+.pricing-section h2 {
+   text-align: center;
+   margin-top: 50px;
+   font-size: 32px;
+}
 
-         .tabs {
-            flex-direction: column;
-         }
+.pricing-section .wrapper {
+   max-width: 1200px;
+   margin: 50px auto;
+   background: #fff;
+   border-radius: 16px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   padding: 20px;
+}
 
-         .tabs label {
-            font-size: 16px;
-            padding: 12px;
-         }
-      }
+/* Tabs */
+.pricing-section .tabs {
+   display: flex;
+   justify-content: space-evenly;
+   padding: 20px;
+   background: #808080;
+   border-radius: 16px 16px 0 0;
+   position: relative;
+}
 
-       /* Footer Styles */
+.pricing-section .tabs label {
+   flex: 1;
+   text-align: center;
+   padding: 10px;
+   font-size: 18px;
+   font-weight: bold;
+   cursor: pointer;
+   color: #fff;
+}
+
+.pricing-section .tabs .slider {
+   position: absolute;
+   height: 4px;
+   background-color: #fff;
+   bottom: 0;
+   transition: all 0.3s ease;
+}
+
+/* Centered card layout */
+.pricing-section .pricing-card {
+   width: 80%;
+   max-width: 400px;
+   margin: 50px auto;
+   background: #fff;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease;
+   text-align: center;
+   padding: 30px;
+}
+
+.pricing-section .pricing-card:hover {
+   transform: translateY(-10px);
+}
+
+.pricing-section .pricing-card .card-header {
+   background: #808080;
+   padding: 20px;
+   color: #fff;
+   text-align: center;
+   border-radius: 8px 8px 0 0;
+}
+
+.pricing-section .pricing-card .price {
+   font-size: 40px;
+   font-weight: bold;
+   margin: 20px 0;
+}
+
+.pricing-section .pricing-card .price span {
+   font-size: 16px;
+}
+
+.pricing-section .pricing-card ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+}
+
+.pricing-section .pricing-card ul li {
+   padding: 12px;
+   font-size: 16px;
+   border-bottom: 1px solid #f0f0f0;
+   display: flex;
+   align-items: center;
+}
+
+.pricing-section .pricing-card ul li i {
+   margin-right: 10px;
+   color: #808080;
+}
+
+.pricing-section .pricing-card button {
+   width: 100%;
+   padding: 15px;
+   background: #808080;
+   color: #fff;
+   border: none;
+   border-radius: 0 0 8px 8px;
+   font-size: 18px;
+   cursor: pointer;
+}
+
+.pricing-section .pricing-card button:hover {
+   transform: scale(0.98);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+   .pricing-section .pricing-card {
+      width: 90%;
+   }
+}
+
+@media (max-width: 480px) {
+   .pricing-section .pricing-card {
+      width: 100%;
+   }
+
+   .pricing-section .tabs {
+      flex-direction: column;
+   }
+
+   .pricing-section .tabs label {
+      font-size: 16px;
+      padding: 12px;
+   }
+}
+
+
+      /* Footer Styles */
       footer {
          text-align: center;
          padding: 20px;
@@ -571,6 +625,7 @@
       }
    </style>
 </head>
+
 <body>
    <header class="navbar" id="navbar">
       <div class="logo">
@@ -595,7 +650,6 @@
          <li><a href="about.html" onclick="closeMenuAndNavigate('about.html')">About</a></li>
          <li><a href="services.html" onclick="closeMenuAndNavigate('services.html')">Services</a></li>
          <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
-         <li><a href="contact.html" onclick="closeMenuAndNavigate('contact.html')">Contact</a></li>
       </ul>
    </div>
 
@@ -628,166 +682,169 @@
       }
    </script>
 
-   <section id="pricing">
-      <div class="container">
-         <h2>Website & App Development Pricing</h2>
-         <div class="wrapper">
-            <div class="tabs">
-               <input type="radio" id="website-tab" name="tab" checked>
-               <input type="radio" id="app-tab" name="tab">
-               <label for="website-tab" class="tab-label">Website Development</label>
-               <label for="app-tab" class="tab-label">App Development</label>
-               <div class="slider"></div>
-            </div>
+   <section id="pricing" class="pricing-section">
+   <div class="container">
+      <h2>Website & App Development Pricing</h2>
+      <div class="wrapper">
+         <div class="tabs">
+            <input type="radio" id="website-tab" name="tab" checked>
+            <input type="radio" id="app-tab" name="tab">
+            <label for="website-tab" class="tab-label">Website Development</label>
+            <label for="app-tab" class="tab-label">App Development</label>
+            <div class="slider"></div>
+         </div>
 
-            <!-- Pricing Content -->
-            <div class="tab-content">
-               <!-- Website Development Tab Content -->
-               <div id="website" class="tab-section">
-                  <div class="pricing-card" id="website-basic">
-                     <div class="card-header">Basic Website</div>
-                     <div class="price">R3,000 <span>From</span></div>
-                     <ul>
-                        <li><i class="fas fa-check"></i> Pages: 1-3 pages</li>
-                        <li><i class="fas fa-check"></i> Individuals, bloggers, personal portfolios</li>
-                        <li><i class="fas fa-check"></i> Custom landing page design</li>
-                        <li><i class="fas fa-check"></i> Contact form integration</li>
-                        <li><i class="fas fa-check"></i> Basic SEO setup</li>
-                        <li><i class="fas fa-check"></i> Responsive design (mobile-friendly)</li>
-                     </ul>
-                     <button onclick="nextCard('website')">Next Plan</button>
-                  </div>
-
-                  <div class="pricing-card" id="website-standard" style="display:none;">
-                     <div class="card-header">Standard Website</div>
-                     <div class="price">R6,000 <span>From</span></div>
-                     <ul>
-                        <li><i class="fas fa-check"></i> Pages: 4-8 pages</li>
-                        <li><i class="fas fa-check"></i> Small businesses, consultants, or non-profits</li>
-                        <li><i class="fas fa-check"></i> Custom homepage and inner page design</li>
-                        <li><i class="fas fa-check"></i> Contact form, gallery, or blog</li>
-                        <li><i class="fas fa-check"></i> Basic SEO optimization</li>
-                        <li><i class="fas fa-check"></i> Social media integration</li>
-                        <li><i class="fas fa-check"></i> Mobile responsiveness</li>
-                     </ul>
-                     <button onclick="nextCard('website')">Next Plan</button>
-                  </div>
-
-                  <div class="pricing-card" id="website-premium" style="display:none;">
-                     <div class="card-header">Premium Website</div>
-                     <div class="price">R12,000 <span>From</span></div>
-                     <ul>
-                        <li><i class="fas fa-check"></i> Pages: 8-16 pages</li>
-                        <li><i class="fas fa-check"></i> Growing businesses, service providers, or organizations</li>
-                        <li><i class="fas fa-check"></i> Custom homepage and multiple service/product pages</li>
-                        <li><i class="fas fa-check"></i> Blog or portfolio section</li>
-                        <li><i class="fas fa-check"></i> Advanced SEO setup</li>
-                        <li><i class="fas fa-check"></i> Social media, chat integration, and more</li>
-                        <li><i class="fas fa-check"></i> Newsletter subscription form</li>
-                     </ul>
-                     <button onclick="nextCard('website')">Next Plan</button>
-                  </div>
-
-                  <div class="pricing-card" id="website-ecommerce" style="display:none;">
-                     <div class="card-header">E-commerce Package</div>
-                     <div class="price">R10,000 <span>From</span></div>
-                     <ul>
-                        <li><i class="fas fa-check"></i> Pages: Custom (varies by product catalog)</li>
-                        <li><i class="fas fa-check"></i> Retail businesses, online stores, or product-based companies</li>
-                        <li><i class="fas fa-check"></i> Online store setup with WooCommerce/Shopify/Wix</li>
-                        <li><i class="fas fa-check"></i> Payment gateway integration</li>
-                        <li><i class="fas fa-check"></i> Inventory management system</li>
-                        <li><i class="fas fa-check"></i> Product pages with images, descriptions, and reviews</li>
-                        <li><i class="fas fa-check"></i> Basic SEO, user account management, shipping, and taxes</li>
-                     </ul>
-                     <button onclick="nextCard('website')">Next Plan</button>
-                  </div>
+         <!-- Pricing Content -->
+         <div class="tab-content">
+            <!-- Website Development Tab Content -->
+            <div id="website" class="tab-section">
+               <div class="pricing-card" id="website-basic">
+                  <div class="card-header">Basic Website</div>
+                  <div class="price">R3,000 <span>From</span></div>
+                  <ul>
+                     <li><i class="fas fa-check"></i> Pages: 1-3 pages</li>
+                     <li><i class="fas fa-check"></i> Individuals, bloggers, personal portfolios</li>
+                     <li><i class="fas fa-check"></i> Custom landing page design</li>
+                     <li><i class="fas fa-check"></i> Contact form integration</li>
+                     <li><i class="fas fa-check"></i> Basic SEO setup</li>
+                     <li><i class="fas fa-check"></i> Responsive design (mobile-friendly)</li>
+                  </ul>
+                  <button onclick="nextCard('website')">Next Plan</button>
                </div>
 
-               <!-- App Development Tab Content -->
-               <div id="app" class="tab-section" style="display:none;">
-                  <div class="pricing-card" id="app-basic">
-                     <div class="card-header">Basic App</div>
-                     <div class="price">R50,000 <span>From</span></div>
-                     <ul>
-                        <li><i class="fas fa-check"></i> Development Time: 2-4 months</li>
-                        <li><i class="fas fa-check"></i> Simple apps with limited features</li>
-                        <li><i class="fas fa-check"></i> User login and registration</li>
-                        <li><i class="fas fa-check"></i> Basic UI/UX design</li>
-                        <li><i class="fas fa-check"></i> Simple functionality (form submission, calculators)</li>
-                        <li><i class="fas fa-check"></i> Push notifications (optional)</li>
-                     </ul>
-                     <button onclick="nextCard('app')">Next Plan</button>
-                  </div>
+               <div class="pricing-card" id="website-standard" style="display:none;">
+                  <div class="card-header">Standard Website</div>
+                  <div class="price">R6,000 <span>From</span></div>
+                  <ul>
+                     <li><i class="fas fa-check"></i> Pages: 4-8 pages</li>
+                     <li><i class="fas fa-check"></i> Small businesses, consultants, or non-profits</li>
+                     <li><i class="fas fa-check"></i> Custom homepage and inner page design</li>
+                     <li><i class="fas fa-check"></i> Contact form, gallery, or blog</li>
+                     <li><i class="fas fa-check"></i> Basic SEO optimization</li>
+                     <li><i class="fas fa-check"></i> Social media integration</li>
+                     <li><i class="fas fa-check"></i> Mobile responsiveness</li>
+                  </ul>
+                  <button onclick="nextCard('website')">Next Plan</button>
+               </div>
 
-                  <div class="pricing-card" id="app-standard" style="display:none;">
-                     <div class="card-header">Standard App</div>
-                     <div class="price">R75,000 <span>From</span></div>
-                     <ul>
-                        <li><i class="fas fa-check"></i> Development Time: 4-6 months</li>
-                        <li><i class="fas fa-check"></i> Apps with medium complexity</li>
-                        <li><i class="fas fa-check"></i> User profiles and login system</li>
-                        <li><i class="fas fa-check"></i> Advanced UI/UX design with custom features</li>
-                        <li><i class="fas fa-check"></i> Integration with third-party APIs</li>
-                        <li><i class="fas fa-check"></i> Admin dashboard for content management</li>
-                     </ul>
-                     <button onclick="nextCard('app')">Next Plan</button>
-                  </div>
+               <div class="pricing-card" id="website-premium" style="display:none;">
+                  <div class="card-header">Premium Website</div>
+                  <div class="price">R12,000 <span>From</span></div>
+                  <ul>
+                     <li><i class="fas fa-check"></i> Pages: 8-16 pages</li>
+                     <li><i class="fas fa-check"></i> Growing businesses, service providers, or organizations</li>
+                     <li><i class="fas fa-check"></i> Custom homepage and multiple service/product pages</li>
+                     <li><i class="fas fa-check"></i> Blog or portfolio section</li>
+                     <li><i class="fas fa-check"></i> Advanced SEO setup</li>
+                     <li><i class="fas fa-check"></i> Social media, chat integration, and more</li>
+                     <li><i class="fas fa-check"></i> Newsletter subscription form</li>
+                  </ul>
+                  <button onclick="nextCard('website')">Next Plan</button>
+               </div>
 
-                  <div class="pricing-card" id="app-premium" style="display:none;">
-                     <div class="card-header">Premium App</div>
-                     <div class="price">R120,000 <span>From</span></div>
-                     <ul>
-                        <li><i class="fas fa-check"></i> Development Time: 9-12 months</li>
-                        <li><i class="fas fa-check"></i> Complex apps with custom features</li>
-                        <li><i class="fas fa-check"></i> Complete custom app design and development</li>
-                        <li><i class="fas fa-check"></i> Multiple integrations (payment gateways, cloud storage, etc.)</li>
-                        <li><i class="fas fa-check"></i> Real-time features (chat, live tracking)</li>
-                        <li><i class="fas fa-check"></i> Advanced user roles and permissions</li>
-                     </ul>
-                     <button onclick="nextCard('app')">Next Plan</button>
-                  </div>
+               <div class="pricing-card" id="website-ecommerce" style="display:none;">
+                  <div class="card-header">E-commerce Package</div>
+                  <div class="price">R10,000 <span>From</span></div>
+                  <ul>
+                     <li><i class="fas fa-check"></i> Pages: Custom (varies by product catalog)</li>
+                     <li><i class="fas fa-check"></i> Retail businesses, online stores, or product-based companies</li>
+                     <li><i class="fas fa-check"></i> Online store setup with WooCommerce/Shopify/Wix</li>
+                     <li><i class="fas fa-check"></i> Payment gateway integration</li>
+                     <li><i class="fas fa-check"></i> Inventory management system</li>
+                     <li><i class="fas fa-check"></i> Product pages with images, descriptions, and reviews</li>
+                     <li><i class="fas fa-check"></i> Basic SEO, user account management, shipping, and taxes</li>
+                  </ul>
+                  <button onclick="nextCard('website')">Next Plan</button>
+               </div>
+            </div>
+
+            <!-- App Development Tab Content -->
+            <div id="app" class="tab-section" style="display:none;">
+               <div class="pricing-card" id="app-basic">
+                  <div class="card-header">Basic App</div>
+                  <div class="price">R50,000 <span>From</span></div>
+                  <ul>
+                     <li><i class="fas fa-check"></i> Development Time: 2-4 months</li>
+                     <li><i class="fas fa-check"></i> Simple apps with limited features</li>
+                     <li><i class="fas fa-check"></i> User login and registration</li>
+                     <li><i class="fas fa-check"></i> Basic UI/UX design</li>
+                     <li><i class="fas fa-check"></i> Simple functionality (form submission, calculators)</li>
+                     <li><i class="fas fa-check"></i> Push notifications (optional)</li>
+                  </ul>
+                  <button onclick="nextCard('app')">Next Plan</button>
+               </div>
+
+               <div class="pricing-card" id="app-standard" style="display:none;">
+                  <div class="card-header">Standard App</div>
+                  <div class="price">R75,000 <span>From</span></div>
+                  <ul>
+                     <li><i class="fas fa-check"></i> Development Time: 4-6 months</li>
+                     <li><i class="fas fa-check"></i> Apps with medium complexity</li>
+                     <li><i class="fas fa-check"></i> User profiles and login system</li>
+                     <li><i class="fas fa-check"></i> Advanced UI/UX design with custom features</li>
+                     <li><i class="fas fa-check"></i> Integration with third-party APIs</li>
+                     <li><i class="fas fa-check"></i> Admin dashboard for content management</li>
+                  </ul>
+                  <button onclick="nextCard('app')">Next Plan</button>
+               </div>
+
+               <div class="pricing-card" id="app-premium" style="display:none;">
+                  <div class="card-header">Premium App</div>
+                  <div class="price">R120,000 <span>From</span></div>
+                  <ul>
+                     <li><i class="fas fa-check"></i> Development Time: 9-12 months</li>
+                     <li><i class="fas fa-check"></i> Complex apps with custom features</li>
+                     <li><i class="fas fa-check"></i> Complete custom app design and development</li>
+                     <li><i class="fas fa-check"></i> Multiple integrations (payment gateways, cloud storage, etc.)</li>
+                     <li><i class="fas fa-check"></i> Real-time features (chat, live tracking)</li>
+                     <li><i class="fas fa-check"></i> Advanced user roles and permissions</li>
+                  </ul>
+                  <button onclick="nextCard('app')">Next Plan</button>
                </div>
             </div>
          </div>
       </div>
-   </section>
+   </div>
+</section>
 
-   <!-- FontAwesome for Icons -->
-   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- FontAwesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-   <script>
-      // Function to cycle through the pricing cards
-      function nextCard(type) {
-         const cards = ['basic', 'standard', 'premium', 'ecommerce'];
-         for (let i = 0; i < cards.length; i++) {
-            const currentId = `${type}-${cards[i]}`;
-            const currentCard = document.getElementById(currentId);
-            if (currentCard && currentCard.style.display !== 'none') {
-               currentCard.style.display = 'none';
-               const nextIndex = (i + 1) % cards.length;
-               const nextId = `${type}-${cards[nextIndex]}`;
-               const nextCard = document.getElementById(nextId);
-               if (nextCard) nextCard.style.display = 'block';
-               break;
-            }
+<script>
+   // Function to cycle through the pricing cards
+   function nextCard(type) {
+      const websiteCards = ['basic', 'standard', 'premium', 'ecommerce'];
+      const appCards = ['basic', 'standard', 'premium'];
+      const cards = type === 'website' ? websiteCards : appCards;
+
+      for (let i = 0; i < cards.length; i++) {
+         const currentId = `${type}-${cards[i]}`;
+         const currentCard = document.getElementById(currentId);
+         if (currentCard && currentCard.style.display !== 'none') {
+            currentCard.style.display = 'none';
+            const nextIndex = (i + 1) % cards.length;
+            const nextId = `${type}-${cards[nextIndex]}`;
+            const nextCard = document.getElementById(nextId);
+            if (nextCard) nextCard.style.display = 'block';
+            break;
          }
       }
+   }
 
-      // Switch tabs logic
-      document.getElementById("website-tab").addEventListener("click", () => {
-         document.getElementById("website").style.display = 'block';
-         document.getElementById("app").style.display = 'none';
-      });
-
-      document.getElementById("app-tab").addEventListener("click", () => {
-         document.getElementById("app").style.display = 'block';
-         document.getElementById("website").style.display = 'none';
-      });
-
-      // Initial state: Show Website Development first
+   // Switch tabs logic
+   document.getElementById("website-tab").addEventListener("click", () => {
       document.getElementById("website").style.display = 'block';
-   </script>
+      document.getElementById("app").style.display = 'none';
+   });
+
+   document.getElementById("app-tab").addEventListener("click", () => {
+      document.getElementById("app").style.display = 'block';
+      document.getElementById("website").style.display = 'none';
+   });
+
+   // Initial state: Show Website Development first
+   document.getElementById("website").style.display = 'block';
+</script>
 
    <!-- WhatsApp Icon -->
    <a href="https://wa.me/0665520197" id="whatsapp-icon" target="_blank" aria-label="Chat on WhatsApp">
@@ -1004,7 +1061,7 @@
                class="bi bi-instagram"
                viewBox="0 0 16 16"
             >
-               <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598 1.485.039.843.047 1.096.047 3.231.047 3.232c.036.78.166 1.203.276 1.485a2.47 2.47 0 0 0 .599.919c.28.28.546.453.92.598.282.11.705.24 1.485.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+               <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
             </svg>
          </li>
       </ul>
