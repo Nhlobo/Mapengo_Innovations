@@ -711,6 +711,14 @@ button:active {
 
 
 
+
+
+
+
+
+
+
+
   /* Carousel Wrapper - enable touch scrolling */
 .showcase-wrapper {
   overflow-x: auto;
@@ -787,127 +795,6 @@ button:active {
         height: 350px;
       }
     }
-    /* Tagline */
-.tagline {
-  font-size: 1.4rem;
-  margin: 0 auto 2rem;
-  text-align: center;
-  max-width: 700px;
-  color: #2c2c2c;
-  line-height: 1.5;
-  display: block;
-}
-
-/* Stats Section */
-.stats-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 2rem auto 0;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-/* Stat Box Cards */
-.stat-box {
-  background: #FFFFFF;
-  padding: 2rem;
-  border-radius: 1rem;
-  flex: 1 1 200px;
-  min-width: 180px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #eaeaea;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.stat-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.stat-number {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 1.1rem;
-  color: #2c2c2c;
-}
-
-@media (max-width: 500px) {
-  .stat-number {
-    font-size: 1.8rem;
-  }
-
-  .stat-label {
-    font-size: 0.95rem;
-  }
-
-  .tagline {
-    font-size: 1.1rem;
-  }
-}
-
-/* Stats Section */
-.stats-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 2rem auto 0;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-/* Stat Box Cards */
-.stat-box {
-  background: #FFFFFF;
-  padding: 2rem;
-  border-radius: 1rem;
-  flex: 1 1 200px;
-  min-width: 180px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #eaeaea;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.stat-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.stat-number {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 1.1rem;
-  color: #2c2c2c;
-}
-
-@media (max-width: 500px) {
-  .stat-number {
-    font-size: 1.8rem;
-  }
-
-  .stat-label {
-    font-size: 0.95rem;
-  }
-
-  .tagline {
-    font-size: 1.1rem;
-  }
-}
-
     /* Companies Section */
     .companies-section {
       margin-top: 4rem;
@@ -952,6 +839,72 @@ button:active {
       }
     }
 
+/* Tagline */
+.tagline {
+  font-size: 1.4rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+  max-width: 700px;
+  color: #2c2c2c;
+  line-height: 1.5;
+  display: block;
+}
+
+
+/* Stats Section */
+.stats-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Stat Box Cards */
+.stat-box {
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: 1rem;
+  flex: 1 1 200px;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eaeaea;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: #2c2c2c;
+}
+
+@media (max-width: 500px) {
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.95rem;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+  }
+}
 
 
 
@@ -963,11 +916,10 @@ button:active {
 
 
 
+   
 
 
-
-
-/* Section Styles */
+/* we build what you need */
 section {
     padding: 80px 20px;
     background: rgba(255, 255, 255, 0.1); /* Light transparent background */
